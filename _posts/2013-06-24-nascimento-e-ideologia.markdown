@@ -1,8 +1,9 @@
 ---
 layout: post
 title:  "nascimento e ideologia"
-date:   2013-06-24 19:08:03 -0400
-categories: meta
+date: 2013-06-24
+tags: [meta, ideologia]
+excerpt: "todo mundo tem ideologia. você pode até achar que não, mas tem."
 ---
 
 post transplantado de calitipo.tumblr.com, tumblr defunto por causas naturais (esquecimento de senha.)
