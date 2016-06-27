@@ -7,7 +7,8 @@ excerpt: todo mundo tem ideologia. você pode até achar que não, mas tem.
 ---
 
 post transplantado de calitipo.tumblr.com, tumblr defunto por causas naturais (esquecimento de senha.)
-                                                                                                          ***
+
+___
 
 estou parindo este blógue para tentar falar de política de maneira clara e informal. todo mundo tem ideologia, e acho importante que se reconheça a ideologia do que a gente lê. vou começar então esclarecendo alguns fatos que permeiam a ideologia do autor, e se você não concordar com eles só continue lendo se ao menos estiver disposto a concordar.
 
