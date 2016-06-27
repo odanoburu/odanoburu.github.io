@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  julieta & romeu: uma história utilitarista
-date:   2014-09-20
+date:   2014-09-10
 tags: [história econômica, amor, romantismo]
 excerpt: julieta e romeu eram duas jovens pessoas privilegiadas numa itália renascentista e patriarcal.  suas famílias eram ricas e inimigas, e no entanto os dois se amavam.  se amavam tanto que se casaram, sabendo da ira que provocariam em seus pais.  mas se amavam tanto assim?
 ---
