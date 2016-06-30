@@ -4,6 +4,7 @@ title:  "a dica suprema pra relacionamentos"
 date:   2014-09-19
 tags: [relacionamentos, amor]
 excerpt: dicas de relacionamento que te fazem duvidar da 'wisdom of the crowd'.
+lang: "pt"
 ---
  
 inspirado neste texto [aqui](http://lugardemulher.com.br/3-truques-para-secar-a-barriga/) do blógue lugar de mulher.

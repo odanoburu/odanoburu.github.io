@@ -4,6 +4,7 @@ title:  "o teste mais difícil"
 date:   2016-06-29
 tags: [teste de turing, chatbot, alan turing]
 excerpt: um teste em que vc precisa responder a perguntas simples como "quantos presidentes chamados Bush os Estados Unidos já tiveram?".  o melhor teste ganha 4000 dólares.  você acha que consegue?
+lang: "pt"
 ---
 
 > se uma cama não cabe num quarto porque é grande demais, o quê é grande demais?
