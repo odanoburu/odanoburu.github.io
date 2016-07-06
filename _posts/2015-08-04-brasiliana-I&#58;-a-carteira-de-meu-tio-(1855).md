@@ -1,0 +1,40 @@
+---
+layout: post
+title:  "brasiliana I: a carteira de meu tio (1855)"
+date:   2015-08-04
+tags: [a carteira de meu tio, brasiliana, joaquim manuel de macedo, a moreninha]
+excerpt: estou lendo uma série de livros sobre essa terrinha bôua que chamamos brasil.
+lang: "pt"
+---
+
+estou lendo uma série de livros sobre essa terrinha bôua que chamamos brasil.  
+
+o primeiro que li foi 'a carteira de meu tio,' do joaquim manuel de macedo.  
+
+"aquele tiozão bobo que escreveu a moreninha, livro romântico de vomitar?", cê pode perguntar.
+
+ele mêmu.  pra minha surpresa, ele também escreveu sátiras políticas, a primeira delas 'a carteira de meu tio.'  
+
+o livro conta a história do sobrinho cínico que tem tio rico e influente.  o sobrinho conta ao tio que quer ser político.  o tio, ao que parece por milagre, é um idealista _of sorts_ — promete a carreira ao sobrinho, mas só se antes ele fizer "o contrario do que fazem os grandes estadistas da nossa terra."  
+
+e prossegue:
+
+> elles empregam no brasil uma politica, que aprendem nos livros da frança e da inglaterra; improvisam no mundo novo as instituições do mundo velho, algumas das quaes tem tanta relação com as nossas circumstancias, como um ovo com um espeto !
+> [pergunta o sobrinho] e eu?..
+> [tio:] e tu estudarás o que convèm ao teo paiz, no que se passa nelle, e nos costumes do nosso povo.
+
+e obriga o sobrinho a viajar pelo brasil num cavalo velho e lento, tendo como companhia a constituição de 1824 e um caderno, a tal carteira do tio,¹ em que ele devia anotar suas impressões.  
+
+é uma leitura interessante porque é curioso ver como alguns enxergavam a política na época (segundo reinado,) fora algumas tiradas inteligentes de humor cínico, como:
+
+> meu tio, pelo que posso julgar, é um homem que sabe muito, e que falla pouco: nunca foi eleito deputado, por ter essas duas terriveis qualidades.  felizmente eu sou o avêsso do bom velho; não sei cousa alguma nesta vida, e fallo mais do que uma velha mettida á litterata : está visto que, se eu já tivesse quarenta annos, entrava necessariamente em alguma lista triplice para senador.
+
+e:
+
+![trecho de 'a carteira de meu tio,' joaquim manuel de macedo (1855)](https://books.google.com.br/books?id=H703AAAAYAAJ&hl=pt-BR&hl=pt-BR&pg=PA4&img=1&zoom=3&sig=ACfU3U2REywij7zCrR0xwiWv0gnK08b9bQ&ci=158%2C221%2C791%2C803&edge=0)
+
+alguns trechos de sátira política soam meio clichê, mas isso ocorre provavelmente porque eles são repetidos há 160 anos...  se você acha que corrupção, fisiologismo, nepotismo, clientelismo, et cetera só surgiram/pioraram nos últimos anos, vale muito ler o livro.  
+
+____
+
+¹: ao que tudo indica, não é a carteira do tio que mais importa ao sobrinho, mas é a que dá título ao livro.
