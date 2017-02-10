@@ -13,23 +13,27 @@ mas a liberdade sempre chamou fountaine mais forte.
 
 um dia um parente rico morreu e deixou pra fountaine, pra suas irmães e pra sua mãe uma considerável soma de dinheiro, que aplicada de maneira confiável por um tio rico, rendia a fountaine uma renda mensal (um salário pelo cargo de ter tido a sorte de familiares ex-ricos mortos). a renda não era suficiente para uma vida de luxos, mas permitia que fountaine viajasse o quanto quisesse, sem precisar de trabalhar.
 
-> saudades desse tempo? 1. a probabilidade de você, se nascido na época, ser uma pessoa com a sorte de fountaine e não um trabalhador de baixa renda sem direitos trabalhistas seria bem pequena; 2. boas(?) notícias, talvez estejamos voltando pra essa época [ao menos nesse aspecto](http://www.economist.com/blogs/buttonwood/2014/03/demography-and-inequality).
+_saudades desse tempo?_
+
+_1. a probabilidade de você, se nascido na época, ser uma pessoa com a sorte de fountaine e não um trabalhador de baixa renda sem direitos trabalhistas seria bem pequena;_
+
+_2. boas(?) notícias, talvez estejamos voltando pra essa época [ao menos nesse aspecto](http://www.economist.com/blogs/buttonwood/2014/03/demography-and-inequality)._
 
 como não existem revoluções (no sentido de mudanças abruptas,) fountaine começou a aproveitar a vida viajando por diferentes cidades do reino unido, exercitando seu hobby de desenhar catedrais.
 
-___
+<center>***</center>
 
 por muito tempo sua catedral favorita foi a de sua cidade natal. era lá que ela às vezes avistava um corista irlandês pelo qual ela se apaixonou. transbordando de romantismo, fountaine se atraía pelo moço ao mesmo tempo em que se reprimia por ele ser de uma classe mais baixa (i.e., indigno dela). mesmo assim, a liberdade econômica de que desfrutava lhe permitia uma liberdade maior em vários sentidos. escrevia cartas nas quais sabia estar infringindo as convenções sociais de seu tempo. fountaine chegou a visitá-lo em sua terra natal, ficando sozinha num hotel (algo incomum na época) e conhecendo a família. chegaram a virar noivos, ao que o tio rico comentou de maneira fria:
 
 > "i am only sorry that it is by your late uncle's money that you gave been able to carry out what i cannot but call a most unfortunate engagement." 
 
-(conta em favor do tio rico que ele poderia ter cancelado a renda mensal de fountaine enquanto gestor da herança, mas não o fez. efetivamente nos impediu de averiguar se fountaine era [uma romântica à la julieta & romeu](https://odanoburu.github.io/2014/09/10/julieta-&-romeu&-58;-uma-hist%C3%B3ria-utilitarista.html)).
+_conta em favor do tio rico que ele poderia ter cancelado a renda mensal de fountaine enquanto gestor da herança, mas não o fez. efetivamente nos impediu de averiguar se fountaine era [uma romântica à la julieta & romeu](https://odanoburu.github.io/2014/09/10/julieta-&-romeu&-58;-uma-hist%C3%B3ria-utilitarista.html)_
 
 depois de algumas reviravoltas e de cartas melosas, o noivado foi cancelado, e fountaine se sentia aliviada sempre que ouvia notícias das bebedeiras e dívidas de jogatina do seu primeiro quase-marido.
 
-(o que talvez nunca tenha ocorrido a fountaine é que seu ex-noivo só tenha se dado a beber porque teve a suposta decência de abrir mão de um casamento que supostamente nunca daria certo por ele ser de uma classe inferior e por ele não ter muito dinheiro. seu objetivo talvez tenha sido salvar fountaine de uma decisão que a sociedade a que pertenciam considerava errada, sacrificando a própria felicidade por isso. isso é tudo especulação minha, claro. mas acho possível).
+_o que talvez nunca tenha ocorrido a fountaine é que seu ex-noivo só tenha se dado a beber porque teve a suposta decência de abrir mão de um casamento que supostamente nunca daria certo por ele ser de uma classe inferior e por ele não ter muito dinheiro. seu objetivo talvez tenha sido salvar fountaine de uma decisão que a sociedade a que pertenciam considerava errada, sacrificando a própria felicidade por isso. isso é tudo especulação minha, claro. mas acho possível._
 
-___
+<center>***</center>
 
 a cada viagem fountaine ía mais longe. aprendeu a andar de bicicleta e viajou o sul da frança. teve aulas de canto em milão. em certo momento, abandonou os desenhos de igreja e o canto, e passou a ter o hobby único de caçar borboletas. nas suas noites em alojamentos no estrangeiro, fountaine se divertia recebendo as atenções de diversos homens, só pra depois rejeitá-los da forma que foi rejeitada por seu primeiro amor.
 
@@ -47,7 +51,7 @@ ou ainda,
 
 mas fountaine sempre ignorava essa voz. afinal, ela adorava viajar e caçar borboletas, e odiava ficar em casa na inglaterra.
 
-___
+<center>***</center>
 
 viajando pelo que na época ainda era o império otomano, fountaine empregava como guia um certo khalil. khalil nunca escondeu seu amor por ela. fountaine inicialmente achava que khalil era só mais um dos muitos assediadores que já havia encontrado, mas um menos perigoso e mais obsequioso do que a maioria (e que além disso falava um bom inglês). passou a empregar khalil em várias outras viagens por países da região, e vendo que o amor de khalil não diminuía, prometeu casar com ele.
 
@@ -57,7 +61,7 @@ mas a sociedade que fountaine tinha sido criada pra agradar tinha cada vez menos
 
 antes que não tivesse importância alguma, no entanto, fountaine recebeu uma carta. a carta era da irmã de um vice-cônsul britânico. fountaine havia conhecido o vice-cônsul e a irmã numa de suas viagens, e não tinha mais pensado nos dois desde então. a irmã perguntava se ela ainda estava solteira (ainda, pois mesmo que houvesse muitas mulheres que escolhiam nunca se casar, essa ainda era uma escolha impensável). dizia que o irmão precisava se casar pois não tinha a renda exigida pelo seu cargo, e que ela preferia que o irmão se casasse com uma mulher inglesa e não com a francesa de renda anual de mil libras/ano que estava no papo dele. a irmã perguntava se fountaine estaria interessada e o quanto era sua renda.
 
-> sim, amigos, isso acontecia no nosso querido século xix.
+_sim, amigues, isso acontecia no nosso querido século xix._
 
 fountaine respondeu dizendo que sua renda mal ultrapassava quatrocentas libras/ano, e que tinha se decidido há muito não se casar. quando o irmão-vice-cônsul em pessoa lhe escreveu, fountaine disse que já tinha viajado demais pra conseguir se instalar num lugar só, que seria pra sempre infeliz caso o fizesse, e que seria uma péssima esposa. na ausência de um não enfático, o irmão-vice-cônsul lhe respondeu com sonhos e planos despedaçados pela decisão de fountaine. 
 
@@ -73,9 +77,10 @@ quando aceita um noivado secreto, ela se pergunta:
 
 > why should i sacrifice liberty for the sake of appearing to advantage before the world? my world is the deserts of torrid lands where wandering tribes sit round their camp fires at night; my world is in the mountain forests...
 
-___
+<center>***</center>
 
 o que o diário de fountaine me faz pensar é no quão influentes são os preconceitos de nossas épocas, mesmo que sejamos, como fountaine, pessoas que tentem (e consigam, em certa medida) superá-los.
-___
+
+<center>***</center>
 
 eu conheci esse livro em uma aula sobre literatura de viagem, que me apresentou pérolas como chaucer (pai da literatura inglesa, junto com shakespeare) e chatwin. por causa de um desafio que estava rolando em 2014, me decidi a ler mais autoras (a maior parte do que lemos é escrito por homens, embora talvez a gente não pare pra pensar nisso). além da fountaine, também li [louisa jebb](https://archive.org/details/bydesertwaystoba00wilkrich), outra escritora corajosa que viajou pelo oriente médio de domínio otomano. (leiam, ela é sensacional. e engraçada).
