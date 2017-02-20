@@ -7,3 +7,4 @@ excerpt: this notebook explains how an anti-SPAM schema would work using a varia
 lang: "en"
 ---
 
+this notebook explains how an anti-SPAM schema would work using a variant of the hashcash algorithm. click <a href="https://odanoburu.github.io/hash-cash">here to read</a>.
