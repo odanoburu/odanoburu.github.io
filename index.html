@@ -8,7 +8,6 @@ layout: default
 
   <ul class="post-list">
     {% for post in site.posts %}
-	{% if post.lang == "pt" %}
       <li>
         <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
 
@@ -17,7 +16,6 @@ layout: default
         </h2>
           <h4> <article>{{ post.excerpt }}</article> </h4>
       </li>
-	{% endif %}
     {% endfor %}
   </ul>
 
