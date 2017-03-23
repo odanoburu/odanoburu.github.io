@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: /whoami
+Disallow: /whoami.html
