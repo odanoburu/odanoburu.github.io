@@ -1,3 +1,2 @@
 User-agent: *
-Disallow: /whoami
-Disallow: /whoami.html
+Disallow: /about

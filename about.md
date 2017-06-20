@@ -1,9 +1,11 @@
 ---
 layout: page
-title: sobre
-permalink: /sobre/
+title: about
+permalink: /about/
 ---
 
-### eu sou quem sou.  estes são meus textos.  
+**bruno cuconato** is an aplied math student.
 
-##### este site foi feito usando [Jekyll](http://jekyllrb.com/), e é hospedado gratuitamente em [GitHub Pages](https://pages.github.com/).
+Feel free to contact me by email or on github.
+
+##### this website is built with [Jekyll](http://jekyllrb.com/), and is hosted for free by [GitHub Pages](https://pages.github.com/).
