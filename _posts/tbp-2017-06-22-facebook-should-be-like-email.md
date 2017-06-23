@@ -1,0 +1,128 @@
+---
+layout: post
+title:  "facebook should be more like email"
+date: 2017-06-22
+tags: [social network, networks, open formats, open, transparency, free, freedom]
+excerpt: "do you use facebook because it is the best platform available or just because all your friends are already on it?"
+lang: "en"
+---
+
+do you use facebook because it is the best platform available or just
+because all your friends are already on it? what about whatsapp versus
+telegram/signal/wechat?  do you really have an option in choosing what
+platform you'll use?
+
+these kinds of services are subject to what economists
+call
+[*network effects*](https://en.wikipedia.org/wiki/Network_effect). from
+wikipedia:
+
+> a network effect (also called network externality or demand-side
+> economies of scale) is the effect that one user of a good or service
+> has on the value of that product to other people. When a network
+> effect is present, the value of a product or service is dependent on
+> the number of others using it.
+
+so what? well, this means that a service like facebook can acquire
+value **intrinsic to its wide adoption, not to its quality**. in plain
+terms, it means that you (and everyone) may be stuck with a worse
+service simply because the cost of coordinating everyone to change
+from bad-but-widely-adopted service A to better-but-not-widely-adopted
+service B can be too high.
+
+this network effect is a market failure if there ever was one, and
+this needs to change. it hurts both personal and market freedom, and
+disincentives innovation, giving the companies that developed these
+services undue market power.
+
+these kinds of services should be behave more like email: they should
+all be based on an open format/protocol that allows other people or
+other companies to develop products/services that can interact with
+the original service. this would reduce these services' market power
+by allowing for true competition (i.e., one that is not hindered by
+the service's network effect) to take place.
+
+can you imagine if email were like facebook or whatsapp? we would all
+have to be using the same provider and the same apps. you would not be
+able to choose between the thousands of different providers (like
+gmail, hotmail, and lesser known paid-only services), between the
+thousands of email clients (webapps, outlook, thunderbird, sendmail,
+etc.). you'd have to use EmailCorp©'s app and service. of course, you
+could create your own email-like service. but everyone already uses
+EmailCorp©'s product. why would they change to yours if they wouldn't
+be able to talk to their friends/partners/clients/bosses/colleagues
+before getting them all to change services too? maybe this could work
+if EmailCorp©'s email **really** sucked, but what if it were just
+*kind of* bad? you wouldn't be able to get most people to change, and
+you'd not be able to compete in equal terms with EmailCorp©. this
+doesn't happen with pizza (or most other products, either). if this
+pizza place is only *kind of* good, you don't have to stick with it. *you
+deserve the best fucking pizza in the world.* just like you deserve
+the best messaging platform or the best social network platform.
+
+**let's make it happen.**
+
+but how?
+
+one way is to enforce governmental regulation whenever a service
+surpasses critical mass and acquires too much market power. the
+government can then force the company responsible to open its service
+to equally standing competitors. in the case of whatsapp, this would
+mean making its messaging protocol open in such a way that could
+message someone on whatsapp using another messaging app such as
+telegram. once the precendent has been set, startup companies will be
+incentived to develop open platforms from the start, so that they
+won't have to change all their backend software if/when they reach
+network critical mass.
+
+another way out is to people actively deny consumption of services or
+products that are not open. companies routinely do this in order to
+prevent buyer lock-in: if your company grows reliant on a closed
+platform from another company, your supplier acquires market power
+over you. it can then raise its prices for no reason other than the
+fact that you are dependent on them. take the example of Microsoft. in
+the year you found your first company it might offer you a huge
+discount on an Office package. when your staff becomes a little too
+realiant on Excel or Word, it can then raise its prices up to point
+where it is not worth for you to pay the price of getting your
+employees used to other software. in order to prevent this, if a
+company has a choice, it will prefer products/services which are open,
+so that if a supplier loses competitiveness, they can switch
+seamlessly to another one. this is precisely how customers should
+behave. if a service offers you no way out of it, you should search
+for better alternatives.
+
+---
+
+if you support this idea, or if you have any comments, let's talk! if
+you have a catchy/marketable name for this kind of company, please
+tell me, so that we can spread the word.
+
+---
+
+faq
+
+#### how can this hurt my freedom if I'm free to leave the service and pick another want?
+
+in a literal sense, you're right. you're still free to leave any
+service. but we're not dealing in absolutes here. you still have a yes
+or no choice, but what about the other possibilities I presented
+above? why can't you use the platform you want and your friend the one
+she wants and so on? the fact is that your freedom is reduced, even if
+it is not removed completely.
+
+#### how can these companies have market power if their services are provided for free?
+
+these companies do make money. facebook (which is also the owner of
+whatsapp) has quite an impressive revenue. the catch is just that they
+are not selling anything to facebook users, but to their advertisers
+instead. and they only have the ability to keep on doing this for such
+a profit is because they don't face competition on equal terms.
+
+#### these companies are in this position because they developed critical mass, and they could only do so because they were better/innovative, therefore they deserve their market power. right?
+
+no. because time goes on, the market changes, and companies can fall
+out of the cutting edge or stop providing a quality service. but
+because of their market power, they don't suffer as much as a company
+in a truly competitive market would (as in my pizzeria example).
+
