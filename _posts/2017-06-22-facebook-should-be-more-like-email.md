@@ -100,7 +100,7 @@ tell me, so that we can spread the word.
 
 ---
 
-faq
+## faq
 
 #### how can this hurt my freedom if I'm free to leave the service and pick another want?
 
