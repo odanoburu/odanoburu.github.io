@@ -94,9 +94,12 @@ for better alternatives.
 
 ---
 
+[]()
+
 if you support this idea, or if you have any comments, let's talk! if
 you have a catchy/marketable name for this kind of company, please
 tell me, so that we can spread the word.
+
 
 ---
 
