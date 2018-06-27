@@ -1,0 +1,13 @@
+#+TITLE: about
+
+this is bruno cuconato's personal website.
+
+* contact
+feel free to contact me by email at (first letter of my
+name)cclaro+site@gmail.com.
+
+I go by =odanoburu= on IRC.
+
+* license
+this website (except otherwise noted) is licensed under a [[http://creativecommons.org/licenses/by-sa/4.0/][Creative
+Commons Attribution-ShareAlike 4.0 International License]].

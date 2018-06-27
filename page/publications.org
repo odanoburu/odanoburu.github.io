@@ -1,0 +1,4 @@
+#+TITLE: my publications
+
+*  bibtex entries
+#+INCLUDE: "./pubs.bib" src bibtex

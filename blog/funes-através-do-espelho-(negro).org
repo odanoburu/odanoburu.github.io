@@ -1,0 +1,78 @@
+#+TITLE: funes através do espelho (negro)
+#+DATE: <2015-03-10 Ter>
+
+imagine um mundo em que você pode guardar tudo o que você vê em vídeo,
+com direito à zoom e à replay. parece legal?
+
+esse mundo não existe (dã), a não ser num episódio da genial série de
+têvê britânica 'black mirror.'
+
+(não posso recomendar essa série com menos ênfase: é simplesmente
+sensacional. e mais: cada episódio vale por si só, não há repetição de
+atores nem de locações, o que quer dizer que você pode assistir a
+qualquer um, em qualquer ordem. e são só sete episódios no total, ou
+seja, você até pode se viciar, mas não vai dar tempo do seu cachorro
+morrer de fome até você acabar de assistir tudo.)
+
+eu gosto de acreditar de que a tecnologia é neutra, que ela no máximo
+potencializa coisas que já existem dentro das pessoas. assim, por mais
+que uma tecnologia possa ser usada pra fins ruins, ela também poderia
+ser usada para fins bons (ou fins neutros.) com o poder de dar replay
+em qualquer momento da sua vida, o que você faria?
+
+já dá pra imaginar as pessoas no ônibus assistindo a momentos felizes,
+sem prestar atenção no que se passa em volta (não muito diferente do
+que já acontece, admito.) muita gente ía ficar revendo aquela transa
+gostosa numa noite solitária (ou durante uma transa ruim,) como de
+fato acontece no episódio de black mirror. também seria possível dar
+zoom num detalhe importante que seja impossível de ver, pra procurar
+uma pessoa amiga num lugar lotado ou pra anotar aquele rabisco do
+professor do outro lado da lousa.
+
+numa época em que muita gente fica de olhos brilhando com as
+possibilidades do avanço tecnológico, black mirror tenta nos lembrar
+de que esses avanços podem dar muito errado. e errado não porque a
+tecnologia é má, mas porque nós pessoas humanas podemos ser muito
+ruins.  black mirror nos lembra de avançar com atenção. (sempre lembro
+do entusiasmo tecnológico da belle époque, que culminou no que
+culminou.)
+
+será que seria desejável ter todos os momentos de nossa vida
+disponíveis a um clique de distância? poderíamos reaprender com algum
+erro passado, ou nos prepararmos melhor pra uma palestra, mas também
+dá pra imaginar um casal revendo uma briga pra ver quem tem razão. ~
+insira calafrios aqui ~
+
+o enredo desse episódio me lembrou muito o conto do jorge luis borges,
+'funes, o memorioso.' no conto, a pessoa-narradora conta a história
+desse tal de funes, um cara que lembrava perfeitamente de
+absolutamente tudo. a pessoa-narradora conta que
+
+#+BEGIN_QUOTE
+  duas ou três vezes [funes] havia reconstituído um dia inteiro [da
+  memória], não havia vacilado vez alguma, mas cada reconstituição
+  havia requerido /um dia inteiro/. (grifo meu.)
+#+END_QUOTE
+
+a pessoa-narradora fala de funes com gravidade: afirma que ele não
+consegue pensar. "penso, logo sou," vem à mente. para a pessoa
+narradora, pensar é esquecer diferenças, abstrair, generalizar. para
+funes, um mesmo cachorro visto uma hora depois de uma perspectiva
+diferente é um ser tão diverso do anterior a ponto de merecer um outro
+nome. por mais que generalizar faça com que percamos detalhes
+importantes, sermos assim (e não como funes,) é sermos humanos.
+
+o sonho de uma memória perfeita agora parece menos interessante, quiçá
+inútil. mas não é disso exatamente de que o episódio de black mirror
+fala. se você, pessoa-leitora, quiser saber, vá lá ver :)
+
+--
+
+o episódio de black mirror de que falo é 'the entire history of you,'
+S01E03. tem no netflix, e um passarinho azul me contou que está
+disponível no seu saite de torrent favorito. ps: se alguém quiser
+traduzir as legendas pro português (caso elas não existam ainda,) eu
+posso ajudar.
+
+o conto do borges está disponível [[http://users.clas.ufl.edu/burt/spaceshotsairheads/Borges-Funes_el_memorioso.pdf][aqui]], em espanhol. se procurar com
+carinho na sra. gúgou você acha em português ou em inglês.

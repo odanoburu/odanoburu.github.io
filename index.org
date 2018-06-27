@@ -1,0 +1,7 @@
+#+TITLE: welcome
+
+this is bruno cuconato's personal website.
+
+you can browse my [[./blog][personal blog]], check my [[./page/publications.html][publications]] (PDFs
+available), or [[./page/about.html][contact me]]. if you are looking for code, take a look at
+my [[https://github.com/odanoburu/][github page]].
