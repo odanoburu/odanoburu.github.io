@@ -2,9 +2,13 @@
 ;; Nicolas Petton's setup
 
 ;; run with
-;: emacs --batch --no-init-file --load publish.el --eval '(org-publish-all t)'
+; bash publish.sh [t]
+;; or
+; emacs --batch --no-init-file --load publish.el --eval '(org-publish-all t)'
+;(package-initialize)
 
 (require 'org)
+;(require 'org-ref)
 (require 'ox-publish)
 
 ;; setting to nil, avoids "Author: x" at the bottom
@@ -25,12 +29,12 @@
 
 (defvar bruno-website-html-head
 "<link href='http://fonts.googleapis.com/css?family=Libre+Baskerville:400,400italic' rel='stylesheet' type='text/css'>
-<link rel='stylesheet' href='css/site.css' type='text/css'/>
+<link rel='stylesheet' href='/css/site.css' type='text/css'/>
 <link rel='icon' type='image/x-icon' href='/favicon.ico'/>")
 
 (defvar bruno-website-html-blog-head
 "<link href='http://fonts.googleapis.com/css?family=Libre+Baskerville:400,400italic' rel='stylesheet' type='text/css'>
-<link rel='stylesheet' href='../css/site.css' type='text/css'/>")
+<link rel='stylesheet' href='/css/site.css' type='text/css'/>")
 
 (defvar bruno-website-html-preamble 
   "<div class='nav'>
@@ -51,22 +55,24 @@ Last updated %C. <br>
 Built with %c.
 </div>")
 
+(setq dir (file-name-directory (or load-file-name buffer-file-name)))
+
 (setq org-publish-project-alist
       `(("org"
-         :base-directory "~/sites/odanoburu.gitlab.io/"
+         :base-directory ,dir
          :base-extension "org"
-         :publishing-directory "~/sites/odanoburu.gitlab.io/"
+         :publishing-directory ,dir
          :publishing-function org-html-publish-to-html
          :section-numbers nil
          :with-toc nil
-         :recursive t
+         :recursive nil
          :html-head ,bruno-website-html-head
          :html-postamble ,bruno-website-html-postamble)
 
         ("pages"
-         :base-directory "~/sites/odanoburu.gitlab.io/page"
+         :base-directory ,(concat dir "page/")
          :base-extension "org"
-         :publishing-directory "~/sites/odanoburu.gitlab.io/page"
+         :publishing-directory ,(concat dir "page/")
          :publishing-function org-html-publish-to-html
          :section-numbers nil
          :with-toc nil
@@ -76,27 +82,27 @@ Built with %c.
          :html-postamble ,bruno-website-html-postamble)
 
         ("rlog"
-         :base-directory "~/sites/odanoburu.gitlab.io/research-log/"
+         :base-directory ,(concat dir "research-log/")
          :base-extension "org"
-         :publishing-directory "~/sites/odanoburu.gitlab.io/research-log/"
+         :publishing-directory ,(concat dir "research-log/")
          :publishing-function org-html-publish-to-html
          :section-numbers t
          :with-toc t
          :auto-sitemap t
+         :sitemap-style list
          :sitemap-title "sitemap for bruno's research log"
          :recursive t
          :sitemap-filename "index.org"
          :sitemap-file-entry-format "%d *%t*"
-         :sitemap-style 'list
          :sitemap-sort-files anti-chronologically
          :html-head ,bruno-website-html-blog-head
          :html-preamble ,bruno-website-html-preamble
          :html-postamble ,bruno-website-html-postamble)
 
         ("blog"
-         :base-directory "~/sites/odanoburu.gitlab.io/blog/"
+         :base-directory ,(concat dir "blog/")
          :base-extension "org"
-         :publishing-directory "~/sites/odanoburu.gitlab.io/blog/"
+         :publishing-directory ,(concat dir "blog/")
          :publishing-function org-html-publish-to-html
          :section-numbers nil
          :with-toc nil
@@ -105,28 +111,28 @@ Built with %c.
          :recursive t
          :sitemap-filename "index.org"
          :sitemap-file-entry-format "%d *%t*"
-         :sitemap-style 'list
+         :sitemap-style list
          :sitemap-sort-files anti-chronologically
          :html-head ,bruno-website-html-blog-head
          :html-preamble ,bruno-website-html-preamble
          :html-postamble ,bruno-website-html-postamble)
 
         ("images"
-         :base-directory "~/sites/odanoburu.gitlab.io/images/"
+         :base-directory ,(concat dir "images/")
          :base-extension "jpg\\|gif\\|png\\|ico"
-         :publishing-directory "~/sites/odanoburu.gitlab.io/images/"
+         :publishing-directory ,(concat dir "images/")
          :publishing-function org-publish-attachment)
 
         ("js"
-         :base-directory "~/sites/odanoburu.gitlab.io/js/"
+         :base-directory ,(concat dir "js/")
          :base-extension "js"
-         :publishing-directory "~/sites/odanoburu.gitlab.io/js/"
+         :publishing-directory ,(concat dir "js/")
          :publishing-function org-publish-attachment)
 
         ("css"
-         :base-directory "~/sites/odanoburu.gitlab.io/css/"
+         :base-directory ,(concat dir "css/")
          :base-extension "css"
-         :publishing-directory "~/sites/odanoburu.gitlab.io/css/"
+         :publishing-directory ,(concat dir "css/")
          :publishing-function org-publish-attachment)
 
         ("website" :components ("org" "pages" "rlog" "blog" "images" "js" "css"))))

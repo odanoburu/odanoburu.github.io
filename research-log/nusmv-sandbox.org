@@ -1,0 +1,261 @@
+#+TITLE: a poor man's introduction to model checking of finite state synchronous systems with NuSMV
+#+DATE: <2018-06-29 Sex>
+
+[[http://nusmv.fbk.eu/][NuSMV]] is a free (both as in beer and as in freedom) model checker tool
+where you can specify a model of a finite-state system and
+exhaustively and automatically check whether this model meets a given
+specification. the specification is given in a DSL, and the check is
+done over a query written in a temporal logic (CTL or LTL).
+
+* a (very) simple specification
+in the spirit of the ongoing world cup, we'll model a [[https://en.wikipedia.org/wiki/Goal-line_technology][goal-line
+system]]. (this is the system used in some football matches to determine
+if a ball has entered the goal or not -- which in [[https://youtu.be/7t7EkbRE0xk?t=24s][some cases]] can be a
+rather tricky task for humans).
+
+the model is borderline stupid: it should indicate =goal= only when
+the ball enters a goal, and should be =idle= otherwise. it can be
+described by the following finite state machine:
+
+#+CAPTION: a finite state machine describing a goal-line system
+[[file:../images/goal-line.png]]
+
+** goal-line model
+first thing we do is declare our variables. these are straight
+forward: we need to keep track of where the ball is, and in which
+state the goal-line system is.
+
+#+BEGIN_SRC nusmv
+  MODULE main
+   VAR
+     goal-line : {goal, idle} ;
+     ball      : {inside, outside} ;
+#+END_SRC
+
+here we are only using enumeration types, but NuSMV supports several
+others, such as =boolean= and =array [range] of [type]=.
+
+next we describe how the finite state system evolves. for this we need
+to specify the initial states, and how they transition to the next
+states. there are special declarations for initialization (=INIT=) and
+transition (=TRANS=) of variables, and also one for invariable ones
+(=INVAR=). we can, however, employ only one declaration for all of
+these, plus special keywords to differentiate them. (everything after
+a =--= is a comment in NuSMV.)
+
+#+BEGIN_SRC nusmv
+  ASSIGN
+    -- initialize variables
+    init(goal-line) := idle ;
+    init(ball)      := outside ;
+    -- trans
+    next(ball) := case
+                    -- if ball is outside, ball may enter goal or not
+                    ball = outside : {outside, inside} ;
+                    -- ball must go out before going in again
+                    ball = inside  : outside ;
+                  esac ;
+    next(goal-line) := case
+                         -- when ball goes in, goal!
+                         next(ball) = inside : goal ;
+                         -- after indicating goal, stop doing so. in
+                         -- this same step ball will do inside ->
+                         -- outside
+                         goal-line = goal : idle ;
+                         -- nothing happened to ball, nothing happens to
+                         -- goal-line
+                         next(ball) = outside : idle ;
+                       esac ;
+#+END_SRC
+
+that is all for our model. after having installed NuSMV and saving
+this code to =goal-line.smv=, you can run
+: NuSMV goal-line.smv
+and you'll get no output, as you haven't asked for any checks and
+there are no syntax errors.
+
+you can also run NuSMV interactively with
+: NuSMV -int goal-line.smv
+this will drop you in a shell, where you can issue =go= to set the
+model up, and then =print_fair_transitions -f dot -o goal-line.gv= to
+get the graphviz file that produces the diagram we see above.
+
+to explore the model, you must pick an initial state with =pick_state
+-i=, and then issue =simulate -iv=. NuSMV will present you the
+possible transitions and you can choose the one you want to follow,
+which is useful for debugging.
+
+you can also call =help= for help.
+
+** checks
+NuSMV offers a variety of checks, but we'll be using only two of
+them. you might want to go over CTL if you don't know/remember it (you
+can pick it up easily if you know first order logic.)
+
+- CTLSPEC :: describes a CTL formula. if it holds, NuSMV will report
+             so; if it doesn't, NuSMV will produce a counterexample.
+- INVARSPEC :: describes a propositional formula, which will be tested
+               in every state.
+
+what properties from our simple goal-line model we would like to have?
+for starters, we would like it to report a goal whenever the ball
+enters the goal. more than that, we would like it to *only* report a
+goal when the ball enters the goal. these two properties can be
+equivalently checked by the following pairs of =CTLSPEC= and
+=INVARSPEC= declarations:
+#+BEGIN_SRC nusmv
+   -- ball inside goal induces goal line system
+   CTLSPEC AG ball = inside -> goal-line = goal ;
+   INVARSPEC ball = inside -> goal-line = goal ;
+   -- goal-line off means ball hasn't entered
+   CTLSPEC AG goal-line = idle -> ball = outside ;
+   INVARSPEC ball = outside -> goal-line = idle ;
+#+END_SRC
+
+(although the declarations in each pair are equivalent, NuSMV will
+handle them differently -- the user manual says =INVARSPEC= can be
+checked by a specialized algorithm, and it allows the use of the
+=next= operator, which is not possible with =CTLSPEC=.)
+
+finally, as a sanity check, we could check that it is possible to not
+have any goals, and that having goals is also possible. the former can
+be done with
+: CTLSPEC EG ball = outside & goal-line = idle
+
+* a (less) simple specification
+in this section we'll model the [[ https://en.wikipedia.org/wiki/River_crossing_puzzle][river crossing puzzle]] and use NuSMV to
+solve it. the puzzle is about a farmer who needs to cross a river,
+bringing along his pet wolf, a lamb, and a cabbage. she has an old
+boat at her disposal, which can at most carry her and one other
+thing. additional constraints are the facts that the wolf can not be
+left alone with the lamb, and that the lamb can not be left alone with
+the cabbage.
+
+** river crossing model
+for each state, we need to keep track of where each entity is, and
+what the farmer will do. the former can be modelled as simple
+=boolean= types, while the latter can be an enumeration type with four
+possibilities: the farmer either crosses the river alone, or she
+brings one of the other entities along.
+
+#+BEGIN_SRC nusmv
+  MODULE main
+   VAR
+     -- decide which thing farmer will take with him, if anything
+     takes : {nothing, cabbage, lamb, wolf} ;
+     -- is thing over the river?
+     cabbage-over : boolean ;
+     lamb-over    : boolean ;
+     wolf-over    : boolean ;
+     farmer-over  : boolean ;
+#+END_SRC
+
+there is only one inital state, of course -- everyone is on the
+'wrong' side of the river. accordingly, the farmer has not done
+anything yet.
+#+BEGIN_SRC nusmv
+   ASSIGN
+     -- takes nothing in the first round
+     init(takes) := nothing ;
+     -- everyone starts not-over the river
+     init(cabbage-over) := FALSE ;
+     init(lamb-over)    := FALSE ;
+     init(wolf-over)    := FALSE ;
+     init(farmer-over)  := FALSE ;
+#+END_SRC
+
+the evolution of the finite state system is very simple: the farmer
+decides if she'll take anything across the river, and the entity she
+decides to take (if any) then moves across the river with her.
+
+in order to declare that the farmer can do any of a number of choices,
+we use a set. this means the variable can transition to any member of
+the specified set.
+
+#+BEGIN_SRC nusmv
+     -- what the farmer takes with her -- which can be anything or
+     -- nothing
+     next(takes) := {nothing, cabbage, lamb, wolf} ;
+#+END_SRC
+
+we have already seen =case= expressions being used to decide on the
+transition of a variable. for simple cases, =case= is overkill -- so
+NuSMV offers us syntactic sugar for a simple =if_then_else= construct:
+
+#+BEGIN_SRC nusmv
+     -- move thing?
+     next(cabbage-over) := next(takes) = cabbage ? ! cabbage-over : cabbage-over ;
+     next(lamb-over)    := next(takes) = lamb ? ! lamb-over : lamb-over ;
+     next(wolf-over)    := next(takes) = wolf ? ! wolf-over : wolf-over ;
+#+END_SRC
+
+finally, we declare how the farmer moves across the river. (for
+simplicity, we'll assume she's indefatigable, so that she'll change
+sides at every transition.)
+
+#+BEGIN_SRC nusmv
+     -- farmer always moves
+     --- exercise : give her the possibility of staying put (she might
+     --- be tired after all this rowing)
+     next(farmer-over)  := ! farmer-over ;
+#+END_SRC
+
+you might have noticed that choosing =boolean= as the representation
+for the side an entity is in makes transitioning it specially easy.
+
+now is a good time to use the NuSMV shell as in the previous section
+and try to solve the puzzle interactively. (you'll have to be your own
+judge, though).
+
+** query
+in the previous section we checked whether a few desirable properties
+we'd like to see were true in the model we specified. in the case of
+the river crossing problem, we'd like to find a suitable path to the
+desired state -- the one where the farmer and her companions are on
+the other side of the river.
+
+for this we can exploit NuSMV's capability of offering counterexamples
+to a false claim. all we have to do is declare that there is no
+suitable solution, and (provided there actually is one) NuSMV will
+find it for us.
+
+#+BEGIN_SRC nusmv
+ CTLSPEC NAME solution := ! E [((farmer-over != cabbage-over -> farmer-over = lamb-over) -- cabbage is safe
+                                & (farmer-over != lamb-over -> farmer-over = wolf-over)) -- lamb is safe
+                                U (farmer-over = TRUE & cabbage-over = farmer-over & lamb-over = farmer-over & wolf-over = farmer-over)] -- until it is over
+#+END_SRC
+
+this is CTL for a variation of "there is no path such that in every
+state until everyone is across river it holds that the cabbage is
+never alone with the lamb and the lamb is never alone with the
+wolf". as there is such a path, NuSMV will give it to us when we run
+: NuSMV river-crossing.smv
+after having saved all this code in =river-crossing.smv=.
+
+* considerations
+model checking is cool and all (c'mon, if you're not convinced of
+this, read this tutorial again!), but it is not without its
+problems. even with these very simple examples things might go
+awry. for instance, although it yields a correct answer, there is a
+bug in the river crossing model (which you might have noticed; if not,
+why not fix it as an exercise?). one obvious fix only causes another
+problem, so there's that: you only check what you think about
+checking, and there's no way to know if the set of properties you are
+checking against is exaustive.
+
+in the case of actual systems like the goal-line one, another problem
+is that the model might differ from the implementation -- so you have
+to check the implementation too. even if you find a tool that (unlike
+NuSMV) will produce code from your model specification, you'd have to
+check this code too (or the tool, for that matter) -- although it is
+less likely to have bugs than an independent implementation, it might
+still have bugs.
+
+all is not lost, though. abstracting away things like speed of
+implementation and costs, some verification is better than none.
+
+---
+
+this [[http://github.com/odanoburu/nusmv-sandbox][repository]] hosts a few NuSMV modules where I try new
+problems. you can find modified versions of the code in this entry
+there.
