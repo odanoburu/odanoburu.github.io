@@ -1,0 +1,31 @@
+#+TITLE: Developing grammars with GF
+#+DATE: <2019-05-25 Sat>
+
+This is a short note to record a few pointers that should help a
+newcomer learn [[http://grammaticalframework.org/][GF]]. In case you don't know what GF is:
+
+#+BEGIN_QUOTE
+Grammatical Framework (GF) is a domain-specific programming language
+for grammar writing. It is a functional programming language, with
+syntax inspired by the Haskell programming language; it draws from
+intuitionistic type theory for its type system.
+#+END_QUOTE
+
+I wrote a short introduction to GF in my [[http://hdl.handle.net/10438/27405][MSc thesis]] (which was about
+implementing a GF grammar for Portuguese), but the best source for
+learning GF is pairing the [[http://www.grammaticalframework.org/gf-book/][GF book]] with a read of [[https://inariksit.github.io/blog/][Inari Listenmaa's
+blog]]. If you don't have so much time as to read a book, you can
+checkout the somewhat old [[http://www.grammaticalframework.org/doc/tutorial/gf-tutorial.html][GF tutorial]] or the [[http://www.grammaticalframework.org/lib/doc/rgl-tutorial/index.html][GF Resource Grammar
+Library (RGL) tutorial]] (I'd pick the former if you are more of a
+programmer than a linguist, and the latter if the contrary).
+
+Installing GF from binary is straightforward, and is probably the best
+course of action if you are not familiar with Haskell (the language of
+implementation) tooling. That's all you need for playing around, but
+as soon as you want to contribute grammars you probably want to clone
+the [[http://github.com/grammaticalframework/gf-rgl][RGL repository]] and build the latest versions of its grammars (you
+don't need Haskell for that, only =bash= or =cmd=).
+
+If you need help or have questions the best forum is probably the the
+=gf-dev= [[https://groups.google.com/forum/#!forum/gf-dev][mailing list]], but the =#gf= channel on freenode is good help
+too.

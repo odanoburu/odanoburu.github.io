@@ -123,7 +123,7 @@ be done with
 : CTLSPEC EG ball = outside & goal-line = idle
 
 * a (less) simple specification
-in this section we'll model the [[ https://en.wikipedia.org/wiki/River_crossing_puzzle][river crossing puzzle]] and use NuSMV to
+in this section we'll model the [[https://en.wikipedia.org/wiki/River_crossing_puzzle][river crossing puzzle]] and use NuSMV to
 solve it. the puzzle is about a farmer who needs to cross a river,
 bringing along his pet wolf, a lamb, and a cabbage. she has an old
 boat at her disposal, which can at most carry her and one other

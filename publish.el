@@ -8,7 +8,8 @@
 ;(package-initialize)
 
 (require 'org)
-;(require 'org-ref)
+(require 'htmlize)
+;;(require 'org-ref)
 (require 'ox-publish)
 
 ;; setting to nil, avoids "Author: x" at the bottom

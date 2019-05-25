@@ -1,3 +1,4 @@
 #+TITLE: sitemap for bruno's research log
 
-   + [[file:nusmv-sandbox.org][2018-06-29 *a poor man's introduction to model checking of finite state synchronous systems with NuSMV*]]
+- [[file:gf-grammars.org][Developing grammars with GF]]
+- [[file:nusmv-sandbox.org][a poor man's introduction to model checking of finite state synchronous systems with NuSMV]]

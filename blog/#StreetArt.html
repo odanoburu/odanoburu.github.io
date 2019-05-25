@@ -1,22 +1,29 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+<!-- 2019-05-25 -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>#StreetArt</title>
-<!-- 2018-06-29 -->
-<meta  charset="utf-8">
-<meta  name="generator" content="Org-mode">
+<meta name="generator" content="Org mode">
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
-  .title  { text-align: center; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
   .todo   { font-family: monospace; color: red; }
-  .done   { color: green; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
   .tag    { background-color: #eee; font-family: monospace;
             padding: 2px; font-size: 80%; font-weight: normal; }
   .timestamp { color: #bebebe; }
   .timestamp-kwd { color: #5f9ea0; }
-  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
-  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
-  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
   .underline { text-decoration: underline; }
   #postamble p, #preamble p { font-size: 90%; margin: .2em; }
   p.verse { margin-left: 3%; }
@@ -43,27 +50,111 @@
     border: 1px solid black;
   }
   pre.src:hover:before { display: inline;}
-  pre.src-sh:before    { content: 'sh'; }
-  pre.src-bash:before  { content: 'sh'; }
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
   pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
-  pre.src-R:before     { content: 'R'; }
-  pre.src-perl:before  { content: 'Perl'; }
-  pre.src-java:before  { content: 'Java'; }
-  pre.src-sql:before   { content: 'SQL'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
 
   table { border-collapse:collapse; }
   caption.t-above { caption-side: top; }
   caption.t-bottom { caption-side: bottom; }
   td, th { vertical-align:top;  }
-  th.right  { text-align: center;  }
-  th.left   { text-align: center;   }
-  th.center { text-align: center; }
-  td.right  { text-align: right;  }
-  td.left   { text-align: left;   }
-  td.center { text-align: center; }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
   dt { font-weight: bold; }
-  .footpara:nth-child(2) { display: inline; }
-  .footpara { display: block; }
+  .footpara { display: inline; }
   .footdef  { margin-bottom: 1em; }
   .figure { padding: 1em; }
   .figure p { text-align: center; }
@@ -83,6 +174,7 @@
     { font-size: 10px; font-weight: bold; white-space: nowrap; }
   .org-info-js_search-highlight
     { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
   /*]]>*/-->
 </style>
 <link href='http://fonts.googleapis.com/css?family=Libre+Baskerville:400,400italic' rel='stylesheet' type='text/css'>
@@ -92,7 +184,7 @@
 @licstart  The following is the entire license notice for the
 JavaScript code in this tag.
 
-Copyright (C) 2012-2013 Free Software Foundation, Inc.
+Copyright (C) 2012-2018 Free Software Foundation, Inc.
 
 The JavaScript code in this tag is free software: you can
 redistribute it and/or modify it under the terms of the GNU
@@ -148,26 +240,27 @@ for the JavaScript code in this tag.
 </div>
 </header>
 <main id="content">
+<header>
 <h1 class="title">#StreetArt</h1>
-<p>
+</header><p>
 in brazil we have a consensus regarding street art.
 </p>
 
 <p>
 street art can be of two (and only two !) types. it can be either
-&lsquo;good&rsquo;, and is thus denominated &lsquo;graffiti&rsquo;, or it can be &lsquo;bad&rsquo;, being
-called &lsquo;pixação&rsquo;. (&lsquo;pixação&rsquo; is basically writing names [&lsquo;tagging&rsquo;] or
+&rsquo;good&rsquo;, and is thus denominated &rsquo;graffiti&rsquo;, or it can be &rsquo;bad&rsquo;, being
+called &rsquo;pixação&rsquo;. (&rsquo;pixação&rsquo; is basically writing names [&rsquo;tagging&rsquo;] or
 what are deemed unreadable signs, e.g.  <a href="http://www.fatcap.com/graffiti-style/wildstyle-1/pictures.html">wildstyle</a>.  anything that does
-not carry an obvious meaning is considered artless: a mere &lsquo;pixação&rsquo;.
+not carry an obvious meaning is considered artless: a mere &rsquo;pixação&rsquo;.
 </p>
 
 <p>
 this categorization reminds me of yet another presupposed dualism: in
-brazil, a transgender woman can be either a &lsquo;transsexual&rsquo; or a
-&lsquo;travesti&rsquo; (&lsquo;transvestite&rsquo;). &lsquo;transsexual&rsquo; is a word that shows a
+brazil, a transgender woman can be either a &rsquo;transsexual&rsquo; or a
+&rsquo;travesti&rsquo; (&rsquo;transvestite&rsquo;). &rsquo;transsexual&rsquo; is a word that shows a
 degree of acceptance by society; the person in question could pretend
 to be cisgender and &ldquo;few would notice otherwise&rdquo;. a transgender
-person, when seen as a &lsquo;travesti,&rsquo; is usually someone forced to the
+person, when seen as a &rsquo;travesti,&rsquo; is usually someone forced to the
 margins of society for not conforming to gender norms. (if you can
 read portuguese, don&rsquo;t bother reading what i wrote here, go read <a href="http://www.oestigmatrans.org/qual-e-a-diferenca-entre-a-travesti-e-a-transexual/">what
 Sofia has to say</a>!)
@@ -179,10 +272,10 @@ complexity of a situation.
 </p>
 
 <p>
-in the film &lsquo;cidade cinza&rsquo; (&lsquo;grey city&rsquo;; trailer w/ english subs <a href="https://www.youtube.com/watch?v=7NpppZaGfJo">here</a>)
+in the film &rsquo;cidade cinza&rsquo; (&rsquo;grey city&rsquo;; trailer w/ english subs <a href="https://www.youtube.com/watch?v=7NpppZaGfJo">here</a>)
 we watch two employees working for the são paulo city government
 <a href="https://www.youtube.com/watch?v=jumIQ47TQPo">debating which street art pieces are art and which are not</a>. their work
-is to clean the city from the so-called &lsquo;pixação&rsquo;. (&lsquo;graffiti&rsquo;, as the
+is to clean the city from the so-called &rsquo;pixação&rsquo;. (&rsquo;graffiti&rsquo;, as the
 film shows, is being increasingly tolerated by authorities due to the
 artists&rsquo; struggle for respect.) the street art pieces which are ruled
 out as unworthy are <a href="http://youtu.be/LZsxPBWuH8k?t=23s">greyened out</a>.
@@ -198,7 +291,7 @@ trying to define art is pointless in itself.
 
 <p>
 os gêmeos (a famous graffiti duo), having noticed the failure of the
-dualism graffiti x &lsquo;pixação&rsquo;, decided to play along with it.
+dualism graffiti x &rsquo;pixação&rsquo;, decided to play along with it.
 </p>
 
 <p>
@@ -211,8 +304,8 @@ is in barcelona. i couldn&rsquo;t find the image of right one).
 
 <p>
 an art critic that tried to differentiate between graffiti and
-&lsquo;pixação&rsquo; would break down in aporia upon the sight of this work. if
-name-writing is mere &lsquo;pixação,&rsquo; why would a name-writing by os gêmeos,
+&rsquo;pixação&rsquo; would break down in aporia upon the sight of this work. if
+name-writing is mere &rsquo;pixação,&rsquo; why would a name-writing by os gêmeos,
 as good as they may be (and are,) be any different? with this graffiti
 (and several others, in fact), os gêmeos were trying to demonstrate
 that <b>anyone</b> can leave their mark on the city, that <b>anyone</b> can make
@@ -228,8 +321,8 @@ would leave the &ldquo;pretty&rdquo; boy figure alone, <a href="https://www.yout
 <footer id="postamble" class="status">
 <hr>
 <div class='footer'>
-Last updated 2018-06-29. <br>
-Built with <a href="http://www.gnu.org/software/emacs/">Emacs</a> 25.2.1 (<a href="http://orgmode.org">Org</a> mode 8.2.10).
+Last updated 2019-05-25. <br>
+Built with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 26.1 (<a href="https://orgmode.org">Org</a> mode 9.1.9).
 </div>
 </footer>
 </body>

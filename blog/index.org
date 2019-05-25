@@ -1,9 +1,9 @@
 #+TITLE: sitemap for bruno's personal blog
 
-   + [[file:facebook-should-be-more-like-email.org][2017-06-22 *facebook should be more like email*]]
-   + [[file:uma-introdução-ao-protocolo-bitcoin-em-português.org][2017-02-20 *uma introdução ao protocolo bitcoin, em português*]]
-   + [[file:borboletas-e-preconceito-no-século-xix.org][2017-02-10 *borboletas e preconceito no século xix*]]
-   + [[file:o-teste-mais-difícil.org][2016-06-29 *o teste mais difícil*]]
-   + [[file:brasiliana-a-carteira-de-meu-tio-(1855).org][2015-08-04 *brasiliana: a carteira de meu tio (1855)*]]
-   + [[file:funes-através-do-espelho-(negro).org][2015-03-10 *funes através do espelho (negro)*]]
-   + [[file:#StreetArt.org][2014-10-12 *#StreetArt*]]
+- [[file:facebook-should-be-more-like-email.org][facebook should be more like email]]
+- [[file:uma-introdução-ao-protocolo-bitcoin-em-português.org][uma introdução ao protocolo bitcoin, em português]]
+- [[file:borboletas-e-preconceito-no-século-xix.org][borboletas e preconceito no século xix]]
+- [[file:o-teste-mais-difícil.org][o teste mais difícil]]
+- [[file:brasiliana-a-carteira-de-meu-tio-(1855).org][brasiliana: a carteira de meu tio (1855)]]
+- [[file:funes-através-do-espelho-(negro).org][funes através do espelho (negro)]]
+- [[file:#StreetArt.org][#StreetArt]]

@@ -6,7 +6,7 @@ this is bruno cuconato's personal website.
 feel free to contact me by email at (first letter of my
 name)cclaro+site@gmail.com.
 
-I go by =odanoburu= on IRC.
+I go by =odanoburu= on github, IRC, etc.
 
 * license
 this website (except otherwise noted) is licensed under a [[http://creativecommons.org/licenses/by-sa/4.0/][Creative
