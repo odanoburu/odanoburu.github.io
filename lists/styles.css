@@ -57,13 +57,13 @@ html {
 
 @media (min-width: 800px) {
     html {
-	font-size: 21.5px;
+        font-size: 21.5px;
     }
 }
 
 @media (min-width: 1200px) {
     html {
-	font-size: 23px;
+        font-size: 23px;
     }
 }
 
@@ -75,8 +75,8 @@ h1 {
 
 @media (min-width: 1200px) {
     h1 {
-	font-size: 2.3353em;
-	line-height: 1.3;
+        font-size: 2.3353em;
+        line-height: 1.3;
     }
 }
 
@@ -86,7 +86,7 @@ h2 {
 
 @media (min-width: 1200px) {
     h2 {
-	font-size: 1.769em;
+        font-size: 1.769em;
     }
 }
 
@@ -96,7 +96,7 @@ h3 {
 
 @media (min-width: 1200px) {
     h3 {
-	font-size: 1.33em;
+        font-size: 1.33em;
     }
 }
 
@@ -106,7 +106,7 @@ h4 {
 
 @media (min-width: 1200px) {
     h4 {
-	font-size: 1.15em;
+        font-size: 1.15em;
     }
 }
 
@@ -114,22 +114,26 @@ body {
     font-family: charterregular, serif ;
     color: #151515;
     background-color: #efefef;
-    max-width: 30em; 		/* one character ~ 0.5 em*/
     margin-left: auto;
     margin-right: auto;
 }
 
 @media (min-width: 600px) {
-    max-width: 100% ;
+    body {
+        max-width: 100% ;
+    }
 }
 
 @media (min-width: 800px) {
-    max-width: 80% ;
+    body {
+        max-width: 85% ;
+    }
 }
 
 @media (min-width: 1200px) {
     body {
-	padding: 1.5rem;
+        padding: 1.5rem ;
+        max-width: 30em ;  /* one character ~ 0.5 em*/
     }
 }
 
@@ -142,3 +146,7 @@ a {
     text-decoration: none;
     color: #1883ba;
 }
+
+/* Local Variables: */
+/* indent-tabs-mode: nil */
+/* End: */
