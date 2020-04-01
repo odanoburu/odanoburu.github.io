@@ -52,12 +52,12 @@
 
 
 html {
-  font-size: 16px;
+  font-size: 20px;
 }
 
 @media (min-width: 800px) {
     html {
-	font-size: 20px;
+	font-size: 21.5px;
     }
 }
 
@@ -117,6 +117,14 @@ body {
     max-width: 30em; 		/* one character ~ 0.5 em*/
     margin-left: auto;
     margin-right: auto;
+}
+
+@media (min-width: 600px) {
+    max-width: 100% ;
+}
+
+@media (min-width: 800px) {
+    max-width: 80% ;
 }
 
 @media (min-width: 1200px) {
