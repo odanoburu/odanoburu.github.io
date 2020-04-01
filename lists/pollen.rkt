@@ -29,7 +29,7 @@
                         (year (attr-ref element 'data-year)))
                     (list 'li title " (" author ")"
                           (txexpr 'a `((href ,(format "#~a" (make-id author title year))))
-                                  (list "⤷"))))))))
+                                  (list "⤵"))))))))
 
 ;; pollen
 
@@ -67,19 +67,19 @@
                       ", by " ,author " (" ,year ")" " :" ,status ":"
                       ,@elems)))
     ((html)
-     (txexpr 'div (append other-attrs (list `(class ,(symbol->string medium))
-                                            `(data-author ,author)
-                                            `(data-year ,year)
-                                            `(data-title ,title)
-                                            `(id ,(make-id author title year))))
+     (txexpr 'article (append other-attrs (list `(class ,(symbol->string medium))
+                                                `(data-author ,author)
+                                                `(data-year ,year)
+                                                `(data-title ,title)
+                                                `(id ,(make-id author title year))))
              `(,(txexpr* 'div (list `(class "metadata"))
                          `(h2 ,title
                               ,@(if subtitle (list "---" subtitle)
                                     empty)
                               ,(txexpr 'a `((href ,(format "#~a" toc-id)))
                                        (list "⤴")))
-                            `(h3 "by " ,`(span ((class "author")) ,author)
-                                 " (" ,year ") ---" ,`(span ((class "status")) ,status)))
+                         `(h3 "by " ,`(span ((class "author")) ,author)
+                              " (" ,year ") ---" ,`(span ((class "status")) ,status)))
                ,@elems
                (hr))))
     (else
