@@ -82,26 +82,39 @@ like free migration.
 
 }
 
-◊; ◊book[#:author "Jonathan Haidt" #:published "2012" #:title
-◊; "The righteous mind" #:subtitle "why good people are divided by politics and religion"
-◊; #:status "read"]{
+◊book[#:author "Jonathan Haidt" #:published "2012" #:title
+"The righteous mind" #:subtitle "why good people are divided by politics and religion"
+#:status "read"]{
 
-◊; ◊synopsis{
+◊synopsis{
 
-◊; See the book's webpage.
+See the book's webpage.
 
-◊; }
+}
 
-◊; ◊opinion{
+◊opinion{
 
-◊; I agree with most of the diagnosis of the problem and with the general
-◊; idea towards a solution. I'm not so sure about the specificities of
-◊; the solutions—free trade still seems like a good thing to me, just
-◊; like free migration.
+I believe political discussion should be about convincing people of
+our ideas (whereas a lot of people nowadays seem to think that it's
+meant to inflate their standing among the people who already agree
+with them). Most people have good intentions, even if their political
+beliefs might be contrary to these intentions (or so we might
+think). We should strive to convince them, not to alienate them. (It's
+funny that I use a “us versus them” discourse to try to undermine this
+mentality.)
 
-◊; }
+This book tries to explain how humans develop their moral beliefs,
+which has implications for their political and religious
+views. Understanding why someone thinks a certain way helps us reduce
+the divisiveness of our current political climate, helping us approach
+problems together despite our clashing beliefs.
 
-◊; }
+This is one of those books we all should read.
+
+
+}
+
+}
 
 ◊; Local Variables:
 ◊; mode: pollen
