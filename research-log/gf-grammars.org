@@ -11,7 +11,7 @@ syntax inspired by the Haskell programming language; it draws from
 intuitionistic type theory for its type system.
 #+END_QUOTE
 
-I wrote a short introduction to GF in my [[http://hdl.handle.net/10438/27405][MSc thesis]] (which was about
+I wrote a short introduction to GF in my [[http://hdl.handle.net/10438/27405][MSc thesis]] (which is about
 implementing a GF grammar for Portuguese), but the best source for
 learning GF is pairing the [[http://www.grammaticalframework.org/gf-book/][GF book]] with a read of [[https://inariksit.github.io/blog/][Inari Listenmaa's
 blog]]. If you don't have so much time as to read a book, you can

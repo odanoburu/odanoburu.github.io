@@ -1,19 +1,23 @@
-;; several parts of this script are copied from Rasmus' publish.el and
-;; Nicolas Petton's setup
+
+
+;; several parts of this script are copied from Rasmus' publish.el
+;; and Nicolas Petton's setup
 
 ;; run with
-; bash publish.sh [t]
+;;; bash publish.sh [t]
 ;; or
-; emacs --batch --no-init-file --load publish.el --eval '(org-publish-all t)'
-;(package-initialize)
+;;; emacs --batch --no-init-file --load publish.el --eval '(org-publish-all t)'
 
-(require 'org)
+;; (package-initialize)
+
 (require 'htmlize)
-;;(require 'org-ref)
-(require 'ox-publish)
+(require 'ox-html)
 
-;; setting to nil, avoids "Author: x" at the bottom
-(setq user-full-name nil)
+;; Customize the HTML output
+(setq org-html-validation-link nil ;; Don't show validation link
+      org-html-head-include-scripts nil       ;; Use our own scripts
+      org-html-head-include-default-style nil ;; Use our own styles
+      org-html-head "<link rel=\"stylesheet\" href=\"static/site.css\" />")
 
 (setq org-export-with-smart-quotes t)
 
@@ -29,15 +33,13 @@
 
 
 (defvar bruno-website-html-head
-"<link href='http://fonts.googleapis.com/css?family=Libre+Baskerville:400,400italic' rel='stylesheet' type='text/css'>
-<link rel='stylesheet' href='/css/site.css' type='text/css'/>
-<link rel='icon' type='image/x-icon' href='/favicon.ico'/>")
+"<link rel='stylesheet' href='/static/site.css' type='text/css'/>
+<link rel='icon' type='image/x-icon' href='/static/favicon.ico'/>")
 
 (defvar bruno-website-html-blog-head
-"<link href='http://fonts.googleapis.com/css?family=Libre+Baskerville:400,400italic' rel='stylesheet' type='text/css'>
-<link rel='stylesheet' href='/css/site.css' type='text/css'/>")
+"<link rel='stylesheet' href='/static/site.css' type='text/css'/>")
 
-(defvar bruno-website-html-preamble 
+(defvar bruno-website-html-preamble
   "<div class='nav'>
 <ul>
 <li><a href='/'>home</a></li>
@@ -49,93 +51,115 @@
 </ul>
 </div>")
 
-(defvar bruno-website-html-postamble 
-  "<hr>
-<div class='footer'>
-Last updated %C. <br>
-Built with %c.
-</div>")
+(defvar bruno-website-html-postamble "")
 
-(setq dir (file-name-directory (or load-file-name buffer-file-name)))
+(defvar base-dir (file-name-directory (or load-file-name buffer-file-name)))
+(defvar publish-dir (file-name-as-directory (concat base-dir "public")))
+(defvar static-dir (file-name-as-directory (concat publish-dir "static")))
+
+(defvar bruno-website-with-creator nil)
 
 (setq org-publish-project-alist
-      `(("org"
-         :base-directory ,dir
-         :base-extension "org"
-         :publishing-directory ,dir
-         :publishing-function org-html-publish-to-html
-         :section-numbers nil
-         :with-toc nil
-         :recursive nil
-         :html-head ,bruno-website-html-head
-         :html-postamble ,bruno-website-html-postamble)
+      (list
+       (list "org"
+	     :base-directory base-dir
+	     :base-extension "org"
+	     :publishing-directory publish-dir
+	     :publishing-function #'org-html-publish-to-html
+	     :section-numbers nil
+	     :with-toc nil
+	     :recursive nil
+	     :with-author nil ;; Don't include author name
+	     :with-creator bruno-website-with-creator ;; Include Emacs and Org versions in footer
+	     :time-stamp-file nil
+	     :html-head bruno-website-html-head
+	     :html-postamble bruno-website-html-postamble)
 
-        ("pages"
-         :base-directory ,(concat dir "page/")
-         :base-extension "org"
-         :publishing-directory ,(concat dir "page/")
-         :publishing-function org-html-publish-to-html
-         :section-numbers nil
-         :with-toc nil
-         :recursive t
-         :html-head ,bruno-website-html-head
-         :html-preamble ,bruno-website-html-preamble
-         :html-postamble ,bruno-website-html-postamble)
+       (list "pages"
+	     :base-directory (concat base-dir "page/")
+	     :base-extension "org"
+	     :publishing-directory (concat publish-dir "page/")
+	     :publishing-function #'org-html-publish-to-html
+	     :section-numbers nil
+	     :with-toc nil
+	     :recursive t
+	     :with-author nil ;; Don't include author name
+	     :with-creator bruno-website-with-creator
+	     :html-head bruno-website-html-head
+	     :html-preamble bruno-website-html-preamble
+	     :html-postamble bruno-website-html-postamble)
 
-        ("rlog"
-         :base-directory ,(concat dir "research-log/")
-         :base-extension "org"
-         :publishing-directory ,(concat dir "research-log/")
-         :publishing-function org-html-publish-to-html
-         :section-numbers t
-         :with-toc t
-         :auto-sitemap t
-         :sitemap-style list
-         :sitemap-title "sitemap for bruno's research log"
-         :recursive t
-         :sitemap-filename "index.org"
-         :sitemap-file-entry-format "%d *%t*"
-         :sitemap-sort-files anti-chronologically
-         :html-head ,bruno-website-html-blog-head
-         :html-preamble ,bruno-website-html-preamble
-         :html-postamble ,bruno-website-html-postamble)
+       (list "rlog"
+	     :base-directory (concat base-dir "research-log/")
+	     :base-extension "org"
+	     :publishing-directory (concat publish-dir "research-log/")
+	     :publishing-function #'org-html-publish-to-html
+	     :section-numbers t
+	     :with-toc t
+	     :with-author nil ;; Don't include author name
+	     :with-creator bruno-website-with-creator
+	     ;; :auto-sitemap t
+	     ;; :sitemap-style 'list
+	     ;; :sitemap-title "sitemap for bruno's research log"
+	     :recursive t
+	     ;; :sitemap-filename "index.org"
+	     ;; :sitemap-file-entry-format "%d *%t*"
+	     ;; :sitemap-sort-files 'anti-chronologically
+	     :html-head bruno-website-html-blog-head
+	     :html-preamble bruno-website-html-preamble
+	     :html-postamble bruno-website-html-postamble)
 
-        ("blog"
-         :base-directory ,(concat dir "blog/")
-         :base-extension "org"
-         :publishing-directory ,(concat dir "blog/")
-         :publishing-function org-html-publish-to-html
-         :section-numbers nil
-         :with-toc nil
-         :auto-sitemap t
-         :sitemap-title "sitemap for bruno's personal blog"
-         :recursive t
-         :sitemap-filename "index.org"
-         :sitemap-file-entry-format "%d *%t*"
-         :sitemap-style list
-         :sitemap-sort-files anti-chronologically
-         :html-head ,bruno-website-html-blog-head
-         :html-preamble ,bruno-website-html-preamble
-         :html-postamble ,bruno-website-html-postamble)
+       (list "blog"
+	     :base-directory (concat base-dir "blog/")
+	     :base-extension "org"
+	     :publishing-directory (concat publish-dir "blog/")
+	     :publishing-function #'org-html-publish-to-html
+	     :section-numbers nil
+	     :with-toc nil
+	     :with-author nil ;; Don't include author name
+	     :with-creator bruno-website-with-creator
+	     ;; :auto-sitemap nil
+	     ;; :sitemap-title "sitemap for bruno's personal blog"
+	     :recursive t
+	     ;; :sitemap-filename "index.org"
+	     ;; :sitemap-file-entry-format "%d *%t*"
+	     ;; :sitemap-style 'list
+	     ;; :sitemap-sort-files 'anti-chronologically
+	     :html-head bruno-website-html-blog-head
+	     :html-preamble bruno-website-html-preamble
+	     :html-postamble bruno-website-html-postamble)
 
-        ("images"
-         :base-directory ,(concat dir "images/")
-         :base-extension "jpg\\|gif\\|png\\|ico"
-         :publishing-directory ,(concat dir "images/")
-         :publishing-function org-publish-attachment)
+       (list "images"
+	     :base-directory (concat base-dir "images/")
+	     :base-extension (regexp-opt (list "jpg" "gif" "png" "ico"))
+	     :publishing-directory static-dir
+	     :publishing-function #'org-publish-attachment
+	     :completion-function (lambda (ps)
+				    (let* ((favicon-file (concat (plist-get ps :base-directory) "favicon.ico"))
+					   (publish-dir (plist-get ps :publishing-directory))
+					   (publish-root (file-name-directory (directory-file-name publish-dir)))
+					   (root-favicon-file (concat publish-root "favicon.ico")))
+				      (copy-file favicon-file root-favicon-file t))))
 
-        ("js"
-         :base-directory ,(concat dir "js/")
-         :base-extension "js"
-         :publishing-directory ,(concat dir "js/")
-         :publishing-function org-publish-attachment)
+       (list "js"
+	     :base-directory (concat base-dir "js/")
+	     :base-extension "js"
+	     :publishing-directory static-dir
+	     :publishing-function #'org-publish-attachment)
 
-        ("css"
-         :base-directory ,(concat dir "css/")
-         :base-extension "css"
-         :publishing-directory ,(concat dir "css/")
-         :publishing-function org-publish-attachment)
+       (list "css"
+	     :base-directory (concat base-dir "css/")
+	     :base-extension "css"
+	     :publishing-directory static-dir
+	     :publishing-function #'org-publish-attachment)
 
-        ("website" :components ("org" "pages" "rlog" "blog" "images" "js" "css"))))
+       (list "fonts"
+	     :base-directory (concat base-dir "fonts/")
+	     :base-extension (regexp-opt (list "ttf" "woff"))
+	     :publishing-directory static-dir
+	     :publishing-function #'org-publish-attachment)
+
+       (list "website" :components '("org" "pages" "rlog" "blog" "images" "js" "css" "fonts"))))
+
 
 (provide 'publish)

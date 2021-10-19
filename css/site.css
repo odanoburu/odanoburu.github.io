@@ -1,5 +1,31 @@
+@font-face {
+    font-family:"CharisSILBoldItalic";
+    src: local('CharisSIL-BoldItalic'),
+	 url("CharisSILBI.woff"),
+	 url("CharisSIL-BI.ttf") format('truetype');
+}
+@font-face {
+    font-family:"CharisSILBold";
+    src: local('CharisSIL-Bold'),
+	 url("CharisSILB.woff"),
+	 url("CharisSIL-B.ttf") format('truetype');
+}
+@font-face {
+    font-family:"CharisSILItalic";
+    src: local('CharisSIL-Italic'),
+	 url("CharisSILI.woff"),
+	 url("CharisSIL-I.ttf") format('truetype');
+}
+@font-face {
+    font-family:"CharisSILRegular";
+    src: local('CharisSIL'),
+	 url("CharisSILR.woff"),
+	 url("CharisSIL-R.ttf") format('truetype');
+}
+
+
 body {
-    font-family: serif ;
+    font-family: 'CharisSILRegular', Fallback, serif;
     font-size: 133%;
     color: #16161d;             /* eigengrau, look it up */
     background-color: #fff8e7;  /* cosmic latte, look it up*/
@@ -9,12 +35,29 @@ h1,h2,h3,h4,h5,h6,p {
  line-height: 1.55;
 }
 
-h1 { font-size: 4em; }
-h2 { font-size: 3em; }
-h3 { font-size: 2em; }
+h1 {
+    font-size: 2em;
+    text-align: center;
+}
+h2 {
+    font-size: 1.5em;
+    text-align: center;
+}
+h3 {
+    font-size: 1.2em;
+    text-align: center;
+}
 
 p {
     margin-left: auto;
     margin-right: auto;
     max-width: 30em; /* one character ~ 0.5 em*/
+}
+
+blockquote p {
+    font-family: monospace;
+}
+
+.nav ul {
+    list-style-type: none; /* Remove bullets */
 }
