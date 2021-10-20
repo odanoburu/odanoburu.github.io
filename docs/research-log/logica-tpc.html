@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- 2021-10-20 -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Benchmarking Logica</title>
+<meta name="generator" content="Org mode">
+<link rel='stylesheet' href='/static/site.css' type='text/css'/>
+</head>
+<body>
+<header id="top" class="status">
+<div class='nav'>
+<ul>
+<li><a href='/'>home</a></li>
+<li><a href='/research-log/index.html'>research log</a></li>
+<li><a href='/blog/index.html'>personal blog</a></li>
+<li><a href='https://github.com/odanoburu'>github</a></li>
+<li><a href='/page/publications.html'>publications</a></li>
+<li><a href='/page/about.html'>about</a></li>
+</ul>
+</div>
+</header>
+<main id="content">
+<header>
+<h1 class="title">Benchmarking Logica</h1>
+</header><nav id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org2251e78">1. TPC</a></li>
+<li><a href="#orgfd3471d">2. Logica</a></li>
+<li><a href="#org873cd65">3. The benchmark</a></li>
+<li><a href="#orgd1fed3a">4. Results</a></li>
+<li><a href="#orge59d314">5. Future work</a></li>
+</ul>
+</div>
+</nav>
+<p>
+<a href="https://github.com/EvgSkv/logica">Logica</a> is a logic programming language that compiles to SQL. It is a
+successor to <a href="https://research.google/pubs/pub43462/">Yedalog</a>, and can be used as a Datalog-like frontend to
+all kinds of data stores that support SQL. We describe here a port of
+the <a href="http://www.tpc.org/tpch/">TPC-H</a> benchmark queries (<b>note</b>: not the benchmark itself) to
+Logica, which helps evaluate how complete Logica&rsquo;s translation to SQL
+is, and if using it entails any sort of penalty, performance-wise.
+</p>
+
+<section id="outline-container-org2251e78" class="outline-2">
+<h2 id="org2251e78"><span class="section-number-2">1</span> TPC</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+*Disclaimer: the benchmark we describe in this document is derived
+from a TPC benchmark, but is by no means a TPC benchmark, for
+reasons we hope will become clear in throughout the text.*
+</p>
+
+<p>
+The Transaction Processing Performance Council (TPC) is an
+organization responsible for producing fair benchmarks. In the case
+of the TPC-H benchmark, SQL queries that support business decisions
+are the objects of the benchmark. Here is an example of a TPC-H
+query:
+</p>
+
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 1: </span>SQL code for TPC-H query #6 (SQLite flavour)</label><pre class="src src-sql" id="org0ef18e4"><span style="font-weight: bold;">SELECT</span> <span style="font-weight: bold;">sum</span>(l_extendedprice*l_discount) <span style="font-weight: bold;">AS</span> revenue
+<span style="font-weight: bold;">FROM</span> lineitem
+<span style="font-weight: bold;">WHERE</span> l_shipdate &gt;= <span style="font-weight: bold; text-decoration: underline;">date</span>(<span style="font-style: italic;">'1994-01-01'</span>)
+<span style="font-weight: bold;">AND</span> l_shipdate &lt; <span style="font-weight: bold; text-decoration: underline;">date</span>(<span style="font-style: italic;">'1994-01-01'</span>, <span style="font-style: italic;">'+1 year'</span>)
+<span style="font-weight: bold;">AND</span> l_discount <span style="font-weight: bold;">between</span> 0.05 <span style="font-weight: bold;">and</span> 0.07
+<span style="font-weight: bold;">AND</span> l_quantity &lt; 24;
+</pre>
+</div>
+
+<p>
+(This query returns the amount &rsquo;spent&rsquo; in order discounts that range
+from 5% to 7% in a specific year; you can find the database schema
+at the TPC-H specification.)
+</p>
+
+<p>
+The TPC-H benchmark is done under controlled conditions so that
+hardware vendors can advertise the performance of their computer
+systems (a measure of price per query workload). If you are
+interested, you can download and read more about the TPC-H benchmark
+at their <a href="http://www.tpc.org/tpch/">webpage</a>, but for our purposes (comparing the original SQL
+queries to their versions as translated by Logica) we can relax many
+of the TPC&rsquo;s strict requirements. As examples, we do not worry about
+randomizing the queries (which is a way of preventing a vendor from
+optimizing for particular queries), nor do we care about concurrent
+queries (we just run them sequentially), because we are not trying
+to measure hardware/DBMS/query performance under different
+workloads.
+</p>
+</div>
+</section>
+
+<section id="outline-container-orgfd3471d" class="outline-2">
+<h2 id="orgfd3471d"><span class="section-number-2">2</span> Logica</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+<a href="https://github.com/EvgSkv/logica">Logica</a> is logic programming language that compiles to SQL (you may
+specify a flavour of SQL, but the default is Google&rsquo;s BigQuery). It
+is implemented in Python, and has no dependencies beyond Python&rsquo;s
+standard library. To get a feeling for the language, you can see
+below the translation of the SQL query <a href="#org0ef18e4">above</a>:
+</p>
+
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 2: </span>Logica code for TPC-H query #6</label><pre class="src src-logica">Query(revenue? += l_extendedprice * l_discount) distinct :-
+  lineitem(l_extendedprice:, l_discount:, l_shipdate:, l_discount:, l_quantity:),
+  l_shipdate &gt;= Date(date),
+  l_shipdate &lt; Date(date,  "+1 year"),
+  l_discount &gt;= 0.05,
+  l_discount &lt; 0.07,
+  l_quantity &lt; 24,
+  date == "1994-01-01";
+</pre>
+</div>
+
+<p>
+(This Logica code generates the same code as the <a href="#org0ef18e4">original SQL query</a>,
+modulo some extraneous parentheses and explicit table references.)
+</p>
+
+<p>
+As we can see in this simple example, the SQL and Logica queries are
+pretty similar, although the Logica one is more verbose because it
+requires explicit names for the columns we are bringing in
+scope. Logica also allows us to name a value easily, which can then
+be reused in different parts of the query (something SQL does not
+offer as simply, although any decent SQL client will make up for it
+with the use of query parameters, of course).  Logica goes further
+than allowing us to declare and use variables, though: we can also
+define functions and subqueries that can be reused in different
+queries, reducing code duplication. For more details on Logica, see
+its <a href="https://colab.research.google.com/github/EvgSkv/logica/blob/main/tutorial/Logica_tutorial.ipynb">tutorial</a>.
+</p>
+</div>
+</section>
+
+<section id="outline-container-org873cd65" class="outline-2">
+<h2 id="org873cd65"><span class="section-number-2">3</span> The benchmark</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+It goes without saying that because Logica compiles to SQL, it can
+at most match the performance of an equivalent SQL query. If we
+manage to write a Logica query that runs faster and/or with less
+space requirements than an equivalent SQL query, we can always take
+the Logica-produced SQL to be our new baseline. The interesting case
+(for us) is when there is no Logica query that compiles to a query
+with the same plan as the original SQL query that we are comparing
+to; when this happens, how faster/slower is the Logica-generated
+query? This is the question that our benchmark answers.
+</p>
+
+<p>
+We have taken the 22 original queries of the TPC-H specification (as
+written in SQL), and attempted an equivalent Logica translation,
+striving for Logica code that produced not only an equivalent query
+(in that produced the same results), but also a query with the same
+query plan as the original (which is, for all intents and purposes,
+the <i>same</i> query). If we could write Logica code that compiled to
+any SQL query, this benchmark would be mostly useless, because we
+could always write a Logica query that compiled to exactly the SQL
+query that we wanted. But alas, this is not so; SQL is a big
+language (the SQL standard has more than a thousand pages), and
+Logica (at the time of writing) compiles to only a subset of it (as
+examples, Logica never compiles to <code>OUTER JOIN</code> nor to <code>EXISTS</code> at
+the time of writing). This subset is enough to express almost all
+queries in the TPC-H benchmark (we will go into details shortly),
+but some Logica queries may never have the same query plan as the
+original, which means they have difference performance
+characteristics.
+</p>
+
+<p>
+To measure such differences, we have used a custom Python script
+that compares SQL queries. It currently only works with SQLite,
+which is the database managements system (DBMS) that we used for
+this experiment, but it can be easily extended to handle other
+DBMSs. The script takes as input two SQL queries and a database, and
+first checks if their query plans (as reported by the underlying
+DBMS) are the same; if they are, the queries are considered equal,
+and we skip any further comparison. If the query plans are not the
+same, we run them against the input database and check that their
+results are the same; if they are, we deem the queries to be
+equivalent (which is a stretch, see the <a href="https://cosette.cs.washington.edu/">Cosette</a> tool for actual
+equivalence of SQL queries), and we then proceed to measure their
+execution times. If the queries produce different results, we
+produce an error. For queries that do not have the same query plan
+but produce equal results, we finally run each a number of times (as
+specified by the user), sequentially, and record the time each run
+takes.
+</p>
+
+<p>
+We have run all queries with the TPC-H test database with a scale
+factor of 1 (which results in a ~1Gb SQLite <code>.db</code> file), which was
+generated with the DBGEN utility bundled with the <a href="http://tpc.org/TPC_Documents_Current_Versions/download_programs/tools-download-request5.asp">TPC-H tools
+archive</a> provided by the TPC.
+</p>
+
+<p>
+As it stands, we do not record the Logica-to-SQL compilation time,
+which we deem to be negligible.
+</p>
+</div>
+</section>
+
+<section id="outline-container-orgd1fed3a" class="outline-2">
+<h2 id="orgd1fed3a"><span class="section-number-2">4</span> Results</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+Out of the 22 queries of the TPC-H, three were too slow for us to
+run in our hardware (queries #17, #20, and #22), query #15 used <a href="https://en.wikipedia.org/wiki/View_(SQL)">SQL
+views</a> (which Logica does not support). Of the remaining queries, we
+were able to write Logica versions that compiled to queries with the
+same plans as the originals for queries #1, #3, #5, #6, #9, #10, and
+#14, and therefore do not benchmark them. For the remainder, we took
+their minimum execution times and computed the ratio between the
+Logica-generated SQL and the original TPC-H query; results are
+below.
+</p>
+
+<table id="org1df5789">
+<caption class="t-above"><span class="table-number">Table 1:</span> Ratio between the execution times of the Logica-generated and the original SQL queries</caption>
+
+<colgroup>
+<col  class="org-left">
+
+<col  class="org-right">
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Query</th>
+<th scope="col" class="org-right">Ratio</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">#2</td>
+<td class="org-right">1.20697</td>
+</tr>
+
+<tr>
+<td class="org-left">#4</td>
+<td class="org-right">11.5661</td>
+</tr>
+
+<tr>
+<td class="org-left">#7</td>
+<td class="org-right">1.0083</td>
+</tr>
+
+<tr>
+<td class="org-left">#8</td>
+<td class="org-right">1.10887</td>
+</tr>
+
+<tr>
+<td class="org-left">#11</td>
+<td class="org-right">1.09911</td>
+</tr>
+
+<tr>
+<td class="org-left">#12</td>
+<td class="org-right">1.04529</td>
+</tr>
+
+<tr>
+<td class="org-left">#13</td>
+<td class="org-right">0.300859</td>
+</tr>
+
+<tr>
+<td class="org-left">#16</td>
+<td class="org-right">10.525</td>
+</tr>
+
+<tr>
+<td class="org-left">#18</td>
+<td class="org-right">1.80505</td>
+</tr>
+
+<tr>
+<td class="org-left">#19</td>
+<td class="org-right">0.822488</td>
+</tr>
+
+<tr>
+<td class="org-left">#21</td>
+<td class="org-right">1.13676</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+Do take this results as transient; someone who is more apt at Logica
+may be able to write queries that match their original versions. In
+this way, even query #4 (which is the only one dramatically slower
+in its Logica version) may have its results improved. As for the
+queries that run faster in their Logica versions, do remember the
+opening remarks of section <a href="#org873cd65">3</a>; in addition, the
+original TPC-derived queries may still be faster in other hardware
+or using other DBMSs.
+</p>
+
+<p>
+With all these caveats, the results we found are not very useful,
+but the process of producing this benchmark has discovered Logica
+bugs that have been subsequently fixed (see commits <a href="https://github.com/EvgSkv/logica/commit/f11921b1a7a28d701a73471506cc6c51497ae163">f11921</a> and
+<a href="https://github.com/EvgSkv/logica/commit/34cbe15b707da135ac7ba6244657309a546decb3">34cbe1</a> and <a href="https://github.com/EvgSkv/logica/pull/133/">PR #133</a>, as well as the <a href="https://web.archive.org/web/20211020194234/https://github.com/EvgSkv/logica/discussions/126">discussions over the
+benchmark</a>). We take this opportunity to thank Evgeny Skvortsov,
+Logica&rsquo;s author and maintainer, whose guidance and extremely helpful
+comments were instrumental to producing this experiment! To see the
+code related to the benchmark and documentation towards reproducing
+it, check out this <a href="https://github.com/odanoburu/logica-tpc">repository</a>.
+</p>
+</div>
+</section>
+
+<section id="outline-container-orge59d314" class="outline-2">
+<h2 id="orge59d314"><span class="section-number-2">5</span> Future work</h2>
+<div class="outline-text-2" id="text-5">
+<p>
+The experimental benchmark we have described here suggests several
+improvements and future lines of work. An obvious first is improving
+the Logica queries we have written to make them match the original
+queries&rsquo; plans whenever possible, which is something we have strived
+to do, but could still possibly improve upon.
+</p>
+
+<p>
+Another improvement would be to acquire better hardware and be able
+to run the queries that were too slow for our machine (queries #17,
+#20, and #22). Given better hardware we could also run the benchmark
+described here using bigger test databases (with greater scale
+factors). This would allow us to check whether the queries we
+compare have different algorithmic behaviour, something the single
+data points we have do not allow us to do. (We could run with
+smaller databases too, of course, but the TPC recommendation is to
+use a minimum scale factor of 1, which is what we have used.)
+</p>
+
+<p>
+It would also be interesting to explore how this benchmark behaves
+if we used other DBMSs. It may be that the query optimizer of
+another SQL engine would end up producing different results. We
+especulate that a better optimizer should make more query plans the
+same, reducing the number of queries that we actually benchmark.
+</p>
+
+<p>
+An obvious extension of this work is to derive more benchmarks from
+the adaptation of other TPC benchmarks, increasing the number of
+queries we compare and work with. This in turn can be used as a test
+suite for Logica itself, to capture any compiler regressions that
+may happen &#x2014; not only in terms of output correctness but also in
+terms of level of optimization, if Logica were ever to become an
+optimizing compiler.
+</p>
+</div>
+</section>
+</main>
+</body>
+</html>

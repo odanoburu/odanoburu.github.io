@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- 2021-10-20 -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>a poor man&rsquo;s introduction to model checking of finite state synchronous systems with NuSMV</title>
+<meta name="generator" content="Org mode">
+<link rel='stylesheet' href='/static/site.css' type='text/css'/>
+</head>
+<body>
+<header id="top" class="status">
+<div class='nav'>
+<ul>
+<li><a href='/'>home</a></li>
+<li><a href='/research-log/index.html'>research log</a></li>
+<li><a href='/blog/index.html'>personal blog</a></li>
+<li><a href='https://github.com/odanoburu'>github</a></li>
+<li><a href='/page/publications.html'>publications</a></li>
+<li><a href='/page/about.html'>about</a></li>
+</ul>
+</div>
+</header>
+<main id="content">
+<header>
+<h1 class="title">a poor man&rsquo;s introduction to model checking of finite state synchronous systems with NuSMV</h1>
+</header><nav id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org2f2d286">1. a (very) simple specification</a>
+<ul>
+<li><a href="#org06f5e5d">1.1. goal-line model</a></li>
+<li><a href="#org145a0de">1.2. checks</a></li>
+</ul>
+</li>
+<li><a href="#orgd0886f7">2. a (less) simple specification</a>
+<ul>
+<li><a href="#org8d5dbc9">2.1. river crossing model</a></li>
+<li><a href="#org947da79">2.2. query</a></li>
+</ul>
+</li>
+<li><a href="#orgc6a0bfc">3. considerations</a></li>
+</ul>
+</div>
+</nav>
+<p>
+<a href="http://nusmv.fbk.eu/">NuSMV</a> is a free (both as in beer and as in freedom) model checker tool
+where you can specify a model of a finite-state system and
+exhaustively and automatically check whether this model meets a given
+specification. the specification is given in a DSL, and the check is
+done over a query written in a temporal logic (CTL or LTL).
+</p>
+
+<section id="outline-container-org2f2d286" class="outline-2">
+<h2 id="org2f2d286"><span class="section-number-2">1</span> a (very) simple specification</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+in the spirit of the ongoing world cup, we&rsquo;ll model a <a href="https://en.wikipedia.org/wiki/Goal-line_technology">goal-line
+system</a>. (this is the system used in some football matches to determine
+if a ball has entered the goal or not &#x2013; which in <a href="https://youtu.be/7t7EkbRE0xk?t=24s">some cases</a> can be a
+rather tricky task for humans).
+</p>
+
+<p>
+the model is borderline stupid: it should indicate <code>goal</code> only when
+the ball enters a goal, and should be <code>idle</code> otherwise. it can be
+described by the following finite state machine:
+</p>
+
+
+<figure id="org4ff1b3f">
+<img src="../static/goal-line.png" alt="goal-line.png">
+
+<figcaption><span class="figure-number">Figure 1: </span>a finite state machine describing a goal-line system</figcaption>
+</figure>
+</div>
+
+<div id="outline-container-org06f5e5d" class="outline-3">
+<h3 id="org06f5e5d"><span class="section-number-3">1.1</span> goal-line model</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+first thing we do is declare our variables. these are straight
+forward: we need to keep track of where the ball is, and in which
+state the goal-line system is.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-nusmv">MODULE main
+ VAR
+   goal-line : {goal, idle} ;
+   ball      : {inside, outside} ;
+</pre>
+</div>
+
+<p>
+here we are only using enumeration types, but NuSMV supports several
+others, such as <code>boolean</code> and <code>array [range] of [type]</code>.
+</p>
+
+<p>
+next we describe how the finite state system evolves. for this we need
+to specify the initial states, and how they transition to the next
+states. there are special declarations for initialization (<code>INIT</code>) and
+transition (<code>TRANS</code>) of variables, and also one for invariable ones
+(<code>INVAR</code>). we can, however, employ only one declaration for all of
+these, plus special keywords to differentiate them. (everything after
+a <code>--</code> is a comment in NuSMV.)
+</p>
+
+<div class="org-src-container">
+<pre class="src src-nusmv">ASSIGN
+  -- initialize variables
+  init(goal-line) := idle ;
+  init(ball)      := outside ;
+  -- trans
+  next(ball) := case
+		  -- if ball is outside, ball may enter goal or not
+		  ball = outside : {outside, inside} ;
+		  -- ball must go out before going in again
+		  ball = inside  : outside ;
+		esac ;
+  next(goal-line) := case
+		       -- when ball goes in, goal!
+		       next(ball) = inside : goal ;
+		       -- after indicating goal, stop doing so. in
+		       -- this same step ball will do inside -&gt;
+		       -- outside
+		       goal-line = goal : idle ;
+		       -- nothing happened to ball, nothing happens to
+		       -- goal-line
+		       next(ball) = outside : idle ;
+		     esac ;
+</pre>
+</div>
+
+<p>
+that is all for our model. after having installed NuSMV and saving
+this code to <code>goal-line.smv</code>, you can run
+</p>
+<pre class="example">
+NuSMV goal-line.smv
+</pre>
+
+<p>
+and you&rsquo;ll get no output, as you haven&rsquo;t asked for any checks and
+there are no syntax errors.
+</p>
+
+<p>
+you can also run NuSMV interactively with
+</p>
+<pre class="example">
+NuSMV -int goal-line.smv
+</pre>
+
+<p>
+this will drop you in a shell, where you can issue <code>go</code> to set the
+model up, and then <code>print_fair_transitions -f dot -o goal-line.gv</code> to
+get the graphviz file that produces the diagram we see above.
+</p>
+
+<p>
+to explore the model, you must pick an initial state with <code>pick_state
+-i</code>, and then issue <code>simulate -iv</code>. NuSMV will present you the
+possible transitions and you can choose the one you want to follow,
+which is useful for debugging.
+</p>
+
+<p>
+you can also call <code>help</code> for help.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org145a0de" class="outline-3">
+<h3 id="org145a0de"><span class="section-number-3">1.2</span> checks</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+NuSMV offers a variety of checks, but we&rsquo;ll be using only two of
+them. you might want to go over CTL if you don&rsquo;t know/remember it (you
+can pick it up easily if you know first order logic.)
+</p>
+
+<dl class="org-dl">
+<dt>CTLSPEC</dt><dd>describes a CTL formula. if it holds, NuSMV will report
+so; if it doesn&rsquo;t, NuSMV will produce a counterexample.</dd>
+<dt>INVARSPEC</dt><dd>describes a propositional formula, which will be tested
+in every state.</dd>
+</dl>
+
+<p>
+what properties from our simple goal-line model we would like to have?
+for starters, we would like it to report a goal whenever the ball
+enters the goal. more than that, we would like it to <b>only</b> report a
+goal when the ball enters the goal. these two properties can be
+equivalently checked by the following pairs of <code>CTLSPEC</code> and
+<code>INVARSPEC</code> declarations:
+</p>
+<div class="org-src-container">
+<pre class="src src-nusmv">-- ball inside goal induces goal line system
+CTLSPEC AG ball = inside -&gt; goal-line = goal ;
+INVARSPEC ball = inside -&gt; goal-line = goal ;
+-- goal-line off means ball hasn't entered
+CTLSPEC AG goal-line = idle -&gt; ball = outside ;
+INVARSPEC ball = outside -&gt; goal-line = idle ;
+</pre>
+</div>
+
+<p>
+(although the declarations in each pair are equivalent, NuSMV will
+handle them differently &#x2013; the user manual says <code>INVARSPEC</code> can be
+checked by a specialized algorithm, and it allows the use of the
+<code>next</code> operator, which is not possible with <code>CTLSPEC</code>.)
+</p>
+
+<p>
+finally, as a sanity check, we could check that it is possible to not
+have any goals, and that having goals is also possible. the former can
+be done with
+</p>
+<pre class="example">
+CTLSPEC EG ball = outside &amp; goal-line = idle
+</pre>
+</div>
+</div>
+</section>
+
+<section id="outline-container-orgd0886f7" class="outline-2">
+<h2 id="orgd0886f7"><span class="section-number-2">2</span> a (less) simple specification</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+in this section we&rsquo;ll model the <a href="https://en.wikipedia.org/wiki/River_crossing_puzzle">river crossing puzzle</a> and use NuSMV to
+solve it. the puzzle is about a farmer who needs to cross a river,
+bringing along his pet wolf, a lamb, and a cabbage. she has an old
+boat at her disposal, which can at most carry her and one other
+thing. additional constraints are the facts that the wolf can not be
+left alone with the lamb, and that the lamb can not be left alone with
+the cabbage.
+</p>
+</div>
+
+<div id="outline-container-org8d5dbc9" class="outline-3">
+<h3 id="org8d5dbc9"><span class="section-number-3">2.1</span> river crossing model</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+for each state, we need to keep track of where each entity is, and
+what the farmer will do. the former can be modelled as simple
+<code>boolean</code> types, while the latter can be an enumeration type with four
+possibilities: the farmer either crosses the river alone, or she
+brings one of the other entities along.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-nusmv">MODULE main
+ VAR
+   -- decide which thing farmer will take with him, if anything
+   takes : {nothing, cabbage, lamb, wolf} ;
+   -- is thing over the river?
+   cabbage-over : boolean ;
+   lamb-over    : boolean ;
+   wolf-over    : boolean ;
+   farmer-over  : boolean ;
+</pre>
+</div>
+
+<p>
+there is only one inital state, of course &#x2013; everyone is on the
+&rsquo;wrong&rsquo; side of the river. accordingly, the farmer has not done
+anything yet.
+</p>
+<div class="org-src-container">
+<pre class="src src-nusmv">ASSIGN
+  -- takes nothing in the first round
+  init(takes) := nothing ;
+  -- everyone starts not-over the river
+  init(cabbage-over) := FALSE ;
+  init(lamb-over)    := FALSE ;
+  init(wolf-over)    := FALSE ;
+  init(farmer-over)  := FALSE ;
+</pre>
+</div>
+
+<p>
+the evolution of the finite state system is very simple: the farmer
+decides if she&rsquo;ll take anything across the river, and the entity she
+decides to take (if any) then moves across the river with her.
+</p>
+
+<p>
+in order to declare that the farmer can do any of a number of choices,
+we use a set. this means the variable can transition to any member of
+the specified set.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-nusmv">-- what the farmer takes with her -- which can be anything or
+-- nothing
+next(takes) := {nothing, cabbage, lamb, wolf} ;
+</pre>
+</div>
+
+<p>
+we have already seen <code>case</code> expressions being used to decide on the
+transition of a variable. for simple cases, <code>case</code> is overkill &#x2013; so
+NuSMV offers us syntactic sugar for a simple <code>if_then_else</code> construct:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-nusmv">-- move thing?
+next(cabbage-over) := next(takes) = cabbage ? ! cabbage-over : cabbage-over ;
+next(lamb-over)    := next(takes) = lamb ? ! lamb-over : lamb-over ;
+next(wolf-over)    := next(takes) = wolf ? ! wolf-over : wolf-over ;
+</pre>
+</div>
+
+<p>
+finally, we declare how the farmer moves across the river. (for
+simplicity, we&rsquo;ll assume she&rsquo;s indefatigable, so that she&rsquo;ll change
+sides at every transition.)
+</p>
+
+<div class="org-src-container">
+<pre class="src src-nusmv">-- farmer always moves
+--- exercise : give her the possibility of staying put (she might
+--- be tired after all this rowing)
+next(farmer-over)  := ! farmer-over ;
+</pre>
+</div>
+
+<p>
+you might have noticed that choosing <code>boolean</code> as the representation
+for the side an entity is in makes transitioning it specially easy.
+</p>
+
+<p>
+now is a good time to use the NuSMV shell as in the previous section
+and try to solve the puzzle interactively. (you&rsquo;ll have to be your own
+judge, though).
+</p>
+</div>
+</div>
+
+<div id="outline-container-org947da79" class="outline-3">
+<h3 id="org947da79"><span class="section-number-3">2.2</span> query</h3>
+<div class="outline-text-3" id="text-2-2">
+<p>
+in the previous section we checked whether a few desirable properties
+we&rsquo;d like to see were true in the model we specified. in the case of
+the river crossing problem, we&rsquo;d like to find a suitable path to the
+desired state &#x2013; the one where the farmer and her companions are on
+the other side of the river.
+</p>
+
+<p>
+for this we can exploit NuSMV&rsquo;s capability of offering counterexamples
+to a false claim. all we have to do is declare that there is no
+suitable solution, and (provided there actually is one) NuSMV will
+find it for us.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-nusmv">CTLSPEC NAME solution := ! E [((farmer-over != cabbage-over -&gt; farmer-over = lamb-over) -- cabbage is safe
+			       &amp; (farmer-over != lamb-over -&gt; farmer-over = wolf-over)) -- lamb is safe
+			       U (farmer-over = TRUE &amp; cabbage-over = farmer-over &amp; lamb-over = farmer-over &amp; wolf-over = farmer-over)] -- until it is over
+</pre>
+</div>
+
+<p>
+this is CTL for a variation of &ldquo;there is no path such that in every
+state until everyone is across river it holds that the cabbage is
+never alone with the lamb and the lamb is never alone with the
+wolf&rdquo;. as there is such a path, NuSMV will give it to us when we run
+</p>
+<pre class="example">
+NuSMV river-crossing.smv
+</pre>
+
+<p>
+after having saved all this code in <code>river-crossing.smv</code>.
+</p>
+</div>
+</div>
+</section>
+
+<section id="outline-container-orgc6a0bfc" class="outline-2">
+<h2 id="orgc6a0bfc"><span class="section-number-2">3</span> considerations</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+model checking is cool and all (c&rsquo;mon, if you&rsquo;re not convinced of
+this, read this tutorial again!), but it is not without its
+problems. even with these very simple examples things might go
+awry. for instance, although it yields a correct answer, there is a
+bug in the river crossing model (which you might have noticed; if not,
+why not fix it as an exercise?). one obvious fix only causes another
+problem, so there&rsquo;s that: you only check what you think about
+checking, and there&rsquo;s no way to know if the set of properties you are
+checking against is exaustive.
+</p>
+
+<p>
+in the case of actual systems like the goal-line one, another problem
+is that the model might differ from the implementation &#x2013; so you have
+to check the implementation too. even if you find a tool that (unlike
+NuSMV) will produce code from your model specification, you&rsquo;d have to
+check this code too (or the tool, for that matter) &#x2013; although it is
+less likely to have bugs than an independent implementation, it might
+still have bugs.
+</p>
+
+<p>
+all is not lost, though. abstracting away things like speed of
+implementation and costs, some verification is better than none.
+</p>
+
+<p>
+&#x2014;
+</p>
+
+<p>
+this <a href="http://github.com/odanoburu/nusmv-sandbox">repository</a> hosts a few NuSMV modules where I try new
+problems. you can find modified versions of the code in this entry
+there.
+</p>
+</div>
+</section>
+</main>
+</body>
+</html>
