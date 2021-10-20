@@ -1,5 +1,6 @@
 #+TITLE: borboletas e preconceito no século xix
 #+DATE: <2017-02-10 Sex>
+#+LANGUAGE: pt
 
 acabei de ler um livro. um diário. na verdade, pedaços de um
 diário. do diário de margaret fountaine, vendido sob o inócuo título

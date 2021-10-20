@@ -1,5 +1,6 @@
 #+TITLE: funes através do espelho (negro)
 #+DATE: <2015-03-10 Ter>
+#+LANGUAGE: pt
 
 imagine um mundo em que você pode guardar tudo o que você vê em vídeo,
 com direito à zoom e à replay. parece legal?

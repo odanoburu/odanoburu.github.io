@@ -1,5 +1,6 @@
 #+TITLE: uma introdução ao protocolo bitcoin, em português
 #+DATE: <2017-02-20 Seg>
+#+LANGUAGE: pt
 
 Este texto foi escrito como trabalho final para um curso superior
 acadêmico ao mesmo tempo em que foi pensado como uma introdução

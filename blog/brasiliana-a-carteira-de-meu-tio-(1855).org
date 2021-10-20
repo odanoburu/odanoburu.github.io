@@ -1,5 +1,6 @@
 #+TITLE: brasiliana: a carteira de meu tio (1855)
 #+DATE: <2015-08-04 Ter>
+#+LANGUAGE: pt
 
 estou lendo livros sobre essa terrinha bôua que chamamos brasil.
 

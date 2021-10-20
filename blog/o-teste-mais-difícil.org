@@ -1,5 +1,6 @@
 #+TITLE: o teste mais difícil
 #+DATE: <2016-06-29 Qua>
+#+LANGUAGE: pt
 
 #+BEGIN_QUOTE
   se uma cama não cabe num quarto porque é grande demais, o quê é
