@@ -18,7 +18,7 @@ the ball enters a goal, and should be =idle= otherwise. it can be
 described by the following finite state machine:
 
 #+CAPTION: a finite state machine describing a goal-line system
-[[file:../images/goal-line.png]]
+[[file:../static/goal-line.png]]
 
 ** goal-line model
 first thing we do is declare our variables. these are straight

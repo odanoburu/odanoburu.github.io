@@ -3,14 +3,14 @@
 
 estou lendo livros sobre essa terrinha bôua que chamamos brasil.
 
-o primeiro que li foi 'a carteira de meu tio,' do joaquim manuel de
+o primeiro que li foi ‘a carteira de meu tio’, do joaquim manuel de
 macedo.
 
 "aquele tiozão bobo que escreveu a moreninha, livro romântico de
 vomitar?", cê pode perguntar.
 
 ele mêmu. pra minha surpresa, ele também escreveu sátiras políticas, a
-primeira delas 'a carteira de meu tio.'
+primeira delas a ‘carteira de meu tio’.
 
 o livro conta a história do sobrinho cínico que tem tio rico e
 influente. o sobrinho conta ao tio que quer ser político. o tio, ao
@@ -48,8 +48,8 @@ inteligentes de humor cínico, como:
 
 e:
 
-#+CAPTION: trecho de 'a carteira de meu tio,' joaquim manuel de macedo (1855)
-[[file:../images/brasiliana-i.png]]
+#+CAPTION: trecho de a ‘carteira de meu tio’, joaquim manuel de macedo (1855)
+[[file:../static/brasiliana-i.png]]
 
 alguns trechos de sátira política soam meio clichê, mas isso ocorre
 provavelmente porque eles são repetidos há 160 anos... se você acha

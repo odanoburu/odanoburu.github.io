@@ -61,3 +61,21 @@ blockquote p {
 .nav ul {
     list-style-type: none; /* Remove bullets */
 }
+
+main, figure, table, div.org-src-container {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+
+table {
+    table-layout: fixed;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding-right: 1em;
+    padding-left: 1em;
+    padding-top: 0.33em;
+}
