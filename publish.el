@@ -70,10 +70,16 @@
 	     :with-toc nil
 	     :recursive nil
 	     :with-author nil ;; Don't include author name
-	     :with-creator bruno-website-with-creator ;; Include Emacs and Org versions in footer
+	     :with-creator bruno-website-with-creator
 	     :time-stamp-file nil
 	     :html-head bruno-website-html-head
-	     :html-postamble bruno-website-html-postamble)
+	     :html-postamble bruno-website-html-postamble
+	     :completion-function (lambda (ps)
+				    (let* ((robots-file (concat (plist-get ps :base-directory) "robots.txt"))
+					   (publish-dir (plist-get ps :publishing-directory))
+					   (root-robots-file (concat publish-dir "robots.txt")))
+				      (message root-robots-file)
+				      (copy-file robots-file root-robots-file t))))
 
        (list "pages"
 	     :base-directory (concat base-dir "page/")
