@@ -13,6 +13,6 @@ deploy: public
 # NOTE: github pages only deploys to root or docs/
 	rsync --archive public/ docs # NOTE: the slash in public/ matters!
 	git add docs
-	git commit -m "deploy"
+	-git commit -m "deploy"
 	git push --force origin to-deploy:gh-pages
 	git checkout master
