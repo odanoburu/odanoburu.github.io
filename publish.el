@@ -33,11 +33,11 @@
 
 
 (defvar bruno-website-html-head
-"<link rel='stylesheet' href='/static/site.css' type='text/css'/>
+  "<link rel='stylesheet' href='/static/site.css' type='text/css'/>
+<meta name=\"viewport\" content=\"width=device-width,initial-scale=1\">
 <link rel='icon' type='image/x-icon' href='/static/favicon.ico'/>")
 
-(defvar bruno-website-html-blog-head
-"<link rel='stylesheet' href='/static/site.css' type='text/css'/>")
+(defvar bruno-website-html-blog-head bruno-website-html-head)
 
 (defvar bruno-website-html-preamble
   "<div class='nav'>
