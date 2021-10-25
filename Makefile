@@ -8,7 +8,7 @@ website:
 force-website:
 	./make-site.sh t
 
-deploy: public
+deploy: website public
 	git checkout to-deploy
 # NOTE: github pages only deploys to root or docs/
 	rsync --archive public/ docs # NOTE: the slash in public/ matters!
