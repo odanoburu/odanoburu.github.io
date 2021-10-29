@@ -31,7 +31,7 @@ AND l_discount between 0.05 and 0.07
 AND l_quantity < 24;
   #+end_src
 
-  (This query returns the amount 'spent' in order discounts that range
+  (This query returns the amount ‘spent’ in order discounts that range
   from 5% to 7% in a specific year; you can find the database schema
   at the TPC-H specification.)
 
