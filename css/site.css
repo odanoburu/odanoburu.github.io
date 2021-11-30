@@ -59,6 +59,11 @@ h3 {
     text-align: center;
 }
 
+h4 {
+    font-size: 1.1em;
+    text-align: center;
+}
+
 p {
     max-width: min(30em, 95vw); /* one character ~ 0.5 em*/
 }

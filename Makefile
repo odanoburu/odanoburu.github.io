@@ -1,7 +1,7 @@
 .PHONY: all
 all: website
 
-.PHONY: blog
+.PHONY: website
 website:
 	./make-site.sh
 
