@@ -46,7 +46,7 @@
 <li><a href='/research-log/index.html'>research log</a></li>
 <li><a href='/blog/index.html'>personal blog</a></li>
 <li><a href='https://github.com/odanoburu'>github</a></li>
-<li><a href='/page/publications.html'>publications</a></li>
+<!-- <li><a href='/page/publications.html'>publications</a></li> -->
 <li><a href='/page/about.html'>about</a></li>
 </ul>
 </div>")
@@ -82,6 +82,7 @@
 				      (copy-file robots-file root-robots-file t))))
 
        (list "pages"
+	     :exclude "publications.org"
 	     :base-directory (concat base-dir "page/")
 	     :base-extension "org"
 	     :publishing-directory (concat publish-dir "page/")
@@ -137,7 +138,7 @@
 
        (list "images"
 	     :base-directory (concat base-dir "images/")
-	     :base-extension (regexp-opt (list "jpg" "gif" "png" "ico"))
+	     :base-extension (regexp-opt (list "jpg" "gif" "png" "ico" "svg"))
 	     :publishing-directory static-dir
 	     :publishing-function #'org-publish-attachment
 	     :completion-function (lambda (ps)

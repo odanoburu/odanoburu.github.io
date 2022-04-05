@@ -1,0 +1,32 @@
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 441.656 441.656">
+  <!-- Figure 60 from 'Mosaics of the Greek and Roman World', by Katherine M. D. Dunbabin -->
+  <defs>
+    <svg id="quarter-square" viewBox="0 0 110.414 110.414">
+      <path d='M110.414,110.414 L110.414,15.536 L76.698,15.536 L76.698,76.698 L15.536,76.698 L15.536,110.414 Z' />
+      <path d='M15.536 76.698 L0.000,61.162 L61.162,0.000 L76.698,15.536 L15.536,76.698 ' />
+    </svg>
+    <svg id="square" viewBox="0 0 220.828 220.828" fill="#16161d">
+      <rect width="100%" height="100%" fill="#fff8e7"/>
+      <g>
+	<use href="#quarter-square" transform="scale(0.5) rotate(180,110.414,110.414)"/>
+	<use href="#quarter-square" transform="scale(0.5) translate(220.828, 0) rotate(270,110.414,110.414)"/>
+	<use href="#quarter-square" transform="scale(0.5) translate(0,220.828) rotate(90,110.414,110.414)"/>
+	<use href="#quarter-square" transform="scale(0.5) translate(220.828,220.828)"/>
+      </g>
+    </svg>
+    <svg id="inverted-square" viewBox="0 0 220.828 220.828" fill="#fff8e7">
+      <rect width="100%" height="100%" fill="#16161d"/>
+      <g>
+	<use href="#quarter-square" transform="scale(0.5) rotate(180,110.414,110.414)"/>
+	<use href="#quarter-square" transform="scale(0.5) translate(220.828, 0) rotate(270,110.414,110.414)"/>
+	<use href="#quarter-square" transform="scale(0.5) translate(0,220.828) rotate(90,110.414,110.414)"/>
+	<use href="#quarter-square" transform="scale(0.5) translate(220.828,220.828)"/>
+      </g>
+    </svg>
+  </defs>
+
+  <use href="#square" transform="scale(0.5)"/>
+  <use href="#inverted-square" transform="translate(220.828) scale(0.5)"/>
+  <use href="#inverted-square" transform="translate(0, 220.828) scale(0.5)"/>
+  <use href="#square" transform="translate(220.828, 220.828) scale(0.5)"/>
+</svg>

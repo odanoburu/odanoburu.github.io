@@ -1,7 +1,11 @@
-#+TITLE: welcome
+# [[file:static/icon.svg]]
 
-this is *bruno cuconato*'s personal website.
+#+BEGIN_EXPORT html
+<div style="margin: 2em;">«…»</div>
+#+END_EXPORT
 
-you can browse my [[./research-log][research log]] or my [[./blog][personal blog]], or check out my
-[[./page/publications.html][publications]] (PDFs available). if you are interested in programming,
-you may want to take a look at my [[https://github.com/odanoburu/][github page]].
+This is *Bruno Cuconato*'s personal website.
+
+You can browse my [[./research-log][research log]] or my [[./blog][personal blog]]. If you are
+interested in programming, you may want to take a look at my [[https://github.com/odanoburu/][github
+page]].

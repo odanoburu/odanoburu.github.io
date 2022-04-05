@@ -2,7 +2,7 @@
 all: website
 
 .PHONY: website
-website:
+website: publish.el
 	./make-site.sh
 
 force-website:
