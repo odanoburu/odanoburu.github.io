@@ -1,0 +1,38 @@
+<svg version="1.1"
+     viewBox="0 0 120 120"
+     xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <svg id="b" viewBox="-10 0 1147 2048" height="60">
+      <path fill="currentColor"
+	    d="M1067 1097q0 116 -34 214.5t-105.5 171.5t-183 114t-265.5 41h-295v-1362h-155v-68l264 -79h82v573q18 -8 47 -21t66.5 -25t80.5 -21t88 -9q101 0 177.5 38t128.5 103t78 150.5t26 179.5zM858 1138q0 -193 -82.5 -292t-230.5 -99q-17 0 -40 3t-46.5 8t-46 11t-37.5 11
+v760q17 1 35 1q15 1 32 1h33q91 0 162 -21t120 -69t75 -125t26 -189z" />
+    </svg>
+    <svg id="c" viewBox="-10 0 964 2048" height="60">
+   <path fill="currentColor"
+d="M885 1562q-35 18 -73.5 36.5t-82 32.5t-91 23t-99.5 9q-108 0 -194.5 -38.5t-147.5 -107t-94 -162.5t-33 -204q0 -129 40 -227t108 -164.5t157.5 -100t187.5 -33.5q67 0 125.5 13.5t101 39.5t67 64t24.5 88q0 30 -10.5 52.5t-27.5 38t-38.5 23t-44.5 7.5q-34 0 -59 -11.5
+t-44 -23.5v-178q-21 -12 -43.5 -19.5t-42.5 -7.5q-68 0 -122.5 31t-92 86t-57.5 130.5t-20 164.5q0 85 21.5 160t64 130.5t106 87.5t147.5 32q72 0 136.5 -22.5t130.5 -66.5v117z" />
+</svg>
+  </defs>
+
+  <rect width="100%" height="100%" fill="transparent"/>
+
+  <path id="outer" d="M 0 0 H 120 V 120 H 0 Z" fill="none" stroke="black"/>
+
+  <path id="cross" d="M 60 0 V 120 M 0 60 H 120" stroke="black"/>
+
+  <use x="-30" y="3" href="#b"/>
+  <use x="-30" y="62" href="#c"/>
+  <use x="30" y="2" href="#c"/>
+
+  <g id="hacker" transform="scale(10) translate(6,6)" stroke-width="0.1">
+    <path id="inside-vertical" d="M 2 0 V 6 M 4 0 V 6" fill="none" stroke="black"/>
+    <path id="inside-horizontal" d="M 0 2 H 6 M 0 4 H 6" fill="none" stroke="black"/>
+
+    <circle cx="3" cy="1" r="0.7" fill="black"/>
+    <circle cx="5" cy="3" r="0.7" fill="black"/>
+    <circle cx="1" cy="5" r="0.7" fill="black"/>
+    <circle cx="3" cy="5" r="0.7" fill="black"/>
+    <circle cx="5" cy="5" r="0.7" fill="black"/>
+  </g>
+
+</svg>

@@ -30,19 +30,19 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgf8a4272">1. a (very) simple specification</a>
+<li><a href="#org4e236f7">1. a (very) simple specification</a>
 <ul>
-<li><a href="#orgfa75f96">1.1. goal-line model</a></li>
-<li><a href="#orgf0c4059">1.2. checks</a></li>
+<li><a href="#orge2e6738">1.1. goal-line model</a></li>
+<li><a href="#org3a03066">1.2. checks</a></li>
 </ul>
 </li>
-<li><a href="#org2d806ab">2. a (less) simple specification</a>
+<li><a href="#orgc1432f7">2. a (less) simple specification</a>
 <ul>
-<li><a href="#org5dd1a53">2.1. river crossing model</a></li>
-<li><a href="#orgd1fcf50">2.2. query</a></li>
+<li><a href="#org037a1a1">2.1. river crossing model</a></li>
+<li><a href="#orgb89f5a3">2.2. query</a></li>
 </ul>
 </li>
-<li><a href="#orged8dfd2">3. considerations</a></li>
+<li><a href="#org27b6ef2">3. considerations</a></li>
 </ul>
 </div>
 </nav>
@@ -54,8 +54,8 @@ specification. the specification is given in a DSL, and the check is
 done over a query written in a temporal logic (CTL or LTL).
 </p>
 
-<section id="outline-container-orgf8a4272" class="outline-2">
-<h2 id="orgf8a4272"><span class="section-number-2">1</span> a (very) simple specification</h2>
+<section id="outline-container-org4e236f7" class="outline-2">
+<h2 id="org4e236f7"><span class="section-number-2">1</span> a (very) simple specification</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 in the spirit of the ongoing world cup, we&rsquo;ll model a <a href="https://en.wikipedia.org/wiki/Goal-line_technology">goal-line
@@ -71,15 +71,15 @@ described by the following finite state machine:
 </p>
 
 
-<figure id="org038254f">
+<figure id="orgb8c2d90">
 <img src="../static/goal-line.png" alt="goal-line.png">
 
 <figcaption><span class="figure-number">Figure 1: </span>a finite state machine describing a goal-line system</figcaption>
 </figure>
 </div>
 
-<div id="outline-container-orgfa75f96" class="outline-3">
-<h3 id="orgfa75f96"><span class="section-number-3">1.1</span> goal-line model</h3>
+<div id="outline-container-orge2e6738" class="outline-3">
+<h3 id="orge2e6738"><span class="section-number-3">1.1</span> goal-line model</h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
 first thing we do is declare our variables. these are straight
@@ -175,8 +175,8 @@ you can also call <code>help</code> for help.
 </div>
 </div>
 
-<div id="outline-container-orgf0c4059" class="outline-3">
-<h3 id="orgf0c4059"><span class="section-number-3">1.2</span> checks</h3>
+<div id="outline-container-org3a03066" class="outline-3">
+<h3 id="org3a03066"><span class="section-number-3">1.2</span> checks</h3>
 <div class="outline-text-3" id="text-1-2">
 <p>
 NuSMV offers a variety of checks, but we&rsquo;ll be using only two of
@@ -228,8 +228,8 @@ CTLSPEC EG ball = outside &amp; goal-line = idle
 </div>
 </section>
 
-<section id="outline-container-org2d806ab" class="outline-2">
-<h2 id="org2d806ab"><span class="section-number-2">2</span> a (less) simple specification</h2>
+<section id="outline-container-orgc1432f7" class="outline-2">
+<h2 id="orgc1432f7"><span class="section-number-2">2</span> a (less) simple specification</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 in this section we&rsquo;ll model the <a href="https://en.wikipedia.org/wiki/River_crossing_puzzle">river crossing puzzle</a> and use NuSMV to
@@ -242,8 +242,8 @@ the cabbage.
 </p>
 </div>
 
-<div id="outline-container-org5dd1a53" class="outline-3">
-<h3 id="org5dd1a53"><span class="section-number-3">2.1</span> river crossing model</h3>
+<div id="outline-container-org037a1a1" class="outline-3">
+<h3 id="org037a1a1"><span class="section-number-3">2.1</span> river crossing model</h3>
 <div class="outline-text-3" id="text-2-1">
 <p>
 for each state, we need to keep track of where each entity is, and
@@ -343,8 +343,8 @@ judge, though).
 </div>
 </div>
 
-<div id="outline-container-orgd1fcf50" class="outline-3">
-<h3 id="orgd1fcf50"><span class="section-number-3">2.2</span> query</h3>
+<div id="outline-container-orgb89f5a3" class="outline-3">
+<h3 id="orgb89f5a3"><span class="section-number-3">2.2</span> query</h3>
 <div class="outline-text-3" id="text-2-2">
 <p>
 in the previous section we checked whether a few desirable properties
@@ -385,8 +385,8 @@ after having saved all this code in <code>river-crossing.smv</code>.
 </div>
 </section>
 
-<section id="outline-container-orged8dfd2" class="outline-2">
-<h2 id="orged8dfd2"><span class="section-number-2">3</span> considerations</h2>
+<section id="outline-container-org27b6ef2" class="outline-2">
+<h2 id="org27b6ef2"><span class="section-number-2">3</span> considerations</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 model checking is cool and all (c&rsquo;mon, if you&rsquo;re not convinced of
