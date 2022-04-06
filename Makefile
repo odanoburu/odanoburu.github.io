@@ -10,6 +10,7 @@ force-website:
 
 deploy: website public
 # NOTE: staging are must be empty, git stash maybe
+	mkdir -p docs
 	git checkout to-deploy
 # NOTE: github pages only deploys to root or docs/
 	rsync --archive public/ docs # NOTE: the slash in public/ matters!
