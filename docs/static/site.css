@@ -1,40 +1,51 @@
 @font-face {
-    font-family:"CharisSILBoldItalic";
-    src: local('CharisSIL-BoldItalic'),
-	 url("CharisSILBI.woff"),
+    font-family:"Charis SIL";
+    src: local('Charis SIL'),
+	 url("CharisSILBI.woff") format('woff'),
 	 url("CharisSIL-BI.ttf") format('truetype');
+    font-weight: bold;
+    font-style: italic;
 }
 @font-face {
-    font-family:"CharisSILBold";
-    src: local('CharisSIL-Bold'),
+    font-family:"Charis SIL";
+    src: local('Charis SIL'),
 	 url("CharisSILB.woff"),
 	 url("CharisSIL-B.ttf") format('truetype');
+    font-weight: bold;
 }
 @font-face {
-    font-family:"CharisSILItalic";
-    src: local('CharisSIL-Italic'),
+    font-family:"Charis SIL";
+    src: local('Charis SIL'),
 	 url("CharisSILI.woff"),
 	 url("CharisSIL-I.ttf") format('truetype');
+    font-style: italic;
 }
 @font-face {
-    font-family:"CharisSILRegular";
-    src: local('CharisSIL'),
+    font-family:"Charis SIL";
+    src: local('Charis SIL'),
 	 url("CharisSILR.woff"),
 	 url("CharisSIL-R.ttf") format('truetype');
 }
 
 html {
-    font-family: 'CharisSILRegular', Fallback, serif;
     font-size: 133%;
-    color: #16161d;             /* eigengrau*/
-    background-color: #fff8e7;  /* cosmic latte*/
+    background-image: url('/static/dubabin-60.svg');
+    background-size: 5%;
 }
 
 
-* {
+body {
+    padding: 0.2em;
     max-width: min(95vw, 45em);
     margin-left: auto;
     margin-right: auto;
+    padding-top: 2em;
+    padding-bottom: 2em;
+    font-family: 'CharisSILRegular', Georgia, serif;
+    color: #16161d;             /* eigengrau*/
+    background-color: #fff8e7;  /* cosmic latte*/
+    background-image: none;
+    border: 2px solid;
 }
 
 label, caption {
@@ -65,7 +76,7 @@ h4 {
 }
 
 p {
-    max-width: min(30em, 95vw); /* one character ~ 0.5 em*/
+    width: min(30em, 95vw); /* one character ~ 0.5 em*/
 }
 
 .org-src-container > pre {
