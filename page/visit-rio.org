@@ -153,7 +153,6 @@ pictures with compatible licenses would be a great contribution).
    apps exist that should emulate fairly well the ride-sharing app
    experience, but the writer can't personally recommend any.
 
-
 ** Nature
    Rio has a wet tropical climate which hovers around the 20s degrees
    Celsius in the winter and around the 30s in the summer, so you can
