@@ -34,19 +34,19 @@
 
 (defvar bruno-website-html-head
   "<link rel='stylesheet' href='/static/site.css' type='text/css'/>
-<link rel='icon' type='image/x-icon' href='/static/favicon.ico'/>")
+<link rel='icon' type='image/x-icon' href='/static/favicon.ico'/>
+<script src='/static/site.js' defer></script>")
 
 (defvar bruno-website-html-blog-head bruno-website-html-head)
 
 (defvar bruno-website-html-preamble
   "<div class='nav'>
 <ul>
-<li><a href='/'>home</a></li>
-<li><a href='/research-log/index.html'>research log</a></li>
-<li><a href='/blog/index.html'>personal blog</a></li>
-<li><a href='https://github.com/odanoburu'>github</a></li>
+<li><a href='/'>Home</a></li>
+<li><a href='/research-log/index.html'>Research blog</a></li>
+<li><a href='/blog/index.html'>Personal blog</a></li>
 <!-- <li><a href='/page/publications.html'>publications</a></li> -->
-<li><a href='/page/about.html'>about</a></li>
+<li><a href='/page/about.html'>About</a></li>
 </ul>
 </div>")
 
