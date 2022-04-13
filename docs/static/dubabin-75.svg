@@ -1,0 +1,23 @@
+<!-- p. 75(54) -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
+  <!-- Part of figure 75 from 'Mosaics of the Greek and Roman World', by Katherine M. D. Dunbabin -->
+  <defs>
+    <svg id="circle" viewBox="0 0 120 120">
+      <circle cx="60" cy="60" r="60"/>
+    </svg>
+    <svg id="quarter-square" viewBox="0 0 120 120">
+      <use href="#circle" x="-60" y="-60" fill="#fff8e7"/>
+      <use href="#circle" x="60" y="60" fill="#fff8e7"/>
+      <!-- more exact control points that look worse 21.2132 98.7868 -->
+      <path d="M0,120 Q25,25 120,0 Q95.1,95.1 0,120" fill="#fff8e7"/>
+    </svg>
+    <svg id="square" viewBox="0 0 120 120">
+      <use href="#quarter-square" transform="scale(0.5)"/>
+      <use href="#quarter-square" transform="scale(0.5) translate(120,0) rotate(90,60,60)"/>
+      <use href="#quarter-square" transform="scale(0.5) translate(0,120) rotate(90,60,60)"/>
+      <use href="#quarter-square" transform="scale(0.5) translate(120,120)"/>
+    </svg>
+  </defs>
+  <rect width="100%" height="100%" fill="#16161d" />
+  <use href="#square"/>
+</svg>
