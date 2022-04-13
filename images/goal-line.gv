@@ -1,0 +1,15 @@
+digraph goalLine {
+
+bgcolor="transparent"
+
+st1 [label = "goal-line = goal\nball = inside"];
+st2 [label = "goal-line = idle\nball = outside"];
+st1->st2;
+st2->st1;
+st2->st2;
+
+}
+
+// Local Variables:
+// indent-tabs-mode: nil
+// End:
