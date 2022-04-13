@@ -75,10 +75,16 @@ h4 {
     text-align: center;
 }
 
-p {
+pre, dl, p {
     width: min(30em, 95vw); /* one character ~ 0.5 em*/
     margin-left: auto;
     margin-right: auto;
+}
+
+dt {
+    font-weight: bold;
+    margin-top: 1em;
+    margin-bottom: 0.5em;
 }
 
 .org-src-container > pre {
@@ -103,6 +109,10 @@ main, figure, table, div.org-src-container {
     flex-flow: column;
     align-items: center;
     justify-content: flex-start;
+}
+
+img {
+    padding: 1em;
 }
 
 table {
