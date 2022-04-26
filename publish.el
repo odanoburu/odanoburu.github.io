@@ -1,4 +1,4 @@
-
+;; -*- lexical-binding: t -*-
 
 ;; several parts of this script are copied from Rasmus' publish.el
 ;; and Nicolas Petton's setup
@@ -12,12 +12,22 @@
 
 (require 'htmlize)
 (require 'ox-html)
+(require 'xml)
+
+(defmacro with-xml (&rest xml)
+  ;; NOTE: this is XML export, not HTML, so we have to be careful
+  ;; with HTML5-breaking stuff, like self-closing non-void elements
+  ;; (in XML it's okay to write <script defer=""/>, but in HTML5
+  ;; it's not, we have to close the element with </script>
+  `(with-temp-buffer
+     (xml-print (list ,@xml))
+     (buffer-string)))
 
 ;; Customize the HTML output
 (setq org-html-validation-link nil ;; Don't show validation link
       org-html-head-include-scripts nil       ;; Use our own scripts
       org-html-head-include-default-style nil ;; Use our own styles
-      org-html-head "<link rel=\"stylesheet\" href=\"static/site.css\" />")
+      org-html-head (with-xml '(link ((rel . "stylesheet") (href . "/static/site.css")))))
 
 (setq org-export-with-smart-quotes t)
 
@@ -33,22 +43,26 @@
 
 
 (defvar bruno-website-html-head
-  "<link rel='stylesheet' href='/static/site.css' type='text/css'/>
-<link rel='icon' type='image/x-icon' href='/static/favicon.ico'/>
-<script src='/static/site.js' defer></script>")
+  (with-xml
+   '(link ((rel . "stylesheet") (href . "/static/site.css")))
+   '(link ((rel . "icon") (type . "image/x-icon") (href . "/static/favicon.ico")))
+   '(script ((src . "/static/site.js") (defer . ""))
+	    ;; NOTE: this empty string matters! (see note on
+	    ;; with-xml definition)
+	    ""
+	    )))
 
 (defvar bruno-website-html-blog-head bruno-website-html-head)
 
 (defvar bruno-website-html-preamble
-  "<div class='nav'>
-<ul>
-<li><a href='/'>Home</a></li>
-<li><a href='/research-log/index.html'>Research blog</a></li>
-<li><a href='/blog/index.html'>Personal blog</a></li>
-<!-- <li><a href='/page/publications.html'>publications</a></li> -->
-<li><a href='/page/about.html'>About</a></li>
-</ul>
-</div>")
+  (with-xml
+   '(div ((class . "nav"))
+	 (ul ()
+	     (li () (a ((href . "/")) "Home"))
+	     (li () (a ((href . "/research-log/index.html")) "Research blog"))
+	     (li () (a ((href . "/blog/index.html")) "Personal blog"))
+	     ;; (li () (a ((href . "/page/publications.html")) "Publications"))
+	     (li () (a ((href . "/page/about.html")) "About"))))))
 
 (defvar bruno-website-html-postamble "")
 
