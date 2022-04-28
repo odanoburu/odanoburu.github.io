@@ -72,6 +72,24 @@
 
 (defvar bruno-website-with-creator nil)
 
+(defun bruno-website-format-blog-entry (entry style project)
+  (with-xml
+   `(div ((lang . ,(or (org-publish-find-property entry :language project) ""))
+	  (data-date . ,(format-time-string "%Y-%m-%d" (org-publish-find-date entry project)))
+	  (data-tags . ,(or (org-publish-find-property entry :keywords project 'html) "")))
+	 (dt ()
+	     (a ((href . ,(concat (file-name-sans-extension entry) ".html")))
+		,(org-publish-find-title entry project)))
+	 (dd ()
+	     ,(or (org-publish-find-property entry :description project 'html) "")))))
+
+(defun bruno-website-sitemap (title files)
+  (let ((file-contents (cl-mapcar #'car (cdr files))))
+    (concat "#+TITLE: " title "\n\n"
+	    "#+BEGIN_EXPORT html\n<dl class=\"org-dl\">"
+	    (apply #'concat file-contents)
+	    "</dl>\n#+END_EXPORT")))
+
 (setq org-publish-project-alist
       (list
        (list "org"
@@ -111,7 +129,7 @@
 
        (list "rlog"
 	     :base-directory (concat base-dir "research-log/")
-	     :base-extension "org"
+	     :base-extension "org$"
 	     :publishing-directory (concat publish-dir "research-log/")
 	     :publishing-function #'org-html-publish-to-html
 	     :section-numbers t
@@ -131,20 +149,22 @@
 
        (list "blog"
 	     :base-directory (concat base-dir "blog/")
-	     :base-extension "org"
+	     :base-extension "org$"
 	     :publishing-directory (concat publish-dir "blog/")
 	     :publishing-function #'org-html-publish-to-html
 	     :section-numbers nil
 	     :with-toc nil
 	     :with-author nil ;; Don't include author name
 	     :with-creator bruno-website-with-creator
-	     ;; :auto-sitemap nil
-	     ;; :sitemap-title "sitemap for bruno's personal blog"
+	     :auto-sitemap t
+	     :sitemap-title "Bruno's Blog"
 	     :recursive t
-	     ;; :sitemap-filename "index.org"
+	     :sitemap-filename "index.org"
+	     :sitemap-format-entry 'bruno-website-format-blog-entry
+	     :sitemap-function 'bruno-website-sitemap
 	     ;; :sitemap-file-entry-format "%d *%t*"
 	     ;; :sitemap-style 'list
-	     ;; :sitemap-sort-files 'anti-chronologically
+	     :sitemap-sort-files 'anti-chronologically
 	     :html-head bruno-website-html-blog-head
 	     :html-preamble bruno-website-html-preamble
 	     :html-postamble bruno-website-html-postamble)
