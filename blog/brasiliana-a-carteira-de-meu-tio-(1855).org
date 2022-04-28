@@ -1,5 +1,7 @@
-#+TITLE: brasiliana: a carteira de meu tio (1855)
+#+TITLE: Brasiliana: a carteira de meu tio (1855)
 #+DATE: <2015-08-04 Ter>
+#+DESCRIPTION: O autor de ‘A moreninha’ já escreveu outros livros bem diferentes, este é um deles.
+#+KEYWORDS: literature art brasil
 #+LANGUAGE: pt
 
 estou lendo livros sobre essa terrinha bôua que chamamos brasil.

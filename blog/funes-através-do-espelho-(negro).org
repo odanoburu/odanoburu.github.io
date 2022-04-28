@@ -1,5 +1,7 @@
-#+TITLE: funes através do espelho (negro)
+#+TITLE: Funes através do espelho (negro)
 #+DATE: <2015-03-10 Ter>
+#+DESCRIPTION: Discutindo Black Mirror (a série) e um conto de Borges.
+#+KEYWORDS: literature tv art
 #+LANGUAGE: pt
 
 imagine um mundo em que você pode guardar tudo o que você vê em vídeo,

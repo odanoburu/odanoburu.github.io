@@ -1,5 +1,7 @@
-#+TITLE: borboletas e preconceito no século xix
+#+TITLE: Borboletas e preconceito no século XIX
 #+DATE: <2017-02-10 Sex>
+#+DESCRIPTION: Sobre a vida e a obra de Margaret Fountaine.
+#+KEYWORDS: literature art
 #+LANGUAGE: pt
 
 acabei de ler um livro. um diário. na verdade, pedaços de um

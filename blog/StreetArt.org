@@ -1,5 +1,8 @@
 #+TITLE: #StreetArt
 #+DATE: <2014-10-12 Dom>
+#+DESCRIPTION: The dichotomy surrounding graffiti in Brazil (and elsewhere?)
+#+KEYWORDS: graffiti cinema art brasil
+#+LANGUAGE: en
 
 in brazil we have a consensus regarding street art.
 

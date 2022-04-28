@@ -1,5 +1,8 @@
-#+TITLE: facebook should be more like email
+#+TITLE: Facebook should be more like email
 #+DATE: <2017-06-22 Qui>
+#+DESCRIPTION: do you use facebook because it is the best platform available or just because all your friends are already on it?
+#+KEYWORDS: technology public-policy
+#+LANGUAGE: en
 
 do you use facebook because it is the best platform available or just
 because all your friends are already on it? what about whatsapp versus

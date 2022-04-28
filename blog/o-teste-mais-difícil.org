@@ -1,5 +1,7 @@
-#+TITLE: o teste mais difícil
+#+TITLE: O teste mais difícil
 #+DATE: <2016-06-29 Qua>
+#+DESCRIPTION: O Teste de Turing e o prêmio Loebner para leigos.
+#+KEYWORDS: technology
 #+LANGUAGE: pt
 
 #+BEGIN_QUOTE
