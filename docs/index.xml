@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+     xmlns:content="http://purl.org/rss/1.0/modules/content/"
+     xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:atom="http://www.w3.org/2005/Atom"
+     xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+     xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+     xmlns:georss="http://www.georss.org/georss"
+     xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+     xmlns:media="http://search.yahoo.com/mrss/"><channel>
+  <title>Bruno's personal blog</title>
+  <atom:link href="https://odanoburu.github.io/index.xml" rel="self" type="application/rss+xml" />
+  <link>https://odanoburu.github.io/</link>
+  <description><![CDATA[]]></description>
+  <language>en</language>
+  <pubDate>Wed, 27 Apr 2022 12:35:29 -0300</pubDate>
+  <lastBuildDate>Wed, 27 Apr 2022 12:35:29 -0300</lastBuildDate>
+  <generator>Emacs 27.2 Org-mode 9.4.4</generator>
+  <webMaster> (Bruno Cuconato)</webMaster>
+  <image>
+    <url>/home/odanoburu/sites/odanoburu.github.io/public/static/favicon.ico</url>
+    <title>Bruno's personal blog</title>
+    <link>https://odanoburu.github.io/</link>
+  </image>
+
+
+  <item>
+    <title>file:facebook-should-be-more-like-email.org</title>
+    <link>https://odanoburu.github.io/index.html#org0af6785</link>
+    <author> (Bruno Cuconato)</author>
+    <guid isPermaLink="false">https://odanoburu.github.io/index.html#org0af6785</guid>
+    <pubDate>Wed, 27 Apr 2022 12:35:00 -0300</pubDate>
+
+    <description><![CDATA[]]></description>
+  </item>
+  <item>
+    <title>file:uma-introdução-ao-protocolo-bitcoin-em-português.org</title>
+    <link>https://odanoburu.github.io/index.html#orge36f1b8</link>
+    <author> (Bruno Cuconato)</author>
+    <guid isPermaLink="false">https://odanoburu.github.io/index.html#orge36f1b8</guid>
+    <pubDate>Wed, 27 Apr 2022 12:35:00 -0300</pubDate>
+
+    <description><![CDATA[]]></description>
+  </item>
+  <item>
+    <title>file:borboletas-e-preconceito-no-século-xix.org</title>
+    <link>https://odanoburu.github.io/index.html#org6f39373</link>
+    <author> (Bruno Cuconato)</author>
+    <guid isPermaLink="false">https://odanoburu.github.io/index.html#org6f39373</guid>
+    <pubDate>Wed, 27 Apr 2022 12:35:00 -0300</pubDate>
+
+    <description><![CDATA[]]></description>
+  </item>
+  <item>
+    <title>file:o-teste-mais-difícil.org</title>
+    <link>https://odanoburu.github.io/index.html#org08ea169</link>
+    <author> (Bruno Cuconato)</author>
+    <guid isPermaLink="false">https://odanoburu.github.io/index.html#org08ea169</guid>
+    <pubDate>Wed, 27 Apr 2022 12:35:00 -0300</pubDate>
+
+    <description><![CDATA[]]></description>
+  </item>
+  <item>
+    <title>file:brasiliana-a-carteira-de-meu-tio-(1855).org</title>
+    <link>https://odanoburu.github.io/index.html#org08307ba</link>
+    <author> (Bruno Cuconato)</author>
+    <guid isPermaLink="false">https://odanoburu.github.io/index.html#org08307ba</guid>
+    <pubDate>Wed, 27 Apr 2022 12:35:00 -0300</pubDate>
+
+    <description><![CDATA[]]></description>
+  </item>
+  <item>
+    <title>file:funes-através-do-espelho-(negro).org</title>
+    <link>https://odanoburu.github.io/index.html#org2c8d715</link>
+    <author> (Bruno Cuconato)</author>
+    <guid isPermaLink="false">https://odanoburu.github.io/index.html#org2c8d715</guid>
+    <pubDate>Wed, 27 Apr 2022 12:35:00 -0300</pubDate>
+
+    <description><![CDATA[]]></description>
+  </item>
+  <item>
+    <title>file:StreetArt.org</title>
+    <link>https://odanoburu.github.io/index.html#orgce955cd</link>
+    <author> (Bruno Cuconato)</author>
+    <guid isPermaLink="false">https://odanoburu.github.io/index.html#orgce955cd</guid>
+    <pubDate>Wed, 27 Apr 2022 12:35:00 -0300</pubDate>
+
+    <description><![CDATA[]]></description>
+  </item>
+</channel>
+</rss>

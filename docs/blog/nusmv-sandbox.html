@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2022-04-28 -->
+<!-- 2022-04-29 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>a poor man&rsquo;s introduction to model checking of finite state synchronous systems with NuSMV</title>
+<title>A poor man&rsquo;s introduction to model checking of finite state synchronous systems with NuSMV</title>
 <meta name="generator" content="Org mode">
+<meta name="description" content="An introduction to NuSMV, with examples."
+>
+<meta name="keywords" content="technical formal-methods">
 <link rel="stylesheet" href="/static/site.css"/><link rel="icon" type="image/x-icon" href="/static/favicon.ico"/><script src="/static/site.js" defer=""></script>
 </head>
 <body>
@@ -16,10 +19,7 @@
       <a href="/">Home</a>
     </li>
     <li>
-      <a href="/research-log/index.html">Research blog</a>
-    </li>
-    <li>
-      <a href="/blog/index.html">Personal blog</a>
+      <a href="/blog/index.html">Blog</a>
     </li>
     <li>
       <a href="/page/about.html">About</a>
@@ -29,28 +29,8 @@
 </header>
 <main id="content">
 <header>
-<h1 class="title">a poor man&rsquo;s introduction to model checking of finite state synchronous systems with NuSMV</h1>
-</header><nav id="table-of-contents">
-<h2>Table of Contents</h2>
-<div id="text-table-of-contents">
-<ul>
-<li><a href="#orged2a1b4">1. a (very) simple specification</a>
-<ul>
-<li><a href="#org533d1be">1.1. goal-line model</a></li>
-<li><a href="#org6b526d3">1.2. checks</a></li>
-</ul>
-</li>
-<li><a href="#orgfc14422">2. a (less) simple specification</a>
-<ul>
-<li><a href="#org9464f96">2.1. river crossing model</a></li>
-<li><a href="#org2a90712">2.2. query</a></li>
-</ul>
-</li>
-<li><a href="#org8e8b282">3. considerations</a></li>
-</ul>
-</div>
-</nav>
-<p>
+<h1 class="title">A poor man&rsquo;s introduction to model checking of finite state synchronous systems with NuSMV</h1>
+</header><p>
 <a href="http://nusmv.fbk.eu/">NuSMV</a> is a free (both as in beer and as in freedom) model checker tool
 where you can specify a model of a finite-state system and
 exhaustively and automatically check whether this model meets a given
@@ -58,9 +38,9 @@ specification. the specification is given in a DSL, and the check is
 done over a query written in a temporal logic (CTL or LTL).
 </p>
 
-<section id="outline-container-orged2a1b4" class="outline-2">
-<h2 id="orged2a1b4"><span class="section-number-2">1</span> a (very) simple specification</h2>
-<div class="outline-text-2" id="text-1">
+<section id="outline-container-orga361d63" class="outline-2">
+<h2 id="orga361d63">a (very) simple specification</h2>
+<div class="outline-text-2" id="text-orga361d63">
 <p>
 in the spirit of the ongoing world cup, we&rsquo;ll model a <a href="https://en.wikipedia.org/wiki/Goal-line_technology">goal-line
 system</a>. (this is the system used in some football matches to determine
@@ -75,16 +55,16 @@ described by the following finite state machine:
 </p>
 
 
-<figure id="org6fb2745">
+<figure id="orge0be4b6">
 <img src="../static/goal-line.png" alt="goal-line.png">
 
 <figcaption><span class="figure-number">Figure 1: </span>a finite state machine describing a goal-line system</figcaption>
 </figure>
 </div>
 
-<div id="outline-container-org533d1be" class="outline-3">
-<h3 id="org533d1be"><span class="section-number-3">1.1</span> goal-line model</h3>
-<div class="outline-text-3" id="text-1-1">
+<div id="outline-container-org1e9a30a" class="outline-3">
+<h3 id="org1e9a30a">goal-line model</h3>
+<div class="outline-text-3" id="text-org1e9a30a">
 <p>
 first thing we do is declare our variables. these are straight
 forward: we need to keep track of where the ball is, and in which
@@ -179,9 +159,9 @@ you can also call <code>help</code> for help.
 </div>
 </div>
 
-<div id="outline-container-org6b526d3" class="outline-3">
-<h3 id="org6b526d3"><span class="section-number-3">1.2</span> checks</h3>
-<div class="outline-text-3" id="text-1-2">
+<div id="outline-container-org816eda2" class="outline-3">
+<h3 id="org816eda2">checks</h3>
+<div class="outline-text-3" id="text-org816eda2">
 <p>
 NuSMV offers a variety of checks, but we&rsquo;ll be using only two of
 them. you might want to go over CTL if you don&rsquo;t know/remember it (you
@@ -232,9 +212,9 @@ CTLSPEC EG ball = outside &amp; goal-line = idle
 </div>
 </section>
 
-<section id="outline-container-orgfc14422" class="outline-2">
-<h2 id="orgfc14422"><span class="section-number-2">2</span> a (less) simple specification</h2>
-<div class="outline-text-2" id="text-2">
+<section id="outline-container-orgb347a22" class="outline-2">
+<h2 id="orgb347a22">a (less) simple specification</h2>
+<div class="outline-text-2" id="text-orgb347a22">
 <p>
 in this section we&rsquo;ll model the <a href="https://en.wikipedia.org/wiki/River_crossing_puzzle">river crossing puzzle</a> and use NuSMV to
 solve it. the puzzle is about a farmer who needs to cross a river,
@@ -246,9 +226,9 @@ the cabbage.
 </p>
 </div>
 
-<div id="outline-container-org9464f96" class="outline-3">
-<h3 id="org9464f96"><span class="section-number-3">2.1</span> river crossing model</h3>
-<div class="outline-text-3" id="text-2-1">
+<div id="outline-container-org3c24df2" class="outline-3">
+<h3 id="org3c24df2">river crossing model</h3>
+<div class="outline-text-3" id="text-org3c24df2">
 <p>
 for each state, we need to keep track of where each entity is, and
 what the farmer will do. the former can be modelled as simple
@@ -347,9 +327,9 @@ judge, though).
 </div>
 </div>
 
-<div id="outline-container-org2a90712" class="outline-3">
-<h3 id="org2a90712"><span class="section-number-3">2.2</span> query</h3>
-<div class="outline-text-3" id="text-2-2">
+<div id="outline-container-org244e086" class="outline-3">
+<h3 id="org244e086">query</h3>
+<div class="outline-text-3" id="text-org244e086">
 <p>
 in the previous section we checked whether a few desirable properties
 we&rsquo;d like to see were true in the model we specified. in the case of
@@ -389,9 +369,9 @@ after having saved all this code in <code>river-crossing.smv</code>.
 </div>
 </section>
 
-<section id="outline-container-org8e8b282" class="outline-2">
-<h2 id="org8e8b282"><span class="section-number-2">3</span> considerations</h2>
-<div class="outline-text-2" id="text-3">
+<section id="outline-container-org8c35f2c" class="outline-2">
+<h2 id="org8c35f2c">considerations</h2>
+<div class="outline-text-2" id="text-org8c35f2c">
 <p>
 model checking is cool and all (c&rsquo;mon, if you&rsquo;re not convinced of
 this, read this tutorial again!), but it is not without its

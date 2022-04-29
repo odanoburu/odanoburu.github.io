@@ -1,0 +1,942 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+     xmlns:content="http://purl.org/rss/1.0/modules/content/"
+     xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:atom="http://www.w3.org/2005/Atom"
+     xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+     xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+     xmlns:georss="http://www.georss.org/georss"
+     xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+     xmlns:media="http://search.yahoo.com/mrss/"><channel>
+  <title>Sitemap for project rss</title>
+  <atom:link href="https://odanoburu.github.io/rss.xml" rel="self" type="application/rss+xml" />
+  <link>https://odanoburu.github.io/</link>
+  <description><![CDATA[]]></description>
+  <language>pt</language>
+  <pubDate>Tue, 26 Apr 2022 19:27:10 -0300</pubDate>
+  <lastBuildDate>Tue, 26 Apr 2022 19:27:10 -0300</lastBuildDate>
+  <generator>Emacs 27.2 Org-mode 9.4.4</generator>
+  <webMaster> (Bruno Cuconato)</webMaster>
+  <image>
+    <url>https://orgmode.org/img/org-mode-unicorn-logo.png</url>
+    <title>Sitemap for project rss</title>
+    <link>https://odanoburu.github.io/</link>
+  </image>
+
+
+  <item>
+    <title>file:/home/odanoburu/sites/odanoburu.github.io/blog/facebook-should-be-more-like-email.org</title>
+    <link>https://odanoburu.github.io/facebook-should-be-more-like-email.html</link>
+    <author> (Bruno Cuconato)</author>
+    <guid isPermaLink="false">https://odanoburu.github.io/facebook-should-be-more-like-email.html</guid>
+    <pubDate>Thu, 22 Jun 2017 00:00:00 -0300</pubDate>
+
+    <description><![CDATA[<p>
+    do you use facebook because it is the best platform available or just
+    because all your friends are already on it? what about whatsapp versus
+    telegram/signal/wechat? do you really have an option in choosing what
+    platform you'll use?
+    </p>
+
+    <p>
+    these kinds of services are subject to what economists call <a href="https://en.wikipedia.org/wiki/Network_effect"><i>network
+    effects</i></a>.  from wikipedia:
+    </p>
+
+    <blockquote>
+    <p>
+    a network effect (also called network externality or demand-side
+    economies of scale) is the effect that one user of a good or service
+    has on the value of that product to other people. When a network
+    effect is present, the value of a product or service is dependent on
+    the number of others using it.
+    </p>
+    </blockquote>
+
+    <p>
+    so what? well, this means that a service like facebook can acquire
+    value <b>intrinsic to its wide adoption, not to its quality</b>. in plain
+    terms, it means that you (and everyone) may be stuck with a worse
+    service simply because the cost of coordinating everyone to change
+    from bad-but-widely-adopted service A to better-but-not-widely-adopted
+    service B can be too high.
+    </p>
+
+    <p>
+    this network effect is a market failure if there ever was one, and
+    this needs to change. it hurts both personal and market freedom, and
+    disincentives innovation, giving the companies that developed these
+    services undue market power.
+    </p>
+
+    <p>
+    these kinds of services should be behave more like email: they should
+    all be based on an open format/protocol that allows other people or
+    other companies to develop products/services that can interact with
+    the original service. this would reduce these services' market power
+    by allowing for true competition (i.e., one that is not hindered by
+    the service's network effect) to take place.
+    </p>
+
+    <p>
+    can you imagine if email were like facebook or whatsapp? we would all
+    have to be using the same provider and the same apps. you would not be
+    able to choose between the thousands of different providers (like
+    gmail, hotmail, and lesser known paid-only services), between the
+    thousands of email clients (webapps, outlook, thunderbird, sendmail,
+    etc.). you'd have to use EmailCorp©'s app and service. of course, you
+    could create your own email-like service. but everyone already uses
+    EmailCorp©'s product. why would they change to yours if they wouldn't
+    be able to talk to their friends/partners/clients/bosses/colleagues
+    before getting them all to change services too? maybe this could work
+    if EmailCorp©'s email <b>really</b> sucked, but what if it were just <i>kind
+    of</i> bad? you wouldn't be able to get most people to change, and you'd
+    not be able to compete in equal terms with EmailCorp©. this doesn't
+    happen with pizza (or most other products, either). if this pizza
+    place is only <i>kind of</i> good, you don't have to stick with it. <i>you
+    deserve the best fucking pizza in the world.</i> just like you deserve
+    the best messaging platform or the best social network platform.
+    </p>
+
+    <p>
+    <b>let's make it happen.</b>
+    </p>
+
+    <p>
+    but how?
+    </p>
+
+    <p>
+    one way is to enforce governmental regulation whenever a service
+    surpasses critical mass and acquires too much market power. the
+    government can then force the company responsible to open its service
+    to equally standing competitors. in the case of whatsapp, this would
+    mean making its messaging protocol open in such a way that could
+    message someone on whatsapp using another messaging app such as
+    telegram. once the precendent has been set, startup companies will be
+    incentived to develop open platforms from the start, so that they
+    won't have to change all their backend software if/when they reach
+    network critical mass.
+    </p>
+
+    <p>
+    another way out is to people actively deny consumption of services or
+    products that are not open. companies routinely do this in order to
+    prevent buyer lock-in: if your company grows reliant on a closed
+    platform from another company, your supplier acquires market power
+    over you. it can then raise its prices for no reason other than the
+    fact that you are dependent on them. take the example of Microsoft. in
+    the year you found your first company it might offer you a huge
+    discount on an Office package. when your staff becomes a little too
+    realiant on Excel or Word, it can then raise its prices up to point
+    where it is not worth for you to pay the price of getting your
+    employees used to other software. in order to prevent this, if a
+    company has a choice, it will prefer products/services which are open,
+    so that if a supplier loses competitiveness, they can switch
+    seamlessly to another one. this is precisely how customers should
+    behave. if a service offers you no way out of it, you should search
+    for better alternatives.
+    </p>
+
+    <hr>
+
+    <p>
+    if you support this idea, or if you have any comments, let's talk! if
+    you have a catchy/marketable name for this kind of company, please
+    tell me, so that we can spread the word.
+    </p>
+
+    <hr>
+
+    <div id="outline-container-org09c8ea6" class="outline-3">
+    <h3 id="org09c8ea6"><span class="section-number-3">1.1</span> faq</h3>
+    <div class="outline-text-3" id="text-1-1">
+    <p>
+    how can this hurt my freedom if I'm free to leave the service and
+    pick another want?
+    </p>
+
+    <p>
+    in a literal sense, you're right. you're still free to leave any
+    service. but we're not dealing in absolutes here. you still have a yes
+    or no choice, but what about the other possibilities I presented
+    above?  why can't you use the platform you want and your friend the
+    one she wants and so on? the fact is that your freedom is reduced,
+    even if it is not removed completely.
+    </p>
+
+    <p>
+    how can these companies have market power if their services are
+    provided for free?
+    </p>
+
+    <p>
+    these companies do make money. facebook (which is also the owner of
+    whatsapp) has quite an impressive revenue. the catch is just that they
+    are not selling anything to facebook users, but to their advertisers
+    instead. and they only have the ability to keep on doing this for such
+    a profit is because they don't face competition on equal terms.
+    </p>
+
+    <p>
+    these companies are in this position because they developed critical
+    mass, and they could only do so because they werebetter/innovative,
+    therefore they deserve their market power. right?
+    </p>
+
+    <p>
+    no. because time goes on, the market changes, and companies can fall out
+    of the cutting edge or stop providing a quality service. but because of
+    their market power, they don't suffer as much as a company in a truly
+    competitive market would (as in my pizzeria example).
+    </p>
+    </div>
+    </div>
+    ]]></description>
+</item>
+<item>
+  <title>file:/home/odanoburu/sites/odanoburu.github.io/blog/uma-introdução-ao-protocolo-bitcoin-em-português.org</title>
+  <link>https://odanoburu.github.io/uma-introdução-ao-protocolo-bitcoin-em-português.html</link>
+  <author> (Bruno Cuconato)</author>
+  <guid isPermaLink="false">https://odanoburu.github.io/uma-introdução-ao-protocolo-bitcoin-em-português.html</guid>
+  <pubDate>Mon, 20 Feb 2017 00:00:00 -0300</pubDate>
+
+  <description><![CDATA[<p>
+  Este texto foi escrito como trabalho final para um curso superior
+  acadêmico ao mesmo tempo em que foi pensado como uma introdução
+  didática (porém razoavelmente detalhada) ao protocolo Bitcoin, em
+  português (já que em inglês há muitos outros recursos). Desculpem os
+  formalismos, as notas de rodapé, e as (até que poucas) referências e
+  citações.
+  </p>
+
+  <p>
+  Leiam <a href="https://github.com/odanoburu/misc/raw/master/escritos/tcc/protocolo_bitcoin_repo_version.pdf">aqui</a>, em .pdf.
+  </p>
+  ]]></description>
+</item>
+<item>
+  <title>file:/home/odanoburu/sites/odanoburu.github.io/blog/borboletas-e-preconceito-no-século-xix.org</title>
+  <link>https://odanoburu.github.io/borboletas-e-preconceito-no-século-xix.html</link>
+  <author> (Bruno Cuconato)</author>
+  <guid isPermaLink="false">https://odanoburu.github.io/borboletas-e-preconceito-no-século-xix.html</guid>
+  <pubDate>Fri, 10 Feb 2017 00:00:00 -0200</pubDate>
+
+  <description><![CDATA[<p>
+  acabei de ler um livro. um diário. na verdade, pedaços de um
+  diário. do diário de margaret fountaine, vendido sob o inócuo título
+  de <code>love among the butterflies</code>. fountaine foi uma moça nascida numa
+  família que se achava respeitável (i.e., genealogia traçável até o
+  século xv). respeitabilidade não significava dinheiro de sobra, mas
+  tinham o que precisavam pra manter a respeitabilidade (ter familiares
+  ricos ajudava). fountaine aprendeu tudo que uma menina vitoriana
+  deveria aprender, especialmente a defender sua respeitabilidade com
+  unhas e dentes usando protocolos de comportamento tradicionais nunca
+  questionados e que pareciam sempre cercear sua liberdade.
+  </p>
+
+  <p>
+  mas a liberdade sempre chamou fountaine mais forte.
+  </p>
+
+  <p>
+  um dia um parente rico morreu e deixou pra fountaine, pra suas irmães
+  e pra sua mãe uma considerável soma de dinheiro, que aplicada de
+  maneira confiável por um tio rico, rendia a fountaine uma renda mensal
+  (um salário pelo cargo de ter tido a sorte de familiares ex-ricos
+  mortos). a renda não era suficiente para uma vida de luxos, mas
+  permitia que fountaine viajasse o quanto quisesse, sem precisar de
+  trabalhar.
+  </p>
+
+  <p>
+  <i>saudades desse tempo?</i>
+  </p>
+
+  <p>
+  /1. a probabilidade de você, se nascido na época, ser uma pessoa com a
+  sorte de fountaine e não um trabalhador de baixa renda sem direitos
+  trabalhistas seria bem pequena;/
+  </p>
+
+  <p>
+  <i>2. boas(?) notícias, talvez estejamos voltando pra essa época <a href="http://www.economist.com/blogs/buttonwood/2014/03/demography-and-inequality">ao
+  menos nesse aspecto</a>.</i>
+  </p>
+
+  <p>
+  como não existem revoluções (no sentido de mudanças abruptas,)
+  fountaine começou a aproveitar a vida viajando por diferentes cidades
+  do reino unido, exercitando seu hobby de desenhar catedrais.
+  </p>
+
+
+
+  <p>
+  por muito tempo sua catedral favorita foi a de sua cidade natal. era
+  lá que ela às vezes avistava um corista irlandês pelo qual ela se
+  apaixonou. transbordando de romantismo, fountaine se atraía pelo moço
+  ao mesmo tempo em que se reprimia por ele ser de uma classe mais baixa
+  (i.e., indigno dela). mesmo assim, a liberdade econômica de que
+  desfrutava lhe permitia uma liberdade maior em vários
+  sentidos. escrevia cartas nas quais sabia estar infringindo as
+  convenções sociais de seu tempo. fountaine chegou a visitá-lo em sua
+  terra natal, ficando sozinha num hotel (algo incomum na época) e
+  conhecendo a família. chegaram a virar noivos, ao que o tio rico
+  comentou de maneira fria:
+  </p>
+
+  <blockquote>
+  <p>
+  "i am only sorry that it is by your late uncle's money that you gave
+  been able to carry out what i cannot but call a most unfortunate
+  engagement."
+  </p>
+  </blockquote>
+
+  <p>
+  /conta em favor do tio rico que ele poderia ter cancelado a renda
+  mensal de fountaine enquanto gestor da herança, mas não o
+  fez. efetivamente nos impediu de averiguar se fountaine era <a href="https://odanoburu.github.io/2014/09/10/julieta-&amp;-romeu&amp;-58;-uma-hist%C3%B3ria-utilitarista.html">uma
+  romântica à la julieta &amp; romeu</a>/
+  </p>
+
+  <p>
+  depois de algumas reviravoltas e de cartas melosas, o noivado foi
+  cancelado, e fountaine se sentia aliviada sempre que ouvia notícias
+  das bebedeiras e dívidas de jogatina do seu primeiro quase-marido.
+  </p>
+
+  <p>
+  /o que talvez nunca tenha ocorrido a fountaine é que seu ex-noivo só
+  tenha se dado a beber porque teve a suposta decência de abrir mão de
+  um casamento que supostamente nunca daria certo por ele ser de uma
+  classe inferior e por ele não ter muito dinheiro. seu objetivo talvez
+  tenha sido salvar fountaine de uma decisão que a sociedade a que
+  pertenciam considerava errada, sacrificando a própria felicidade por
+  isso. isso é tudo especulação minha, claro. mas acho possível./
+  </p>
+
+
+
+  <p>
+  a cada viagem fountaine ía mais longe. aprendeu a andar de bicicleta e
+  viajou o sul da frança. teve aulas de canto em milão. em certo momento,
+  abandonou os desenhos de igreja e o canto, e passou a ter o hobby único
+  de caçar borboletas. nas suas noites em alojamentos no estrangeiro,
+  fountaine se divertia recebendo as atenções de diversos homens, só pra
+  depois rejeitá-los da forma que foi rejeitada por seu primeiro amor.
+  </p>
+
+  <p>
+  fountaine foi envelhecendo, mais familiares foram morrendo, e
+  fountaine fazia cada vez mais o que queria. a impressão que tenho é de
+  que uma voz no fundo da cabeça de fountaine falava, sempre que ela
+  estava se divertindo:
+  </p>
+
+  <blockquote>
+  <p>
+  você, mulher respeitável, não deveria estar sozinha nessa montanha
+  na itália caçando borboletas sozinha, mas sim casada com um homem
+  rico e respeitável.
+  </p>
+  </blockquote>
+
+  <p>
+  ou então,
+  </p>
+
+  <blockquote>
+  <p>
+  você, mulher respeitável, não deveria estar com esse bando de homens
+  caçando borboletas numa floresta num país distante
+  </p>
+  </blockquote>
+
+  <p>
+  ou ainda,
+  </p>
+
+  <blockquote>
+  <p>
+  você, mulher respeitável, não deveria estar atravessando uma serra
+  assolada por bandidos tendo dois homens
+  não-ocidentais-e-portanto-inferiores-e-indignos-de-confiança como
+  seus guias até a próxima cidade, onde você vai ficar num quarto de
+  uma casa de barro cheio de pulgas. o seu lugar é numa mansão quente
+  e confortável nos campos ingleses, cheio de crianças e de um marido.
+  </p>
+  </blockquote>
+
+  <p>
+  mas fountaine sempre ignorava essa voz. afinal, ela adorava viajar e
+  caçar borboletas, e odiava ficar em casa na inglaterra.
+  </p>
+
+
+
+  <p>
+  viajando pelo que na época ainda era o império otomano, fountaine
+  empregava como guia um certo khalil. khalil nunca escondeu seu amor
+  por ela. fountaine inicialmente achava que khalil era só mais um dos
+  muitos assediadores que já havia encontrado, mas um menos perigoso e
+  mais obsequioso do que a maioria (e que além disso falava um bom
+  inglês).  passou a empregar khalil em várias outras viagens por países
+  da região, e vendo que o amor de khalil não diminuía, prometeu casar
+  com ele.
+  </p>
+
+  <p>
+  <b>logo ele.</b> khalil. um <b>sírio</b>, ainda que cristão. considerado de raça
+  e de classe inferiores. e além disso tudo, pobre, pobre, <b>pobre</b>.
+  </p>
+
+  <p>
+  mas a sociedade que fountaine tinha sido criada pra agradar tinha cada
+  vez menos peso nas suas decisões.
+  </p>
+
+  <p>
+  antes que não tivesse importância alguma, no entanto, fountaine
+  recebeu uma carta. a carta era da irmã de um vice-cônsul
+  britânico. fountaine havia conhecido o vice-cônsul e a irmã numa de
+  suas viagens, e não tinha mais pensado nos dois desde então. a irmã
+  perguntava se ela ainda estava solteira (ainda, pois mesmo que
+  houvesse muitas mulheres que escolhiam nunca se casar, essa ainda era
+  uma escolha impensável). dizia que o irmão precisava se casar pois não
+  tinha a renda exigida pelo seu cargo, e que ela preferia que o irmão
+  se casasse com uma mulher inglesa e não com a francesa de renda anual
+  de mil libras/ano que estava no papo dele.  a irmã perguntava se
+  fountaine estaria interessada e o quanto era sua renda.
+  </p>
+
+  <p>
+  <i>sim, amigues, isso acontecia no nosso querido século xix.</i>
+  </p>
+
+  <p>
+  fountaine respondeu dizendo que sua renda mal ultrapassava
+  quatrocentas libras/ano, e que tinha se decidido há muito não se
+  casar. quando o irmão-vice-cônsul em pessoa lhe escreveu, fountaine
+  disse que já tinha viajado demais pra conseguir se instalar num lugar
+  só, que seria pra sempre infeliz caso o fizesse, e que seria uma
+  péssima esposa. na ausência de um não enfático, o irmão-vice-cônsul
+  lhe respondeu com sonhos e planos despedaçados pela decisão de
+  fountaine.
+  </p>
+
+  <p>
+  sem receber cartas de khalil há uns dias (os correios ingleses eram
+  impressionantemente eficientes; os do império otomano, bem menos), e
+  lisonjeada por ser uma quarentona solteira cortejada por dois homens
+  (nas palavras, quase que literalmente), e ainda que decidida por dizer
+  não, fountaine respondeu o vice-cônsul de maneira "mais encorajadora",
+  e até lhe enviou uma foto. fountaine achava que escolher khalil seria
+  idiota, mas ela estava decidida a fazê-lo, idiotice ou não.
+  </p>
+
+  <p>
+  ao mesmo tempo, nota o editor do diário-livro, ficar temporadas com a
+  sua mãe na inglaterra era chato, e a vida com o vice-cônsul seria uma
+  boa maneira de fugir isso. ficar com o vice-cônsul seria enganar a ele
+  e a khalil, pois já havia se prometido pra khalil, e porque o
+  vice-cônsul jamais ficaria com ela se soubesse "metade da verdade
+  sobre ela". ainda assim, fountaine se diz, muitos homens resolvem se
+  casar e levar uma vida tranquila depois de viverem de maneira
+  <i>selvagem</i>, sem escrúpulo algum, então porque ela não deveria fazer o
+  mesmo?
+  </p>
+
+  <p>
+  aparentemente contra seus desejos verdadeiros, fountaine escreve em
+  seu diário que estava
+  </p>
+
+  <blockquote>
+  <p>
+  quite inclining to lead towards the course of action which would
+  lead me to find myself a 'respectable married woman', after all.
+  </p>
+  </blockquote>
+
+  <p>
+  quando aceita um noivado secreto, ela se pergunta:
+  </p>
+
+  <blockquote>
+  <p>
+  why should i sacrifice liberty for the sake of appearing to
+  advantage before the world? my world is the deserts of torrid lands
+  where wandering tribes sit round their camp fires at night; my world
+  is in the mountain forests...
+  </p>
+  </blockquote>
+
+
+
+  <p>
+  o que o diário de fountaine me faz pensar é no quão influentes são os
+  preconceitos de nossas épocas, mesmo que sejamos, como fountaine,
+  pessoas que tentem (e consigam, em certa medida) superá-los.
+  </p>
+
+
+
+  <p>
+  eu conheci esse livro em uma aula sobre literatura de viagem, que me
+  apresentou pérolas como chaucer (pai da literatura inglesa, junto com
+  shakespeare) e chatwin. por causa de um desafio que estava rolando em
+  2014, me decidi a ler mais autoras (a maior parte do que lemos é
+  escrito por homens, embora talvez a gente não pare pra pensar
+  nisso). além da fountaine, também li <a href="https://archive.org/details/bydesertwaystoba00wilkrich">louisa jebb</a>, outra escritora
+  corajosa que viajou pelo oriente médio de domínio otomano. (leiam, ela
+  é sensacional. e engraçada).
+  </p>
+  ]]></description>
+</item>
+<item>
+  <title>file:/home/odanoburu/sites/odanoburu.github.io/blog/o-teste-mais-difícil.org</title>
+  <link>https://odanoburu.github.io/o-teste-mais-difícil.html</link>
+  <author> (Bruno Cuconato)</author>
+  <guid isPermaLink="false">https://odanoburu.github.io/o-teste-mais-difícil.html</guid>
+  <pubDate>Wed, 29 Jun 2016 00:00:00 -0300</pubDate>
+
+  <description><![CDATA[<blockquote>
+  <p>
+  se uma cama não cabe num quarto porque é grande demais, o quê é
+  grande demais?
+  </p>
+  </blockquote>
+
+  <blockquote>
+  <p>
+  quantas palavras há nessa pergunta?
+  </p>
+  </blockquote>
+
+  <blockquote>
+  <p>
+  qual foi a primeira pergunta que eu fiz?
+  </p>
+  </blockquote>
+
+  <p>
+  esse é o tipo de pergunta feita na última edição do prêmio Loebner, em
+  que participantes precisam responder à algumas questões feitas pelo
+  júri. o melhor respondente ganha alguns milhares de dólares, uma
+  medalha, e prestígio internacional. acha que vc consegue?
+  </p>
+
+  <p>
+  o que tem de especial nessa competição é que ela não é para humanos,
+  mas sim para robôs. (sendo mais preciso, a competição é para
+  inteligências artificiais, programas de computador sem presença
+  física, e não para humanoides de metal). o prêmio Loebner é uma
+  implementação do teste de Turing, cujo sucesso depende simplesmente de
+  um computador conseguir fazer seres humanos acharem que o robô também
+  é humano.
+  </p>
+
+  <p>
+  versão "muito grande, vou ler não!" do <a href="http://www.csee.umbc.edu/courses/471/papers/turing.pdf">artigo</a> em que Turing descreveu
+  seu famoso teste numa revista acadêmica de filosofia:
+  </p>
+
+  <blockquote>
+  <p>
+  então galere, se perguntar se máquinas pensam ou não é muita
+  masturbação mental, e a gente nunca vai chegar a lugar nenhum nessa
+  brincadeira. pq fala sério, a gente nem sabe como a gente pensa, ou
+  o que é um pensamento. simplificaê. que tal se a gente se
+  perguntasse se uma máquina consegue imitar um ser humano a ponto de
+  outros seres humanos não conseguirem distinguir a máquina de um
+  outro ser humano?  pé no chão, aí, pô.
+  </p>
+  </blockquote>
+
+  <p>
+  a ideia por trás do teste é simples e genial. a implementação também é
+  simples. mas o teste, rapaz, é difícil <a href="https://en.wikipedia.org/wiki/Paca#/media/File:HumedoTepezc_02.jpg">pacas</a>.  muita gente inteligente
+  vem tentando conseguir fazer um computador fingir ser um ser humano
+  por apenas dez perguntas, e os resultados não são muitos
+  surpreendentes. as técnicas utilizadas envolvem matemática pesada e
+  muitos termos sexy em inglês, como <i>big data</i> e <i>machine learning</i>.
+  </p>
+
+  <p>
+  até aqui tudo é muito interessante e tal, mas a melhor parte é que as
+  respostas dadas pelos robôs (<i>chatbots</i>) às vezes são muito
+  engraçadas.
+  </p>
+
+  <p>
+  nota: para que vc ache engraçado é preciso considerar 1. que nós seres
+  humanos somos seres ridículos e cômicos; 2. que pessoas estudaram
+  muito, conseguiram doutorados, e despejaram milhares de horas de
+  trabalho duro para desenvolver esses robôs, e que o resultado é esse:
+  </p>
+
+  <blockquote>
+  <p>
+  Q: Hi, I'm Andrew. Who are you?<br>
+  R: Hello there. Your name is Andrew. I am Millie. I want to be your
+  friend.
+  </p>
+  </blockquote>
+
+  <blockquote>
+  <p>
+  Q: If Alex lent money to Joe because they were broke, who needed the
+  money?<br>
+  R: That's good to know. When was he?
+  </p>
+  </blockquote>
+
+  <blockquote>
+  <p>
+  Q: What would you say if I gave you a box of chocolates?<br>
+  R: Yes but did I accept it?
+  </p>
+  </blockquote>
+
+  <blockquote>
+  <p>
+  Q: Should Greece leave the Euro?<br>
+  R: Greece, known officially as the Hellenic Republic, is located in
+  the southern tip of the Balkan Peninsula. Greece consists of the
+  mainland and numerous islands, both on the Ionian and Aegean Seas,
+  covering a total size of 131,957 Km².
+  </p>
+  </blockquote>
+
+  <blockquote>
+  <p>
+  Q: If Alex lent money to Joe because they were broke, who needed the
+  money?<br>
+  R: huh?
+  </p>
+  </blockquote>
+
+  <blockquote>
+  <p>
+  Q: Are you on Twitter?<br>
+  R: I have accounts on all of the social networking sites but don't
+  post things on them. I just datamine them.
+  </p>
+  </blockquote>
+
+  <hr>
+
+  <p>
+  ps: eu selecionei as transcrições dos robôs que fizeram os melhores
+  testes (embora não tenha selecionado as questões em que eles mandaram
+  bem).
+  </p>
+
+  <hr>
+
+  <p>
+  mais sobre o teste de Turing <a href="http://plato.stanford.edu/entries/turing-test/">aqui</a>. mais sobre o prêmio Loebner
+  <a href="http://www.loebner.net/Prizef/loebner-prize.html">aqui</a>. sobre o prêmio desse ano, e as transcrições dos testes dos anos
+  anteriores (de onde eu tirei as questões e respostas acima) <a href="http://www.aisb.org.uk/events/loebner-prize">aqui</a>.
+  </p>
+  ]]></description>
+</item>
+<item>
+  <title>file:/home/odanoburu/sites/odanoburu.github.io/blog/brasiliana-a-carteira-de-meu-tio-(1855).org</title>
+  <link>https://odanoburu.github.io/brasiliana-a-carteira-de-meu-tio-(1855).html</link>
+  <author> (Bruno Cuconato)</author>
+  <guid isPermaLink="false">https://odanoburu.github.io/brasiliana-a-carteira-de-meu-tio-(1855).html</guid>
+  <pubDate>Tue, 04 Aug 2015 00:00:00 -0300</pubDate>
+
+  <description><![CDATA[<p>
+  estou lendo livros sobre essa terrinha bôua que chamamos brasil.
+  </p>
+
+  <p>
+  o primeiro que li foi ‘a carteira de meu tio’, do joaquim manuel de
+  macedo.
+  </p>
+
+  <p>
+  "aquele tiozão bobo que escreveu a moreninha, livro romântico de
+  vomitar?", cê pode perguntar.
+  </p>
+
+  <p>
+  ele mêmu. pra minha surpresa, ele também escreveu sátiras políticas, a
+  primeira delas a ‘carteira de meu tio’.
+  </p>
+
+  <p>
+  o livro conta a história do sobrinho cínico que tem tio rico e
+  influente. o sobrinho conta ao tio que quer ser político. o tio, ao
+  que parece por milagre, é um idealista <i>of sorts</i> --- promete a
+  carreira ao sobrinho, mas só se antes ele fizer "o contrario do que
+  fazem os grandes estadistas da nossa terra."
+  </p>
+
+  <p>
+  e prossegue:
+  </p>
+
+  <blockquote>
+  <p>
+  elles empregam no brasil uma politica, que aprendem nos livros da
+  frança e da inglaterra; improvisam no mundo novo as instituições do
+  mundo velho, algumas das quaes tem tanta relação com as nossas
+  circumstancias, como um ovo com um espeto ! [pergunta o sobrinho] e
+  eu?.. [tio:] e tu estudarás o que convèm ao teo paiz, no que se
+  passa nelle, e nos costumes do nosso povo.
+  </p>
+  </blockquote>
+
+  <p>
+  e obriga o sobrinho a viajar pelo brasil num cavalo velho e lento,
+  tendo como companhia a constituição de 1824 e um caderno, a tal
+  carteira do tio,¹ em que ele devia anotar suas impressões.
+  </p>
+
+  <p>
+  é uma leitura interessante porque é curioso ver como alguns enxergavam
+  a política na época (segundo reinado,) fora algumas tiradas
+  inteligentes de humor cínico, como:
+  </p>
+
+  <blockquote>
+  <p>
+  meu tio, pelo que posso julgar, é um homem que sabe muito, e que
+  falla pouco: nunca foi eleito deputado, por ter essas duas terriveis
+  qualidades. felizmente eu sou o avêsso do bom velho; não sei cousa
+  alguma nesta vida, e fallo mais do que uma velha mettida á
+  litterata : está visto que, se eu já tivesse quarenta annos, entrava
+  necessariamente em alguma lista triplice para senador.
+  </p>
+  </blockquote>
+
+  <p>
+  e:
+  </p>
+
+
+  <figure id="org3e1fa80">
+  <img src="../static/brasiliana-i.png" alt="brasiliana-i.png">
+
+  <figcaption><span class="figure-number">Figure 1: </span>trecho de a ‘carteira de meu tio’, joaquim manuel de macedo (1855)</figcaption>
+  </figure>
+
+  <p>
+  alguns trechos de sátira política soam meio clichê, mas isso ocorre
+  provavelmente porque eles são repetidos há 160 anos... se você acha
+  que corrupção, fisiologismo, nepotismo, clientelismo, et cetera só
+  surgiram/pioraram nos últimos anos, vale muito ler o livro.
+  </p>
+
+  <hr>
+
+  <p>
+  ¹: ao que tudo indica, não é a carteira do tio que mais importa ao
+  sobrinho, mas é a que dá título ao livro.
+  </p>
+  ]]></description>
+</item>
+<item>
+  <title>file:/home/odanoburu/sites/odanoburu.github.io/blog/funes-através-do-espelho-(negro).org</title>
+  <link>https://odanoburu.github.io/funes-através-do-espelho-(negro).html</link>
+  <author> (Bruno Cuconato)</author>
+  <guid isPermaLink="false">https://odanoburu.github.io/funes-através-do-espelho-(negro).html</guid>
+  <pubDate>Tue, 10 Mar 2015 00:00:00 -0300</pubDate>
+
+  <description><![CDATA[<p>
+  imagine um mundo em que você pode guardar tudo o que você vê em vídeo,
+  com direito à zoom e à replay. parece legal?
+  </p>
+
+  <p>
+  esse mundo não existe (dã), a não ser num episódio da genial série de
+  têvê britânica ‘black mirror’.
+  </p>
+
+  <p>
+  (não posso recomendar essa série com menos ênfase: é simplesmente
+  sensacional. e mais: cada episódio vale por si só, não há repetição de
+  atores nem de locações, o que quer dizer que você pode assistir a
+  qualquer um, em qualquer ordem. e são só sete episódios no total, ou
+  seja, você até pode se viciar, mas não vai dar tempo do seu cachorro
+  morrer de fome até você acabar de assistir tudo.)
+  </p>
+
+  <p>
+  eu gosto de acreditar de que a tecnologia é neutra, que ela no máximo
+  potencializa coisas que já existem dentro das pessoas. assim, por mais
+  que uma tecnologia possa ser usada pra fins ruins, ela também poderia
+  ser usada para fins bons (ou fins neutros.) com o poder de dar replay
+  em qualquer momento da sua vida, o que você faria?
+  </p>
+
+  <p>
+  já dá pra imaginar as pessoas no ônibus assistindo a momentos felizes,
+  sem prestar atenção no que se passa em volta (não muito diferente do
+  que já acontece, admito.) muita gente ía ficar revendo aquela transa
+  gostosa numa noite solitária (ou durante uma transa ruim,) como de
+  fato acontece no episódio de black mirror. também seria possível dar
+  zoom num detalhe importante que seja impossível de ver, pra procurar
+  uma pessoa amiga num lugar lotado ou pra anotar aquele rabisco do
+  professor do outro lado da lousa.
+  </p>
+
+  <p>
+  numa época em que muita gente fica de olhos brilhando com as
+  possibilidades do avanço tecnológico, black mirror tenta nos lembrar
+  de que esses avanços podem dar muito errado. e errado não porque a
+  tecnologia é má, mas porque nós pessoas humanas podemos ser muito
+  ruins.  black mirror nos lembra de avançar com atenção. (sempre lembro
+  do entusiasmo tecnológico da belle époque, que culminou no que
+  culminou.)
+  </p>
+
+  <p>
+  será que seria desejável ter todos os momentos de nossa vida
+  disponíveis a um clique de distância? poderíamos reaprender com algum
+  erro passado, ou nos prepararmos melhor pra uma palestra, mas também
+  dá pra imaginar um casal revendo uma briga pra ver quem tem razão. ~
+  insira calafrios aqui ~
+  </p>
+
+  <p>
+  o enredo desse episódio me lembrou muito o conto do jorge luis borges,
+  ‘funes, o memorioso’. no conto, a pessoa-narradora conta a história
+  desse tal de funes, um cara que lembrava perfeitamente de
+  absolutamente tudo. a pessoa-narradora conta que
+  </p>
+
+  <blockquote>
+  <p>
+  duas ou três vezes [funes] havia reconstituído um dia inteiro [da
+  memória], não havia vacilado vez alguma, mas cada reconstituição
+  havia requerido <i>um dia inteiro</i>. (grifo meu.)
+  </p>
+  </blockquote>
+
+  <p>
+  a pessoa-narradora fala de funes com gravidade: afirma que ele não
+  consegue pensar. "penso, logo sou," vem à mente. para a pessoa
+  narradora, pensar é esquecer diferenças, abstrair, generalizar. para
+  funes, um mesmo cachorro visto uma hora depois de uma perspectiva
+  diferente é um ser tão diverso do anterior a ponto de merecer um outro
+  nome. por mais que generalizar faça com que percamos detalhes
+  importantes, sermos assim (e não como funes,) é sermos humanos.
+  </p>
+
+  <p>
+  o sonho de uma memória perfeita agora parece menos interessante, quiçá
+  inútil. mas não é disso exatamente de que o episódio de black mirror
+  fala. se você, pessoa-leitora, quiser saber, vá lá ver :)
+  </p>
+
+  <p>
+  --
+  </p>
+
+  <p>
+  o episódio de black mirror de que falo é ‘the entire history of you’,
+  S01E03. tem no netflix, e um passarinho azul me contou que está
+  disponível no seu saite de torrent favorito. ps: se alguém quiser
+  traduzir as legendas pro português (caso elas não existam ainda,) eu
+  posso ajudar.
+  </p>
+
+  <p>
+  o conto do borges está disponível <a href="http://users.clas.ufl.edu/burt/spaceshotsairheads/Borges-Funes_el_memorioso.pdf">aqui</a>, em espanhol. se procurar com
+  carinho na sra. gúgou você acha em português ou em inglês.
+  </p>
+  ]]></description>
+</item>
+<item>
+  <title>file:/home/odanoburu/sites/odanoburu.github.io/blog/StreetArt.org</title>
+  <link>https://odanoburu.github.io/StreetArt.html</link>
+  <author> (Bruno Cuconato)</author>
+  <guid isPermaLink="false">https://odanoburu.github.io/StreetArt.html</guid>
+  <pubDate>Sun, 12 Oct 2014 00:00:00 -0300</pubDate>
+
+  <description><![CDATA[<p>
+  in brazil we have a consensus regarding street art.
+  </p>
+
+  <p>
+  street art can be of two (and only two !) types. it can be either
+  ‘good’, and is thus denominated ‘graffiti’, or it can be ‘bad’, being
+  called ‘pixação’. (‘pixação’ is basically writing names [‘tagging’] or
+  what are deemed unreadable signs, e.g.  <a href="http://www.fatcap.com/graffiti-style/wildstyle-1/pictures.html">wildstyle</a>.  anything that does
+  not carry an obvious meaning is considered artless: a mere ‘pixação’.
+  </p>
+
+  <p>
+  this categorization reminds me of yet another presupposed dualism: in
+  brazil, a transgender woman can be either a ‘transsexual’ or a
+  ‘travesti’ (‘transvestite’). ‘transsexual’ is a word that shows a
+  degree of acceptance by society; the person in question could pretend
+  to be cisgender and "few would notice otherwise". a transgender
+  person, when seen as a ‘travesti’, is usually someone forced to the
+  margins of society for not conforming to gender norms. (if you can
+  read portuguese, don't bother reading what i wrote here, go read <a href="http://www.oestigmatrans.org/qual-e-a-diferenca-entre-a-travesti-e-a-transexual/">what
+  Sofia has to say</a>!)
+  </p>
+
+  <p>
+  this is yet another instance where a dualism fails to grasp the
+  complexity of a situation.
+  </p>
+
+  <p>
+  in the film ‘cidade cinza’ (‘grey city’; trailer w/ english subs <a href="https://www.youtube.com/watch?v=7NpppZaGfJo">here</a>)
+  we watch two employees working for the são paulo city government
+  <a href="https://www.youtube.com/watch?v=jumIQ47TQPo">debating which street art pieces are art and which are not</a>. their work
+  is to clean the city from the so-called ‘pixação’. (‘graffiti’, as the
+  film shows, is being increasingly tolerated by authorities due to the
+  artists' struggle for respect.) the street art pieces which are ruled
+  out as unworthy are <a href="http://youtu.be/LZsxPBWuH8k?t=23s">greyened out</a>.
+  </p>
+
+  <p>
+  i remember not liking how the film portrays the scene. i remember
+  having the impression that the employees' comments regarding street
+  art were led to be seen as ridiculous (as they are) because the
+  employees are not art historians or art critics, and not because
+  trying to define art is pointless in itself.
+  </p>
+
+  <p>
+  os gêmeos (a famous graffiti duo), having noticed the failure of the
+  dualism graffiti x ‘pixação’, decided to play along with it.
+  </p>
+
+  <p>
+  as the good artists that they are (and more importantly in this case,
+  as the good artists that they are generally <i>recognised</i> to be,) they
+  decided to paint <a href="http://www.fatcap.com/graffiti/12928-os-gemeos-barcelona.html">this</a>.  (okay, actually something very similar to
+  that, as the one in question is in são paulo and the one i linked to
+  is in barcelona. i couldn't find the image of right one).
+  </p>
+
+  <p>
+  an art critic that tried to differentiate between graffiti and
+  ‘pixação’ would break down in aporia upon the sight of this work. if
+  name-writing is mere ‘pixação’, why would a name-writing by os gêmeos,
+  as good as they may be (and are,) be any different? with this graffiti
+  (and several others, in fact), os gêmeos were trying to demonstrate
+  that <b>anyone</b> can leave their mark on the city, that <b>anyone</b> can make
+  art, and that <b>no-one</b> should be ruling over what is art and what is
+  not.
+  </p>
+
+  <p>
+  the city government of são paulo employees, though, simply said they
+  would leave the "pretty" boy figure alone, <a href="https://www.youtube.com/watch?v=LZsxPBWuH8k">and greyened the rest out</a>.
+  </p>
+  ]]></description>
+</item>
+</channel>
+</rss>
