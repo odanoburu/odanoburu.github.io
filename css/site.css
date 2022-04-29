@@ -1,3 +1,12 @@
+:root {
+  --color-background: #fff8e7;   /* cosmic latte*/
+  --color-text: #16161d;	 /* eigengrau */
+  --color-text-lighter: #797979;
+  --color-emphasis: #e0b1cb;
+  --color-emphasis-darker: maroon;
+  /* --color-canvas: #ffffdf; */
+}
+
 @font-face {
     font-family:"Charis SIL";
     src: local('Charis SIL'),
@@ -42,8 +51,8 @@ body {
     padding-top: 2em;
     padding-bottom: 2em;
     font-family: 'CharisSILRegular', Georgia, serif;
-    color: #16161d;             /* eigengrau*/
-    background-color: #fff8e7;  /* cosmic latte*/
+    color: var(--color-text);
+    background-color: var(--color-background);
     background-image: none;
     border: 2px solid;
 }
@@ -75,7 +84,7 @@ h4 {
     text-align: center;
 }
 
-pre, dl, p {
+pre, dl, p, ul {
     width: min(30em, 95vw); /* one character ~ 0.5 em*/
     margin-left: auto;
     margin-right: auto;
@@ -125,4 +134,35 @@ th, td {
     padding-right: 1em;
     padding-left: 1em;
     padding-top: 0.33em;
+}
+
+.nodisplay {
+    display: none;
+}
+
+ul.horizontal-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    align-items: flex-start;
+    list-style-type: none;
+    padding-left: 0;
+}
+
+li.option.selected {
+    font-weight: 600;
+    color: unset;
+}
+li.option {
+    color: var(--color-text-lighter);
+    margin-left: 1.1em;
+    margin-bottom: 0.5em;
+    cursor: pointer;
+    padding: 0.2em;
+}
+li.option:hover {
+    background-color: var(--color-emphasis);
+    border-radius: 6px;
+    color: unset;
 }

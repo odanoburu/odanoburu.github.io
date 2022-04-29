@@ -73,22 +73,30 @@
 (defvar bruno-website-with-creator nil)
 
 (defun bruno-website-format-blog-entry (entry style project)
-  (with-xml
-   `(div ((lang . ,(or (org-publish-find-property entry :language project) ""))
-	  (data-date . ,(format-time-string "%Y-%m-%d" (org-publish-find-date entry project)))
-	  (data-tags . ,(or (org-publish-find-property entry :keywords project 'html) "")))
-	 (dt ()
-	     (a ((href . ,(concat (file-name-sans-extension entry) ".html")))
-		,(org-publish-find-title entry project)))
-	 (dd ()
-	     ,(or (org-publish-find-property entry :description project 'html) "")))))
+  (let ((entry-lang (org-publish-find-property entry :language project))
+	(entry-keywords (or (org-publish-find-property entry :keywords project 'html) "")))
+    (with-xml
+     `(div ((class . "post")
+	    (data-date . ,(format-time-string "%Y-%m-%d" (org-publish-find-date entry project)))
+	    (lang . ,(or entry-lang ""))
+	    (data-keyword . ,(if entry-lang
+				 (concat entry-keywords " lang:" entry-lang)
+			       entry-keywords)))
+	   (dt ()
+	       (a ((href . ,(concat (file-name-sans-extension entry) ".html")))
+		  ,(org-publish-find-title entry project)))
+	   (dd ()
+	       ,(or (org-publish-find-property entry :description project 'html) ""))))))
 
 (defun bruno-website-sitemap (title files)
   (let ((file-contents (cl-mapcar #'car (cdr files))))
     (concat "#+TITLE: " title "\n\n"
-	    "#+BEGIN_EXPORT html\n<dl class=\"org-dl\">"
+	    "#+BEGIN_EXPORT html\n"
+	    "<!-- javascript-powered feature: --> <ul id=\"keywords-menu\" class=\"horizontal-list\"></ul>"
+	    "<dl class=\"org-dl\">"
 	    (apply #'concat file-contents)
-	    "</dl>\n#+END_EXPORT")))
+	    "</dl>"
+	    "\n#+END_EXPORT")))
 
 (setq org-publish-project-alist
       (list
