@@ -1,7 +1,7 @@
 #+TITLE: Uma introdução ao protocolo bitcoin, em português
 #+DATE: <2017-02-20 Seg>
 #+DESCRIPTION: Bitcoin explicado à leigos, mas em detalhes (e com alguma matemática envolvida).
-#+KEYWORDS: technology scholarly
+#+KEYWORDS: technical crypto
 #+LANGUAGE: pt
 
 Este texto foi escrito como trabalho final para um curso superior

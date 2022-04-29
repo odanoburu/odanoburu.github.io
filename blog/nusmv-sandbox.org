@@ -1,5 +1,8 @@
-#+TITLE: a poor man's introduction to model checking of finite state synchronous systems with NuSMV
+#+TITLE: A poor man's introduction to model checking of finite state synchronous systems with NuSMV
 #+DATE: <2018-06-29 Sex>
+#+DESCRIPTION: An introduction to NuSMV, with examples.
+#+KEYWORDS: technical formal-methods
+#+LANGUAGE: en
 
 [[http://nusmv.fbk.eu/][NuSMV]] is a free (both as in beer and as in freedom) model checker tool
 where you can specify a model of a finite-state system and

@@ -1,5 +1,8 @@
 #+TITLE: Benchmarking Logica
 #+DATE: <2021-10-19 Tue>
+#+DESCRIPTION: Translating SQL queries to Logica and benchmarking them.
+#+KEYWORDS: technical databases
+#+LANGUAGE: en
 
 [[https://github.com/EvgSkv/logica][Logica]] is a logic programming language that compiles to SQL. It is a
 successor to [[https://research.google/pubs/pub43462/][Yedalog]], and can be used as a Datalog-like frontend to

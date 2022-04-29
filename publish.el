@@ -59,8 +59,7 @@
    '(div ((class . "nav"))
 	 (ul ()
 	     (li () (a ((href . "/")) "Home"))
-	     (li () (a ((href . "/research-log/index.html")) "Research blog"))
-	     (li () (a ((href . "/blog/index.html")) "Personal blog"))
+	     (li () (a ((href . "/blog/index.html")) "Blog"))
 	     ;; (li () (a ((href . "/page/publications.html")) "Publications"))
 	     (li () (a ((href . "/page/about.html")) "About"))))))
 
@@ -92,7 +91,9 @@
   (let ((file-contents (cl-mapcar #'car (cdr files))))
     (concat "#+TITLE: " title "\n\n"
 	    "#+BEGIN_EXPORT html\n"
+	    "<h3>Tags</h3>"
 	    "<!-- javascript-powered feature: --> <ul id=\"keywords-menu\" class=\"horizontal-list\"></ul>"
+	    "<h3>Posts</h3>"
 	    "<dl class=\"org-dl\">"
 	    (apply #'concat file-contents)
 	    "</dl>"

@@ -1,5 +1,8 @@
 #+TITLE: Developing grammars with GF
 #+DATE: <2019-05-25 Sat>
+#+DESCRIPTION: Pointers to begin learning Grammatical Framework (GF).
+#+KEYWORDS: technical
+#+LANGUAGE: en
 
 This is a short note to record a few pointers that should help a
 newcomer learn [[http://grammaticalframework.org/][GF]]. In case you don't know what GF is:

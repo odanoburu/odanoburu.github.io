@@ -84,7 +84,7 @@ h4 {
     text-align: center;
 }
 
-pre, dl, p, ul {
+pre, dl, p, ul, caption {
     width: min(30em, 95vw); /* one character ~ 0.5 em*/
     margin-left: auto;
     margin-right: auto;
