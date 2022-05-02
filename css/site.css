@@ -166,3 +166,16 @@ li.option:hover {
     border-radius: 6px;
     color: unset;
 }
+
+#navlinks > li {
+    margin-left: 0.5em;
+    padding-right: 0.5em;
+    font-weight: bold;
+}
+
+#navlinks::before {
+    content: "⟦"
+}
+#navlinks::after {
+    content: "⟧"
+}

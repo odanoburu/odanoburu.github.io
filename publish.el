@@ -57,7 +57,7 @@
 (defvar bruno-website-html-preamble
   (with-xml
    '(div ((class . "nav"))
-	 (ul ()
+	 (ul ((id . "navlinks") (class . "horizontal-list"))
 	     (li () (a ((href . "/")) "Home"))
 	     (li () (a ((href . "/blog/index.html")) "Blog"))
 	     ;; (li () (a ((href . "/page/publications.html")) "Publications"))
@@ -123,7 +123,7 @@
        (list "pages"
 	     :exclude "publications.org"
 	     :base-directory (concat base-dir "page/")
-	     :base-extension "org"
+	     :base-extension "org$"
 	     :publishing-directory (concat publish-dir "page/")
 	     :publishing-function #'org-html-publish-to-html
 	     :section-numbers nil
