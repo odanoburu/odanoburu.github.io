@@ -30,7 +30,7 @@
     font-style: italic;
 }
 @font-face {
-    font-family:"Charis SIL";
+    font-family: "Charis SIL";
     src: local('Charis SIL'),
 	 url("CharisSILR.woff"),
 	 url("CharisSIL-R.ttf") format('truetype');
@@ -50,7 +50,7 @@ body {
     margin-right: auto;
     padding-top: 2em;
     padding-bottom: 2em;
-    font-family: 'CharisSILRegular', Georgia, serif;
+    font-family: "Charis SIL", Georgia, serif;
     color: var(--color-text);
     background-color: var(--color-background);
     background-image: none;
