@@ -1,19 +1,25 @@
 #+TITLE: About
 
+* Me
+
 I (= Bruno Cuconato) am currently a PhD student/candidate/researcher
 at the computer science department at [[https://en.wikipedia.org/wiki/Pontifical_Catholic_University_of_Rio_de_Janeiro][PUC-Rio]]. Otherwise, I spend most
 of my free time reading, hiking, and learning Japanese.
 
-If you ever thought of visiting my home town (Rio), you may find this
+If you ever thought of visiting my hometown (Rio), you may find this
 [[./visit-rio.html][guide]] useful.
 
-* Contact
-Feel free to contact me by email at (first letter of my
-name)cclaro+site@gmail.com.
+** Contact
+Feel free to contact me by email at =(first letter of my
+name)cclaro+site= at google's email service.
 
 I go by =odanoburu= on github, IRC, etc.
 
-* License
-This website (except otherwise noted, like in the font files) is
+* The website
+
+This website uses only vanilla HTML/CSS/JS and the [[https://orgmode.org/][org]] markup
+language, all edited from [[https://www.gnu.org/software/emacs/][Emacs]].
+
+The content (except otherwise noted, like in the font files) is
 licensed under a [[http://creativecommons.org/licenses/by-sa/4.0/][Creative Commons Attribution-ShareAlike 4.0
 International License]].

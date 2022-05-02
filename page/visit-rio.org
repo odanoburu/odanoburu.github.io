@@ -1,8 +1,8 @@
-#+TITLE: (my) guide to Rio de Janeiro
+#+TITLE: (My) guide to Rio de Janeiro
 #+DATE: 2021-11-30
 #+OPTIONS: toc:2
 
-São Sebastião do Rio de Janeiro is a city full of beautiful sights,
+/São Sebastião do Rio de Janeiro/ is a city full of beautiful sights,
 and historical and cultural landmarks. (The food could be better,
 though — for that you'll have to visit São Paulo, Minas Gerais, or
 Bahia.)
@@ -13,7 +13,7 @@ details and up-to-date instructions if you actually plan to visit any
 of them (feel free to contact me for help if you wish).
 
 This is a work-in-progress, and feedback is welcome. I should add some
-pictures and maps, but for now this is text-only (suggesting suitable
+pictures and maps, but for now it is text-only (suggesting suitable
 pictures with compatible licenses would be a great contribution).
 
 ** Geography
