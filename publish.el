@@ -118,7 +118,6 @@
 				    (let* ((robots-file (concat (plist-get ps :base-directory) "robots.txt"))
 					   (publish-dir (plist-get ps :publishing-directory))
 					   (root-robots-file (concat publish-dir "robots.txt")))
-				      (message root-robots-file)
 				      (copy-file robots-file root-robots-file t))))
 
        (list "pages"
@@ -133,26 +132,6 @@
 	     :with-author nil ;; Don't include author name
 	     :with-creator bruno-website-with-creator
 	     :html-head bruno-website-html-head
-	     :html-preamble bruno-website-html-preamble
-	     :html-postamble bruno-website-html-postamble)
-
-       (list "rlog"
-	     :base-directory (concat base-dir "research-log/")
-	     :base-extension "org$"
-	     :publishing-directory (concat publish-dir "research-log/")
-	     :publishing-function #'org-html-publish-to-html
-	     :section-numbers t
-	     :with-toc t
-	     :with-author nil ;; Don't include author name
-	     :with-creator bruno-website-with-creator
-	     ;; :auto-sitemap t
-	     ;; :sitemap-style 'list
-	     ;; :sitemap-title "sitemap for bruno's research log"
-	     :recursive t
-	     ;; :sitemap-filename "index.org"
-	     ;; :sitemap-file-entry-format "%d *%t*"
-	     ;; :sitemap-sort-files 'anti-chronologically
-	     :html-head bruno-website-html-blog-head
 	     :html-preamble bruno-website-html-preamble
 	     :html-postamble bruno-website-html-postamble)
 
@@ -208,7 +187,7 @@
 	     :publishing-directory static-dir
 	     :publishing-function #'org-publish-attachment)
 
-       (list "website" :components '("org" "pages" "rlog" "blog" "images" "js" "css" "fonts"))))
+       (list "website" :components '("org" "pages" "blog" "images" "js" "css" "fonts"))))
 
 
 (provide 'publish)
