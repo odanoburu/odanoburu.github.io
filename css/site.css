@@ -9,7 +9,7 @@
 
 @font-face {
     font-family:"Charis SIL";
-    src: local('Charis SIL'),
+    src: local('Charis SIL, BoldItalic'),
 	 url("CharisSILBI.woff") format('woff'),
 	 url("CharisSIL-BI.ttf") format('truetype');
     font-weight: bold;
@@ -17,14 +17,14 @@
 }
 @font-face {
     font-family:"Charis SIL";
-    src: local('Charis SIL'),
+    src: local('Charis SIL, Bold'),
 	 url("CharisSILB.woff"),
 	 url("CharisSIL-B.ttf") format('truetype');
     font-weight: bold;
 }
 @font-face {
     font-family:"Charis SIL";
-    src: local('Charis SIL'),
+    src: local('Charis SIL, Italic'),
 	 url("CharisSILI.woff"),
 	 url("CharisSIL-I.ttf") format('truetype');
     font-style: italic;
@@ -44,10 +44,12 @@ html {
 
 
 body {
-    padding: 0.2em;
     max-width: min(95vw, 45em);
     margin-left: auto;
     margin-right: auto;
+    margin-top: 2.5%;
+    margin-bottom: 2.5%;
+    padding: 0.2em;
     padding-top: 2em;
     padding-bottom: 2em;
     font-family: "Charis SIL", Georgia, serif;
