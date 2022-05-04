@@ -9,6 +9,6 @@
 
 This is *Bruno Cuconato*'s personal website.
 
-You can browse my [[./blog][personal blog]]. Or you can read more [[./page/about.html][about me]]. If you
-are interested in programming, you may want to take a look at my
-[[https://github.com/odanoburu/][GitHub]] and [[https://gitlab.com/odanoburu/][GitLab]] pages.
+You can browse my [[./blog][personal blog]] {{{rss-icon-link}}}. Or you can read
+more [[./page/about.html][about me]]. If you are interested in programming, you may want to
+take a look at my [[https://github.com/odanoburu/][GitHub]] and [[https://gitlab.com/odanoburu/][GitLab]] pages.

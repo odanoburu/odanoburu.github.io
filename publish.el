@@ -23,6 +23,20 @@
      (xml-print (list ,@xml))
      (buffer-string)))
 
+(defvar bruno-website-rss-feed-link
+  (with-xml
+   '(a ((href . "https://odanoburu.github.io/feed")
+	(download . "feed.xml")
+	(target . "_blank")
+	(class . "no-decoration"))
+       (object ((id . "rss-icon")
+		(type . "image/svg+xml")
+		(data . "/static/rss.svg"))
+	       "RSS icon"))))
+
+(push (cons "rss-icon-link" (format "@@html:%s@@" bruno-website-rss-feed-link))
+      org-export-global-macros)
+
 ;; Customize the HTML output
 (setq org-html-validation-link nil ;; Don't show validation link
       org-html-head-include-scripts nil       ;; Use our own scripts
@@ -98,7 +112,7 @@
 	    "#+BEGIN_EXPORT html\n"
 	    "<h3>Tags</h3>"
 	    "<!-- javascript-powered feature: --> <ul id=\"keywords-menu\" class=\"horizontal-list\"></ul>"
-	    "<h3>Posts</h3>"
+	    "<h3>Posts " bruno-website-rss-feed-link "</h3>"
 	    "<dl class=\"org-dl\">"
 	    (apply #'concat file-contents)
 	    "</dl>"
@@ -107,7 +121,7 @@
 (defvar bruno-website-url "https://odanoburu.github.io/")
 
 (defun bruno-website-publish-url (file-name publish-dir)
-  (concat bruno-website-url (file-relative-name publish-dir bruno-website-publish-dir) file-name))
+  (url-encode-url (concat bruno-website-url (file-relative-name publish-dir bruno-website-publish-dir) file-name)))
 
 (defvar bruno-website-rfc822-time-format-string
   ;; Tue, 30 Nov 2021 00:00:00 +0000
@@ -122,21 +136,24 @@
       (org-publish-cache-set-file-property
        source
        :rss
-       (print
-	`(item ()
-	       (title () ,title)
-	       (description () ,description)
-	       (pubDate () ,(format-time-string bruno-website-rfc822-time-format-string date))
-	       (link () ,dest-url)
-	       (guid ((isPermaLink . "true")) ,dest-url)))))))
+       `(item ()
+	      (title () ,title)
+	      (description () ,description)
+	      (pubDate () ,(format-time-string bruno-website-rfc822-time-format-string date))
+	      (link () ,dest-url)
+	      (guid ((isPermaLink . "true")) ,dest-url))))))
 
 (defun bruno-website-rss (entry-rss publish-dir)
   (with-temp-file (concat publish-dir "feed.xml")
     (xml-print
-     `((rss ((version . "2.0"))
+     `((rss ((version . "2.0")
+	     (xmlns:atom . "http://www.w3.org/2005/Atom"))
 	    (channel ()
 		     (title () ,bruno-website-blog-title)
 		     (link () ,bruno-website-url)
+		     (atom:link ((href . ,(concat bruno-website-url "feed.xml"))
+				 (ref . "self")
+				 (type . "application/rss+xml")))
 		     (description () ,(concat bruno-website-url "about.html"))
 		     (lastBuildDate () ,(format-time-string bruno-website-rfc822-time-format-string))
 		     (docs () "https://www.rssboard.org/rss-specification")

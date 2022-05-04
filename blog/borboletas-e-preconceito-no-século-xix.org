@@ -27,9 +27,9 @@ trabalhar.
 
 /saudades desse tempo?/
 
-/1. a probabilidade de você, se nascido na época, ser uma pessoa com a
-sorte de fountaine e não um trabalhador de baixa renda sem direitos
-trabalhistas seria bem pequena;/
+/1. a probabilidade de você, se nascido na época, ser uma pessoa com
+a/ /sorte de fountaine e não um trabalhador de baixa renda sem
+direitos trabalhistas seria bem pequena/
 
 /2. boas(?) notícias, talvez estejamos voltando pra essa época [[http://www.economist.com/blogs/buttonwood/2014/03/demography-and-inequality][ao
 menos nesse aspecto]]./

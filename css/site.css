@@ -181,3 +181,18 @@ li.option:hover {
 #navlinks::after {
     content: "⟧"
 }
+
+#rss-icon {
+    height: 0.8em;
+    pointer-events: none;
+    outline: solid;
+    border-radius: 2px;
+}
+
+h3 > a > #rss-icon {
+    margin-left: 0.3em;
+}
+
+a.no-decoration {
+    text-decoration: none;
+}
