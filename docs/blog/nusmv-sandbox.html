@@ -38,9 +38,9 @@ specification. the specification is given in a DSL, and the check is
 done over a query written in a temporal logic (CTL or LTL).
 </p>
 
-<section id="outline-container-org216266d" class="outline-2">
-<h2 id="org216266d">a (very) simple specification</h2>
-<div class="outline-text-2" id="text-org216266d">
+<section id="outline-container-orge457e0c" class="outline-2">
+<h2 id="orge457e0c">a (very) simple specification</h2>
+<div class="outline-text-2" id="text-orge457e0c">
 <p>
 in the spirit of the ongoing world cup, we&rsquo;ll model a <a href="https://en.wikipedia.org/wiki/Goal-line_technology">goal-line
 system</a>. (this is the system used in some football matches to determine
@@ -55,16 +55,16 @@ described by the following finite state machine:
 </p>
 
 
-<figure id="org7b2d1c2">
+<figure id="org3a8e8a6">
 <img src="../static/goal-line.png" alt="goal-line.png">
 
 <figcaption><span class="figure-number">Figure 1: </span>a finite state machine describing a goal-line system</figcaption>
 </figure>
 </div>
 
-<div id="outline-container-org7dcff9a" class="outline-3">
-<h3 id="org7dcff9a">goal-line model</h3>
-<div class="outline-text-3" id="text-org7dcff9a">
+<div id="outline-container-org6412df8" class="outline-3">
+<h3 id="org6412df8">goal-line model</h3>
+<div class="outline-text-3" id="text-org6412df8">
 <p>
 first thing we do is declare our variables. these are straight
 forward: we need to keep track of where the ball is, and in which
@@ -159,9 +159,9 @@ you can also call <code>help</code> for help.
 </div>
 </div>
 
-<div id="outline-container-orgb5e4fb3" class="outline-3">
-<h3 id="orgb5e4fb3">checks</h3>
-<div class="outline-text-3" id="text-orgb5e4fb3">
+<div id="outline-container-org017b364" class="outline-3">
+<h3 id="org017b364">checks</h3>
+<div class="outline-text-3" id="text-org017b364">
 <p>
 NuSMV offers a variety of checks, but we&rsquo;ll be using only two of
 them. you might want to go over CTL if you don&rsquo;t know/remember it (you
@@ -212,9 +212,9 @@ CTLSPEC EG ball = outside &amp; goal-line = idle
 </div>
 </section>
 
-<section id="outline-container-orge89cd40" class="outline-2">
-<h2 id="orge89cd40">a (less) simple specification</h2>
-<div class="outline-text-2" id="text-orge89cd40">
+<section id="outline-container-org4a65d7b" class="outline-2">
+<h2 id="org4a65d7b">a (less) simple specification</h2>
+<div class="outline-text-2" id="text-org4a65d7b">
 <p>
 in this section we&rsquo;ll model the <a href="https://en.wikipedia.org/wiki/River_crossing_puzzle">river crossing puzzle</a> and use NuSMV to
 solve it. the puzzle is about a farmer who needs to cross a river,
@@ -226,9 +226,9 @@ the cabbage.
 </p>
 </div>
 
-<div id="outline-container-org92a5e2e" class="outline-3">
-<h3 id="org92a5e2e">river crossing model</h3>
-<div class="outline-text-3" id="text-org92a5e2e">
+<div id="outline-container-org1c4e5d4" class="outline-3">
+<h3 id="org1c4e5d4">river crossing model</h3>
+<div class="outline-text-3" id="text-org1c4e5d4">
 <p>
 for each state, we need to keep track of where each entity is, and
 what the farmer will do. the former can be modelled as simple
@@ -327,9 +327,9 @@ judge, though).
 </div>
 </div>
 
-<div id="outline-container-orgea4d5f1" class="outline-3">
-<h3 id="orgea4d5f1">query</h3>
-<div class="outline-text-3" id="text-orgea4d5f1">
+<div id="outline-container-org8c290ad" class="outline-3">
+<h3 id="org8c290ad">query</h3>
+<div class="outline-text-3" id="text-org8c290ad">
 <p>
 in the previous section we checked whether a few desirable properties
 we&rsquo;d like to see were true in the model we specified. in the case of
@@ -369,9 +369,9 @@ after having saved all this code in <code>river-crossing.smv</code>.
 </div>
 </section>
 
-<section id="outline-container-org6f59e51" class="outline-2">
-<h2 id="org6f59e51">considerations</h2>
-<div class="outline-text-2" id="text-org6f59e51">
+<section id="outline-container-org0fae266" class="outline-2">
+<h2 id="org0fae266">considerations</h2>
+<div class="outline-text-2" id="text-org0fae266">
 <p>
 model checking is cool and all (c&rsquo;mon, if you&rsquo;re not convinced of
 this, read this tutorial again!), but it is not without its
