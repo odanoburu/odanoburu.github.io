@@ -196,3 +196,7 @@ h3 > a > #rss-icon {
 a.no-decoration {
     text-decoration: none;
 }
+
+.section-separator::before {
+    content: "***";
+}
