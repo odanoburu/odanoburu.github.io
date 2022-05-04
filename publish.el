@@ -42,6 +42,8 @@
       org-html-doctype "html5")
 
 
+(defvar bruno-website-blog-title "Bruno Cuconato's Blog")
+
 (defvar bruno-website-html-head
   (with-xml
    '(link ((rel . "stylesheet") (href . "/static/site.css")))
@@ -65,11 +67,14 @@
 
 (defvar bruno-website-html-postamble "")
 
-(defvar base-dir (file-name-directory (or load-file-name buffer-file-name)))
-(defvar publish-dir (file-name-as-directory (concat base-dir "public")))
-(defvar static-dir (file-name-as-directory (concat publish-dir "static")))
+(defvar bruno-website-base-dir (file-name-directory (or load-file-name buffer-file-name)))
+(defvar bruno-website-publish-dir (file-name-as-directory (concat bruno-website-base-dir "public")))
+(defvar bruno-website-static-dir (file-name-as-directory (concat bruno-website-publish-dir "static")))
 
 (defvar bruno-website-with-creator nil)
+
+(defun bruno-website-org-publish-find-description (file project)
+  (org-publish-find-property file :description project 'html))
 
 (defun bruno-website-format-blog-entry (entry style project)
   (let ((entry-lang (org-publish-find-property entry :language project))
@@ -85,7 +90,7 @@
 	       (a ((href . ,(concat (file-name-sans-extension entry) ".html")))
 		  ,(org-publish-find-title entry project)))
 	   (dd ()
-	       ,(or (org-publish-find-property entry :description project 'html) ""))))))
+	       ,(or (bruno-website-org-publish-find-description entry project) ""))))))
 
 (defun bruno-website-sitemap (title files)
   (let ((file-contents (cl-mapcar #'car (cdr files))))
@@ -99,12 +104,50 @@
 	    "</dl>"
 	    "\n#+END_EXPORT")))
 
+(defvar bruno-website-url "https://odanoburu.github.io/")
+
+(defun bruno-website-publish-url (file-name publish-dir)
+  (concat bruno-website-url (file-relative-name publish-dir bruno-website-publish-dir) file-name))
+
+(defvar bruno-website-rfc822-time-format-string
+  ;; Tue, 30 Nov 2021 00:00:00 +0000
+  "%a, %d %b %Y %H:%M:%S GMT")
+
+(defun bruno-website-rss-entry (project source publish-dir)
+  (let ((title (org-publish-find-title source project))
+	(date (org-publish-find-date source project))
+	(description (bruno-website-org-publish-find-description source project))
+	(dest-url (bruno-website-publish-url (concat (file-name-sans-extension (file-name-nondirectory source)) ".html") publish-dir)))
+    (when description
+      (org-publish-cache-set-file-property
+       source
+       :rss
+       (print
+	`(item ()
+	       (title () ,title)
+	       (description () ,description)
+	       (pubDate () ,(format-time-string bruno-website-rfc822-time-format-string date))
+	       (link () ,dest-url)
+	       (guid ((isPermaLink . "true")) ,dest-url)))))))
+
+(defun bruno-website-rss (entry-rss publish-dir)
+  (with-temp-file (concat publish-dir "feed.xml")
+    (xml-print
+     `((rss ((version . "2.0"))
+	    (channel ()
+		     (title () ,bruno-website-blog-title)
+		     (link () ,bruno-website-url)
+		     (description () ,(concat bruno-website-url "about.html"))
+		     (lastBuildDate () ,(format-time-string bruno-website-rfc822-time-format-string))
+		     (docs () "https://www.rssboard.org/rss-specification")
+		     ,@entry-rss))))))
+
 (setq org-publish-project-alist
       (list
        (list "org"
-	     :base-directory base-dir
+	     :base-directory bruno-website-base-dir
 	     :base-extension "org"
-	     :publishing-directory publish-dir
+	     :publishing-directory bruno-website-publish-dir
 	     :publishing-function #'org-html-publish-to-html
 	     :section-numbers nil
 	     :with-toc nil
@@ -122,9 +165,9 @@
 
        (list "pages"
 	     :exclude "publications.org"
-	     :base-directory (concat base-dir "page/")
+	     :base-directory (concat bruno-website-base-dir "page/")
 	     :base-extension "org$"
-	     :publishing-directory (concat publish-dir "page/")
+	     :publishing-directory (concat bruno-website-publish-dir "page/")
 	     :publishing-function #'org-html-publish-to-html
 	     :section-numbers nil
 	     :with-toc nil
@@ -136,31 +179,43 @@
 	     :html-postamble bruno-website-html-postamble)
 
        (list "blog"
-	     :base-directory (concat base-dir "blog/")
+	     :base-directory (concat bruno-website-base-dir "blog/")
 	     :base-extension "org$"
-	     :publishing-directory (concat publish-dir "blog/")
-	     :publishing-function #'org-html-publish-to-html
+	     :publishing-directory (concat bruno-website-publish-dir "blog/")
+	     :publishing-function (list #'org-html-publish-to-html #'bruno-website-rss-entry)
 	     :section-numbers nil
 	     :with-toc nil
 	     :with-author nil ;; Don't include author name
 	     :with-creator bruno-website-with-creator
 	     :auto-sitemap t
-	     :sitemap-title "Bruno's Blog"
+	     :sitemap-title bruno-website-blog-title
 	     :recursive t
 	     :sitemap-filename "index.org"
-	     :sitemap-format-entry 'bruno-website-format-blog-entry
-	     :sitemap-function 'bruno-website-sitemap
-	     ;; :sitemap-file-entry-format "%d *%t*"
-	     ;; :sitemap-style 'list
+	     :sitemap-format-entry #'bruno-website-format-blog-entry
+	     :sitemap-function #'bruno-website-sitemap
 	     :sitemap-sort-files 'anti-chronologically
+	     ;; abuse completion function to generate RSS; each file
+	     ;; has its corresponding rss entry stored in the cache
+	     ;; (so we just generate it once) and this function then
+	     ;; collects them and publishes the RSS
+	     ;;; TODO: check if the file actually changed (with
+	     ;;; hashes) and if not, skip writing to disk
+	     :completion-function (lambda (proj)
+				    (let ((entries-rss))
+				      (map-do (lambda (k v)
+						(let ((rss (plist-get v :rss)))
+						  (when rss
+						    (push rss entries-rss))))
+					      org-publish-cache)
+				      (bruno-website-rss entries-rss bruno-website-publish-dir)))
 	     :html-head bruno-website-html-blog-head
 	     :html-preamble bruno-website-html-preamble
 	     :html-postamble bruno-website-html-postamble)
 
        (list "images"
-	     :base-directory (concat base-dir "images/")
+	     :base-directory (concat bruno-website-base-dir "images/")
 	     :base-extension (regexp-opt (list "jpg" "gif" "png" "ico" "svg"))
-	     :publishing-directory static-dir
+	     :publishing-directory bruno-website-static-dir
 	     :publishing-function #'org-publish-attachment
 	     :completion-function (lambda (ps)
 				    (let* ((favicon-file (concat (plist-get ps :base-directory) "favicon.ico"))
@@ -170,24 +225,25 @@
 				      (copy-file favicon-file root-favicon-file t))))
 
        (list "js"
-	     :base-directory (concat base-dir "js/")
+	     :base-directory (concat bruno-website-base-dir "js/")
 	     :base-extension "js"
-	     :publishing-directory static-dir
+	     :publishing-directory bruno-website-static-dir
 	     :publishing-function #'org-publish-attachment)
 
        (list "css"
-	     :base-directory (concat base-dir "css/")
+	     :base-directory (concat bruno-website-base-dir "css/")
 	     :base-extension "css"
-	     :publishing-directory static-dir
+	     :publishing-directory bruno-website-static-dir
 	     :publishing-function #'org-publish-attachment)
 
        (list "fonts"
-	     :base-directory (concat base-dir "fonts/")
+	     :base-directory (concat bruno-website-base-dir "fonts/")
 	     :base-extension (regexp-opt (list "ttf" "woff"))
-	     :publishing-directory static-dir
+	     :publishing-directory bruno-website-static-dir
 	     :publishing-function #'org-publish-attachment)
 
-       (list "website" :components '("org" "pages" "blog" "images" "js" "css" "fonts"))))
+       (list "website"
+	     :components '("org" "pages" "blog" "images" "js" "css" "fonts"))))
 
 
 (provide 'publish)
