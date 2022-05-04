@@ -38,7 +38,7 @@ como não existem revoluções (no sentido de mudanças abruptas,)
 fountaine começou a aproveitar a vida viajando por diferentes cidades
 do reino unido, exercitando seu hobby de desenhar catedrais.
 
-*
+{{{section-separator}}}
 
 por muito tempo sua catedral favorita foi a de sua cidade natal. era
 lá que ela às vezes avistava um corista irlandês pelo qual ela se
@@ -75,7 +75,7 @@ tenha sido salvar fountaine de uma decisão que a sociedade a que
 pertenciam considerava errada, sacrificando a própria felicidade por
 isso. isso é tudo especulação minha, claro. mas acho possível./
 
-*
+{{{section-separator}}}
 
 a cada viagem fountaine ía mais longe. aprendeu a andar de bicicleta e
 viajou o sul da frança. teve aulas de canto em milão. em certo momento,
@@ -116,7 +116,7 @@ ou ainda,
 mas fountaine sempre ignorava essa voz. afinal, ela adorava viajar e
 caçar borboletas, e odiava ficar em casa na inglaterra.
 
-*
+{{{section-separator}}}
 
 viajando pelo que na época ainda era o império otomano, fountaine
 empregava como guia um certo khalil. khalil nunca escondeu seu amor
@@ -191,13 +191,13 @@ quando aceita um noivado secreto, ela se pergunta:
   is in the mountain forests...
 #+END_QUOTE
 
-*
+{{{section-separator}}}
 
 o que o diário de fountaine me faz pensar é no quão influentes são os
 preconceitos de nossas épocas, mesmo que sejamos, como fountaine,
 pessoas que tentem (e consigam, em certa medida) superá-los.
 
-*
+{{{section-separator}}}
 
 eu conheci esse livro em uma aula sobre literatura de viagem, que me
 apresentou pérolas como chaucer (pai da literatura inglesa, junto com

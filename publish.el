@@ -36,6 +36,8 @@
 
 (push (cons "rss-icon-link" (format "@@html:%s@@" bruno-website-rss-feed-link))
       org-export-global-macros)
+(push (cons "section-separator" "\n#+BEGIN_EXPORT html\n<span class=\"section-separator\"></span>\n#+END_EXPORT")
+      org-export-global-macros)
 
 ;; Customize the HTML output
 (setq org-html-validation-link nil ;; Don't show validation link
