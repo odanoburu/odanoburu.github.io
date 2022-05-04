@@ -17,8 +17,9 @@ I go by =odanoburu= on github, IRC, etc.
 
 * The website
 
-This website uses only vanilla HTML/CSS/JS and the [[https://orgmode.org/][org]] markup
-language, all edited from [[https://www.gnu.org/software/emacs/][Emacs]].
+This website is built with vanilla JS and CSS, but most of the HTML is
+generated from the [[https://orgmode.org/][org]] markup language. Everything is done from the
+[[https://www.gnu.org/software/emacs/][Emacs]] text editor.
 
 The content (except otherwise noted, like in the font files) is
 licensed under a [[http://creativecommons.org/licenses/by-sa/4.0/][Creative Commons Attribution-ShareAlike 4.0
