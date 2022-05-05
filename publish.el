@@ -152,7 +152,7 @@
     (insert "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n")
     (xml-print
      `((rss ((version . "2.0")
-	     (xmlns:atom . "https://www.w3.org/2005/Atom"))
+	     (xmlns:atom . "http://www.w3.org/2005/Atom"))
 	    (channel ()
 		     (title () ,bruno-website-blog-title)
 		     (link () ,bruno-website-url)
