@@ -25,7 +25,7 @@
 
 (defvar bruno-website-rss-feed-link
   (with-xml
-   '(a ((href . "https://odanoburu.github.io/feed")
+   '(a ((href . "/feed.xml")
 	(download . "feed.xml")
 	(target . "_blank")
 	(class . "no-decoration"))
