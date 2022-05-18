@@ -1,0 +1,60 @@
+#+TITLE: Fusion
+#+DATE: <2022-05-18 Wed>
+#+DESCRIPTION: Why you should read ‘The Future of Fusion Energy’, by Jason Parisi & Justin Ball.
+#+KEYWORDS: book-review technology public-policy
+#+LANGUAGE: en
+
+If you are not excited about fusion energy, you should be. In case you
+already are, you should read the book [[https://www.iter.org/newsline/-/3232][‘The Future of Fusion Energy’]]
+(assuming you haven't already, or are specialist). This will give you
+a better understanding of why fusion is necessary, what are the
+challenges to achieving it, how far we have come, and how far it could
+take us. If you are not excited about fusion energy (yet), well, will
+you give it a try?  I promise it's worth it.
+
+‘The Future of Fusion Energy’ sums up the case for fusion energy in an
+educated layman's terms — there's neither handwaving nor too
+complicated physics (there's some optional content with more complex
+formulas, but nothing that prevents you from understanding the main
+points).
+
+The book goes beyond mere physics and engineering, though, delving
+into energy (and environmental) policy and nuclear proliferation. It
+argues it's impossible for us to depend solely on renewable energy
+sources for our energy needs. Some of this argument depends on making
+assumptions about the efficiency of batteries and other technologies,
+but there's quite a bit of physical /reasons/ as to why we can never
+get all of our energy needs from wave or geothermal or biofuel
+energy. (Solar and wind wouldn't be physically impossible, probably
+only economically and politically impossible.)
+
+So we need another energy source, and the best we have is not good
+enough. Fusion energy has all the benefits of fossil fuels (it's
+efficient, can be produced anywhere, can adapt to fluctuating demand)
+and none of the downsides (pollution that poisons the air we breathe
+and the water we drink, carbon release that destabilizes the
+climate). Its advantages are similar to that of nuclear fission (lots
+of energy produced with very little fuel and space used), with way
+less disadvantages like radioactive waste (it does produce some, but
+in less quantity and it's more manageable due to it having a way
+half-life) and the preoccupation of nuclear proliferation (it doesn't
+affect the likelihood of nuclear proliferation in a world with fission
+reactors, and makes it extremely unlikely in a world with no nuclear
+fission use).
+
+This sounds too good to be true, but the only gotcha is that achieving
+a fusion power plant is hard and will take a lot more investment than
+we currently provide for it. The authors make a good case that fusion
+research advanced very rapidly while it had significant investment
+(during the cold war and oil crises), and that it should enjoy the
+same advancement if we were to invest more in it again. Even with the
+mediocre investment we give it today, we have exciting prospects, but
+we shouldn't be contented with that, we should strive for more.
+
+We need fusion /for yesterday/. It would make our energy transition
+painless, our cities less noisy and with clean air, our electricity
+bills lower, and did I also mention that it might make space travel
+way faster? If you have any reservation, give the book a read, it's
+probably discussed there!
+
+/Thanks to [[https://martin.kleppmann.com/2022/01/03/future-of-fusion-energy.html][Martin Kleppmann]] for the book tip./
