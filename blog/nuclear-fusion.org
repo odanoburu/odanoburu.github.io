@@ -14,9 +14,8 @@ you give it a try?  I promise it's worth it.
 
 ‘The Future of Fusion Energy’ sums up the case for fusion energy in an
 educated layman's terms — there's neither handwaving nor too
-complicated physics (there's some optional content with more complex
-formulas, but nothing that prevents you from understanding the main
-points).
+complicated physics. Anything that's remotely complicated goes into
+optional sections that do not detract from the users understanding.
 
 The book goes beyond mere physics and engineering, though, delving
 into energy (and environmental) policy and nuclear proliferation. It
@@ -29,32 +28,35 @@ energy. (Solar and wind wouldn't be physically impossible, probably
 only economically and politically impossible.)
 
 So we need another energy source, and the best we have is not good
-enough. Fusion energy has all the benefits of fossil fuels (it's
-efficient, can be produced anywhere, can adapt to fluctuating demand)
-and none of the downsides (pollution that poisons the air we breathe
-and the water we drink, carbon release that destabilizes the
-climate). Its advantages are similar to that of nuclear fission (lots
-of energy produced with very little fuel and space used), with way
-less disadvantages like radioactive waste (it does produce some, but
-in less quantity and it's more manageable due to it having a way
-half-life) and the preoccupation of nuclear proliferation (it doesn't
-affect the likelihood of nuclear proliferation in a world with fission
-reactors, and makes it extremely unlikely in a world with no nuclear
-fission use).
+enough. Fusion energy has all the benefits of fossil fuels: it's
+efficient, can be produced anywhere, and can adapt to fluctuating
+demand. Even better, fusion has none of their downsides, be it
+pollution that poisons the air we breathe and the water we drink or
+carbon release that destabilizes the climate. Its advantages are
+similar to that of nuclear fission, with lots of energy produced with
+very little fuel and space used. Compared to fission, however, fusion
+produces less radioactive waste, both in quantity, in radioactivity,
+and in a lower half-life. Fusion also has very small nuclear
+proliferation preoccupations: in a world with fission energy use no
+one would opt to use fusion to obtain nuclear materials for a weapon
+(fission would make the task much easier), and in a world without
+fission this kind of misuse of a fusion reactor could be easily
+detected by the [[https://en.wikipedia.org/wiki/International_Atomic_Energy_Agency][IAEA]] or other organs.
 
-This sounds too good to be true, but the only gotcha is that achieving
-a fusion power plant is hard and will take a lot more investment than
-we currently provide for it. The authors make a good case that fusion
-research advanced very rapidly while it had significant investment
-(during the cold war and oil crises), and that it should enjoy the
-same advancement if we were to invest more in it again. Even with the
-mediocre investment we give it today, we have exciting prospects, but
-we shouldn't be contented with that, we should strive for more.
+Fusion energy might sound too good to be true, but the only gotcha is
+that achieving a fusion power plant is hard and will take a lot more
+investment than we currently provide for it. The authors make a good
+case that fusion research advanced very rapidly while it had
+significant investment (during the cold war and oil crises), and that
+it should enjoy the same advancement if we were to invest more in it
+again. Even with the mediocre investment we give it today, we have
+exciting prospects. We shouldn't be contented with that, however: we
+should strive for more.
 
 We need fusion /for yesterday/. It would make our energy transition
 painless, our cities less noisy and with clean air, our electricity
 bills lower, and did I also mention that it might make space travel
-way faster? If you have any reservation, give the book a read, it's
-probably discussed there!
+way faster? If you have any reservations, give the book a read, they
+are probably discussed there!
 
 /Thanks to [[https://martin.kleppmann.com/2022/01/03/future-of-fusion-energy.html][Martin Kleppmann]] for the book tip./
