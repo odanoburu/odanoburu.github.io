@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2022-05-04 -->
+<!-- 2022-05-10 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Benchmarking Logica</title>
@@ -39,9 +39,9 @@ Logica, which helps evaluate how complete Logica&rsquo;s translation to SQL
 is, and if using it entails any sort of penalty, performance-wise.
 </p>
 
-<section id="outline-container-orge0b0814" class="outline-2">
-<h2 id="orge0b0814">TPC</h2>
-<div class="outline-text-2" id="text-orge0b0814">
+<section id="outline-container-org522e5f3" class="outline-2">
+<h2 id="org522e5f3">TPC</h2>
+<div class="outline-text-2" id="text-org522e5f3">
 <p>
 *Disclaimer: the benchmark we describe in this document is derived
 from a TPC benchmark, but is by no means a TPC benchmark, for
@@ -57,7 +57,7 @@ query:
 </p>
 
 <div class="org-src-container">
-<label class="org-src-name"><span class="listing-number">Listing 1: </span>SQL code for TPC-H query #6 (SQLite flavour)</label><pre class="src src-sql" id="org1764fc1"><span style="font-weight: bold;">SELECT</span> <span style="font-weight: bold;">sum</span>(l_extendedprice*l_discount) <span style="font-weight: bold;">AS</span> revenue
+<label class="org-src-name"><span class="listing-number">Listing 1: </span>SQL code for TPC-H query #6 (SQLite flavour)</label><pre class="src src-sql" id="orgb4325c0"><span style="font-weight: bold;">SELECT</span> <span style="font-weight: bold;">sum</span>(l_extendedprice*l_discount) <span style="font-weight: bold;">AS</span> revenue
 <span style="font-weight: bold;">FROM</span> lineitem
 <span style="font-weight: bold;">WHERE</span> l_shipdate &gt;= <span style="font-weight: bold; text-decoration: underline;">date</span>(<span style="font-style: italic;">'1994-01-01'</span>)
 <span style="font-weight: bold;">AND</span> l_shipdate &lt; <span style="font-weight: bold; text-decoration: underline;">date</span>(<span style="font-style: italic;">'1994-01-01'</span>, <span style="font-style: italic;">'+1 year'</span>)
@@ -89,15 +89,15 @@ workloads.
 </div>
 </section>
 
-<section id="outline-container-org7ce53f7" class="outline-2">
-<h2 id="org7ce53f7">Logica</h2>
-<div class="outline-text-2" id="text-org7ce53f7">
+<section id="outline-container-orgd77de77" class="outline-2">
+<h2 id="orgd77de77">Logica</h2>
+<div class="outline-text-2" id="text-orgd77de77">
 <p>
 <a href="https://github.com/EvgSkv/logica">Logica</a> is logic programming language that compiles to SQL (you may
 specify a flavour of SQL, but the default is Google&rsquo;s BigQuery). It
 is implemented in Python, and has no dependencies beyond Python&rsquo;s
 standard library. To get a feeling for the language, you can see
-below the translation of the SQL query <a href="#org1764fc1">above</a>:
+below the translation of the SQL query <a href="#orgb4325c0">above</a>:
 </p>
 
 <div class="org-src-container">
@@ -113,7 +113,7 @@ below the translation of the SQL query <a href="#org1764fc1">above</a>:
 </div>
 
 <p>
-(This Logica code generates the same code as the <a href="#org1764fc1">original SQL query</a>,
+(This Logica code generates the same code as the <a href="#orgb4325c0">original SQL query</a>,
 modulo some extraneous parentheses and explicit table references.)
 </p>
 
@@ -133,9 +133,9 @@ its <a href="https://colab.research.google.com/github/EvgSkv/logica/blob/main/tu
 </div>
 </section>
 
-<section id="outline-container-orgaa71bf1" class="outline-2">
-<h2 id="orgaa71bf1">The benchmark</h2>
-<div class="outline-text-2" id="text-orgaa71bf1">
+<section id="outline-container-orgf291aee" class="outline-2">
+<h2 id="orgf291aee">The benchmark</h2>
+<div class="outline-text-2" id="text-orgf291aee">
 <p>
 It goes without saying that because Logica compiles to SQL, it can
 at most match the performance of an equivalent SQL query. If we
@@ -202,9 +202,9 @@ which we deem to be negligible.
 </div>
 </section>
 
-<section id="outline-container-orga5f9e12" class="outline-2">
-<h2 id="orga5f9e12">Results</h2>
-<div class="outline-text-2" id="text-orga5f9e12">
+<section id="outline-container-org6201af0" class="outline-2">
+<h2 id="org6201af0">Results</h2>
+<div class="outline-text-2" id="text-org6201af0">
 <p>
 Out of the 22 queries of the TPC-H, three were too slow for us to
 run in our hardware (queries #17, #20, and #22). Of the remaining
@@ -216,7 +216,7 @@ ratio between the Logica-generated SQL and the original TPC-H query;
 results are below.
 </p>
 
-<table id="orgadaf657">
+<table id="orgb39280f">
 <caption class="t-above"><span class="table-number">Table 1:</span> Ratio between the execution times of the Logica-generated and the original SQL queries</caption>
 
 <colgroup>
@@ -299,7 +299,7 @@ may be able to write queries that match their original versions. In
 this way, even queries #4 and #16 (which are the only ones
 dramatically slower in their Logica versions) may have their results
 improved. As for the queries that run faster in their Logica
-versions, do remember the opening remarks of section <a href="#orgaa71bf1">The benchmark</a>; in addition, the original TPC-derived queries may still
+versions, do remember the opening remarks of section <a href="#orgf291aee">The benchmark</a>; in addition, the original TPC-derived queries may still
 be faster in other hardware or using other DBMSs.
 </p>
 
@@ -317,9 +317,9 @@ it, check out this <a href="https://github.com/odanoburu/logica-tpc">repository<
 </div>
 </section>
 
-<section id="outline-container-org6dac027" class="outline-2">
-<h2 id="org6dac027">Future work</h2>
-<div class="outline-text-2" id="text-org6dac027">
+<section id="outline-container-org34117a5" class="outline-2">
+<h2 id="org34117a5">Future work</h2>
+<div class="outline-text-2" id="text-org34117a5">
 <p>
 The experimental benchmark we have described here suggests several
 improvements and future lines of work. An obvious first is improving

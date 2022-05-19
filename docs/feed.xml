@@ -5,8 +5,24 @@
     <link>https://odanoburu.github.io/</link>
     <atom:link href="https://odanoburu.github.io/feed.xml" ref="self" type="application/rss+xml"/>
     <description>https://odanoburu.github.io/about.html</description>
-    <lastBuildDate>Wed, 04 May 2022 21:34:42 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 19 May 2022 19:29:40 GMT</lastBuildDate>
     <docs>https://www.rssboard.org/rss-specification</docs>
+    <item>
+      <title>Fusion</title>
+      <description>Why you should read ‘The Future of Fusion Energy’, by Jason Parisi &amp; Justin Ball.</description>
+      <category domain="https://www.rfc-editor.org/info/bcp47">en</category>
+      <pubDate>Wed, 18 May 2022 00:00:00 GMT</pubDate>
+      <link>https://odanoburu.github.io/blog/nuclear-fusion.html</link>
+      <guid isPermaLink="true">https://odanoburu.github.io/blog/nuclear-fusion.html</guid>
+    </item>
+    <item>
+      <title>On hope</title>
+      <description></description>
+      <category domain="https://www.rfc-editor.org/info/bcp47">en</category>
+      <pubDate>Tue, 10 May 2022 00:00:00 GMT</pubDate>
+      <link>https://odanoburu.github.io/blog/on-hope.html</link>
+      <guid isPermaLink="true">https://odanoburu.github.io/blog/on-hope.html</guid>
+    </item>
     <item>
       <title>#StreetArt</title>
       <description>The dichotomy surrounding graffiti in Brazil (and elsewhere?)</description>
