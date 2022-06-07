@@ -15,7 +15,7 @@ deploy: website public
 # NOTE: github pages only deploys to root or docs/
 	rsync --archive public/ docs # NOTE: the slash in public/ matters!
 	git add docs
-	-git commit -m "deploy"
+	-git commit -m "Automated commit (this branch is for build artifacts only)"
 # NOTE: Emacs `compile` won't work if the password is not cached (no
 # interactive input allowed)
 	git push --force origin to-deploy:gh-pages
