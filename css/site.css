@@ -200,3 +200,10 @@ a.no-decoration {
 .section-separator::before {
     content: "***";
 }
+
+ul.org-ul > li:first-child {
+    margin-top: 2.5em;
+}
+ul.org-ul > li {
+    margin-top: 1.5em;
+}

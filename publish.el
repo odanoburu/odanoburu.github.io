@@ -164,6 +164,32 @@
 		     (docs () "https://www.rssboard.org/rss-specification")
 		     ,@entry-rss))))))
 
+(push (cons "publication" "(eval (bruno-website-publication-to-html $1))")
+      org-export-global-macros)
+(defvar bruno-website-publications-url "https://www.inf.puc-rio.br/~bclaro/publications/"
+  ;; transfer files there with lftp
+  "URL where the publication files are stored.")
+(defun bruno-website-publication-to-html (key)
+  "KEY must be the file name (without extension) of the .pdf and
+the .bib pertaining to the publication in question.
+
+Ideally it should be the the key of the bibtex entry too, and
+should follow the schema
+ {first author surname}{year}-{meaningful but short title}-{venue}"
+  (format "@@html:%s@@"
+	  (replace-regexp-in-string "\n" " "
+				    (with-xml
+				     `(span ((class . "publication-links"))
+					    (a ((href . ,(concat bruno-website-publications-url key ".bib"))
+						(target . "_blank")
+						(type . "text/plain"))
+					       ".bib")
+					    (a ((href . ,(concat bruno-website-publications-url key ".pdf"))
+						(target . "_blank")
+						(type . "application/pdf"))
+					       ".pdf")))
+				    t t)))
+
 (setq org-publish-project-alist
       (list
        (list "org"
@@ -220,8 +246,8 @@
 	     ;; has its corresponding rss entry stored in the cache
 	     ;; (so we just generate it once) and this function then
 	     ;; collects them and publishes the RSS
-	     ;;; TODO: check if the file actually changed (with
-	     ;;; hashes) and if not, skip writing to disk
+;;; TODO: check if the file actually changed (with
+;;; hashes) and if not, skip writing to disk
 	     :completion-function (lambda (proj)
 				    (let ((entries-rss))
 				      (map-do (lambda (k v)
