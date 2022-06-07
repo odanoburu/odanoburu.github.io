@@ -1,0 +1,23 @@
+<svg version="1.1"
+     viewBox="0 0 120 120"
+     xmlns="http://www.w3.org/2000/svg">
+  <style>
+    circle.hidden {
+      visibility: hidden;
+    }
+  </style>
+  <g id="game-of-life" transform="scale(10)" stroke-width="0.1">
+    <path id="inside-vertical" d="M 2 0 V 6 M 4 0 V 6" fill="none" stroke="black"/>
+    <path id="inside-horizontal" d="M 0 2 H 6 M 0 4 H 6" fill="none" stroke="black"/>
+
+    <circle class="cell" id="game-of-life-1-1" cx="1" cy="1" r="0.7" fill="black"/>
+    <circle class="cell" id="game-of-life-2-1" cx="3" cy="1" r="0.7" fill="black"/>
+    <circle class="cell" id="game-of-life-3-1" cx="5" cy="1" r="0.7" fill="black"/>
+    <circle class="cell" id="game-of-life-1-2" cx="1" cy="3" r="0.7" fill="black"/>
+    <circle class="cell" id="game-of-life-2-2" cx="3" cy="3" r="0.7" fill="black"/>
+    <circle class="cell" id="game-of-life-3-2" cx="5" cy="3" r="0.7" fill="black"/>
+    <circle class="cell" id="game-of-life-1-3" cx="1" cy="5" r="0.7" fill="black"/>
+    <circle class="cell" id="game-of-life-2-3" cx="3" cy="5" r="0.7" fill="black"/>
+    <circle class="cell" id="game-of-life-3-3" cx="5" cy="5" r="0.7" fill="black"/>
+  </g>
+</svg>
