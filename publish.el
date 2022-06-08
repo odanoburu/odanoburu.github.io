@@ -34,9 +34,12 @@
 		(data . "/static/rss.svg"))
 	       "RSS icon"))))
 
+(defun bruno-website-with-begin-export-html (str)
+  (format "\n#+BEGIN_EXPORT html\n%s\n#+END_EXPORT" str))
+
 (push (cons "rss-icon-link" (format "@@html:%s@@" bruno-website-rss-feed-link))
       org-export-global-macros)
-(push (cons "section-separator" "\n#+BEGIN_EXPORT html\n<span class=\"section-separator\"></span>\n#+END_EXPORT")
+(push (cons "section-separator" (bruno-website-with-begin-export-html (with-xml '(span ((class . "section-separator")) ""))))
       org-export-global-macros)
 
 ;; Customize the HTML output
@@ -204,27 +207,13 @@ should follow the schema
 	     :with-creator bruno-website-with-creator
 	     :time-stamp-file nil
 	     :html-head bruno-website-html-head
+	     :html-preamble bruno-website-html-preamble
 	     :html-postamble bruno-website-html-postamble
 	     :completion-function (lambda (ps)
 				    (let* ((robots-file (concat (plist-get ps :base-directory) "robots.txt"))
 					   (publish-dir (plist-get ps :publishing-directory))
 					   (root-robots-file (concat publish-dir "robots.txt")))
 				      (copy-file robots-file root-robots-file t))))
-
-       (list "pages"
-	     :exclude "publications.org"
-	     :base-directory (concat bruno-website-base-dir "page/")
-	     :base-extension "org$"
-	     :publishing-directory (concat bruno-website-publish-dir "page/")
-	     :publishing-function #'org-html-publish-to-html
-	     :section-numbers nil
-	     :with-toc nil
-	     :recursive t
-	     :with-author nil ;; Don't include author name
-	     :with-creator bruno-website-with-creator
-	     :html-head bruno-website-html-head
-	     :html-preamble bruno-website-html-preamble
-	     :html-postamble bruno-website-html-postamble)
 
        (list "blog"
 	     :base-directory (concat bruno-website-base-dir "blog/")
@@ -291,7 +280,7 @@ should follow the schema
 	     :publishing-function #'org-publish-attachment)
 
        (list "website"
-	     :components '("org" "pages" "blog" "images" "js" "css" "fonts"))))
+	     :components '("org" "blog" "images" "js" "css" "fonts"))))
 
 
 (provide 'publish)
