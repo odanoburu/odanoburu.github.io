@@ -11,5 +11,5 @@ This is *Bruno Cuconato*'s personal website. If you are looking for my
 research page, [[./research.org][here it is]].
 
 You can browse my [[./blog][personal blog]] {{{rss-icon-link}}}. Or you can read
-more [[./page/about.html][about me]]. If you are interested in programming, you may want to
+more [[./about.org][about me]]. If you are interested in programming, you may want to
 take a look at my [[https://github.com/odanoburu/][GitHub]] and [[https://gitlab.com/odanoburu/][GitLab]] pages.

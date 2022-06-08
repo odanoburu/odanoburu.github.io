@@ -7,7 +7,7 @@ at the computer science department at [[https://en.wikipedia.org/wiki/Pontifical
 of my free time reading, hiking, and learning Japanese.
 
 If you ever thought of visiting my hometown (Rio), you may find this
-[[./visit-rio.html][guide]] useful.
+[[./visit-rio.org][guide]] useful.
 
 ** Contact
 Feel free to contact me by email at =(first letter of my

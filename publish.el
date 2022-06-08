@@ -78,8 +78,8 @@
 	 (ul ((id . "navlinks") (class . "horizontal-list"))
 	     (li () (a ((href . "/")) "Home"))
 	     (li () (a ((href . "/blog/index.html")) "Blog"))
-	     ;; (li () (a ((href . "/page/publications.html")) "Publications"))
-	     (li () (a ((href . "/page/about.html")) "About"))))))
+	     ;; (li () (a ((href . "/research.html")) "Research"))
+	     (li () (a ((href . "/about.html")) "About"))))))
 
 (defvar bruno-website-html-postamble "")
 
