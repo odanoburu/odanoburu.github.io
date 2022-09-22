@@ -28,42 +28,42 @@ You can find my contact information in any of the papers below.
    :END:
 
   - /Bruno Cuconato/, Jefferson de Barros Santos, Edward Hermann
-    Haeusler. *A logical framework with a graph
-    meta-language*. LFMTP 2021. (presentation-only)
+    Haeusler. *A graph logical framework* (EBL XX 2022, presentation-only)
+  - /Bruno Cuconato/, Jefferson de Barros Santos, Edward Hermann
+    Haeusler. *A logical framework with a graph meta-language* (LFMTP
+    2021, presentation-only)
     {{{publication(cuconato2021-logical-framework-lfmtp)}}}
   - /Bruno Cuconato Claro/. *A computational grammar for
     Portuguese*. MSc Thesis at EMAp/FGV, advised by Alexandre
-    Rademaker.
+    Rademaker (2019)
     {{{publication(cuconato2019-computational-grammar-fgv)}}}
   - Alexandre Rademaker, /Bruno Cuconato/, Alessandra Cid, Alexandre
     Tessarollo, Henrique Muniz. *Completing the Princeton Annotated
-    Gloss Corpus Project*. GWC 2019.
+    Gloss Corpus Project* (GWC 2019)
     {{{publication(rademaker2019-glosstag-gwc)}}}
   - Leonel Figueiredo de Alencar, /Bruno Cuconato/, Alexandre
     Rademaker. *MorphoBR: An Open Source Large-Coverage Full-Form
-    Lexicon for Morphological Analysis of Portuguese*. Texto
-    Livre 2018.
-    {{{publication(alencar2018-morphobr-textolivre)}}}
+    Lexicon for Morphological Analysis of Portuguese* (Texto
+    Livre 2018) {{{publication(alencar2018-morphobr-textolivre)}}}
   - /Bruno Cuconato/, Alexandre Rademaker. *A computational grammar
-    for Portuguese*. PROPOR 2018 (demo)
+    for Portuguese* (PROPOR 2018, demo)
     {{{publication(cuconato2018-grammar-propor)}}}
   - Alexandre Rademaker, Fabricio Chalub, /Bruno Cuconato/, Henrique
     Muniz, Guilherme Passos. *CL-CONLLU Universal Dependencies in
-    Common Lisp*. PROPOR 2018 (demo)
+    Common Lisp*. (PROPOR 2018, demo)
     {{{publication(rademaker2018-conllu-propor)}}}
   - Suemi Higuchi, Cláudia Freitas, /Bruno Cuconato/ and Alexandre
     Rademaker. *Text Mining for History: first steps on building a
-    large dataset*. LREC 2018.
+    large dataset* (LREC 2018)
     {{{publication(higuchi2018-dhbb-lrec)}}}
   - Alessandra Cid, Alexandre Rademaker, /Bruno Cuconato/, Valeria de
-    Paiva. *Linguistic Legal Concept Extraction in
-    Portuguese*. JURIX 2018.
-    {{{publication(cid2018-legal-concept-jurix)}}}
+    Paiva. *Linguistic Legal Concept Extraction in Portuguese*
+    (JURIX 2018) {{{publication(cid2018-legal-concept-jurix)}}}
   - Pedro Delfino, /Bruno Cuconato/, Guilherme Paulino Passos, Gerson
     Zaverucha, Alexandre Rademaker. *Using OpenWordnet-PT for Question
-    Answering on Legal Domain/* GWC 2018.
+    Answering on Legal Domain/* (GWC 2018)
     {{{publication(delfino2018-oab-gwc)}}}
   - Pedro Delfino, /Bruno Cuconato/, Edward Hermann Haeusler,
     Alexandre Rademaker. *Passing the Brazilian OAB Exam: Data
-    Preparation and Some Experiments*. JURIX 2017.
+    Preparation and Some Experiments* (JURIX 2017)
     {{{publication(delfino2017-oab-jurix)}}}
