@@ -103,7 +103,7 @@
 	    (data-date . ,(format-time-string "%Y-%m-%d" (org-publish-find-date entry project)))
 	    (lang . ,(or entry-lang ""))
 	    (data-keyword . ,(if entry-lang
-				 (concat entry-keywords " lang:" entry-lang)
+				 (concat entry-keywords " lang-" entry-lang)
 			       entry-keywords)))
 	   (dt ()
 	       (a ((href . ,(concat (file-name-sans-extension entry) ".html")))
