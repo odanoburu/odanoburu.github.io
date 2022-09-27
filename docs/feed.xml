@@ -5,8 +5,16 @@
     <link>https://odanoburu.github.io/</link>
     <atom:link href="https://odanoburu.github.io/feed.xml" ref="self" type="application/rss+xml"/>
     <description>https://odanoburu.github.io/about.html</description>
-    <lastBuildDate>Tue, 07 Jun 2022 19:57:37 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 27 Sep 2022 20:04:22 GMT</lastBuildDate>
     <docs>https://www.rssboard.org/rss-specification</docs>
+    <item>
+      <title>Things I&apos;d like to see</title>
+      <description>My bucket list, in a blog post.</description>
+      <category domain="https://www.rfc-editor.org/info/bcp47">en</category>
+      <pubDate>Tue, 27 Sep 2022 00:00:00 GMT</pubDate>
+      <link>https://odanoburu.github.io/blog/things-id-like-to-see.html</link>
+      <guid isPermaLink="true">https://odanoburu.github.io/blog/things-id-like-to-see.html</guid>
+    </item>
     <item>
       <title>#StreetArt</title>
       <description>The dichotomy surrounding graffiti in Brazil (and elsewhere?)</description>
