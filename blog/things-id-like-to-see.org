@@ -1,0 +1,62 @@
+#+TITLE: Things I'd like to see
+#+DATE: <2022-09-27 Tue>
+#+DESCRIPTION: My bucket list, in a blog post.
+#+KEYWORDS: personal draft
+#+LANGUAGE: en
+
+This is a non-exhaustive list of the things I'd like to see in my
+lifetime, in no particular order.
+
+** Clean rivers
+
+By which I mean unpolluted waters, not potable nor crystal-clear
+waters (most rivers have way too much sediment for those). Depending
+on where you live, you might (already, or still) be able to swim and
+fish on a close-by river; I simply would like to see a future where
+virtually all rivers are like this.
+
+Of course I also wish for a generally clean environment: clean air,
+clean oceans, etc. We don't have to sacrifice material comfort for
+this --- technology enabling this reality exists or will come into
+existence as long we make it a priority (i.e., invest in it).
+
+** Betelgeuse going supernova
+
+[[https://en.wikipedia.org/wiki/Betelgeuse][Betelgeuse]] is one of the brightest stars in the night sky, and is due
+to go supernova (explode) shortly --- sometime in the next 100000
+years or so. While it's extremely unlikely it will happen before you
+or I die, it would be super cool to see, since it would be visible
+even during daytime, and at night it should be very bright (less
+bright than the moon but comparably so).
+
+** The end of the ‘economic problem’
+
+The term ‘economic problem’ is used by Keynes in his [[http://www.econ.yale.edu/smith/econ116a/keynes1.pdf][essay]] ‘The
+economic possibilities of our children’, which I heartly
+recommend. The essay does show its age at times, but the idea is that
+rapid increases in productivity (enabled by technology) would allow
+humans to work much less for higher standards of living than ever
+before.
+
+An important matter is whether this will turn most of us into
+lethargic people dependent on government handouts (as in /The Expanse/
+science fiction [[https://en.wikipedia.org/wiki/The_Expanse_(novel_series)][series]]) or into freer beings who can than enjoy life
+more fully (which for some people still includes working a lot) as in
+the /Terra Ignota/ [[https://en.wikipedia.org/wiki/Terra_Ignota][series]]. Because I think it's unlikely to happen,
+I'm excluding the outcome commonly shown in cyberpunk-esque science
+fiction, which is that this increase in productivity gets almost
+completely captured by an elite and the rest of humanity actually
+lives much worse than we do now (but with shinier dystopic-/er/
+technology than the one we have today).
+
+** Finding extra-terrestrial life
+
+No, not aliens. I mean, /technically/ aliens, but I'm thinking more
+towards finding conclusive evidence of past microbial life on Mars (as
+[[https://en.wikipedia.org/wiki/Perseverance_(rover)][Percy]] is trying to do on Mars), or somewhere else in the solar system
+(e.g., on [[https://en.wikipedia.org/wiki/Europa_(moon)][Europa]]). It's likely we won't be able to ascertain anything
+about life farther than that anytime soon, so I'm hoping for us to
+find other life here in the neighbourhood.
+
+Or else it's just too lonely out there… I mean, not really, but it
+would very interesting to see a whole other biology, wouldn't it?
