@@ -89,13 +89,13 @@ seamlessly to another one. this is precisely how customers should
 behave. if a service offers you no way out of it, you should search
 for better alternatives.
 
---------------
+{{{section-separator}}}
 
 if you support this idea, or if you have any comments, let's talk! if
 you have a catchy/marketable name for this kind of company, please
 tell me, so that we can spread the word.
 
---------------
+{{{section-separator}}}
 
 ** faq
 
