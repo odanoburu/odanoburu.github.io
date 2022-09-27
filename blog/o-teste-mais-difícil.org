@@ -96,14 +96,20 @@ trabalho duro para desenvolver esses robôs, e que o resultado é esse:
   post things on them. I just datamine them.
 #+END_QUOTE
 
---------------
+{{{section-separator}}}
 
 ps: eu selecionei as transcrições dos robôs que fizeram os melhores
 testes (embora não tenha selecionado as questões em que eles mandaram
 bem).
 
---------------
+{{{section-separator}}}
 
 mais sobre o teste de Turing [[http://plato.stanford.edu/entries/turing-test/][aqui]]. mais sobre o prêmio Loebner
 [[http://www.loebner.net/Prizef/loebner-prize.html][aqui]]. sobre o prêmio desse ano, e as transcrições dos testes dos anos
 anteriores (de onde eu tirei as questões e respostas acima) [[http://www.aisb.org.uk/events/loebner-prize][aqui]].
+
+{{{section-separator}}}
+
+*Atualização em 2022-09-27*: O prêmio Loebner não existe mais, e o
+site parece estar fora do ar. Ainda é possível acessar os links pelo
+[[https://web.archive.org/web/20161126013112/http://www.aisb.org.uk/events/loebner-prize][internet archive]].
