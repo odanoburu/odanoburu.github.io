@@ -98,18 +98,20 @@
 (defun bruno-website-format-blog-entry (entry style project)
   (let ((entry-lang (org-publish-find-property entry :language project))
 	(entry-keywords (or (org-publish-find-property entry :keywords project 'html) "")))
-    (with-xml
-     `(div ((class . "post")
-	    (data-date . ,(format-time-string "%Y-%m-%d" (org-publish-find-date entry project)))
-	    (lang . ,(or entry-lang ""))
-	    (data-keyword . ,(if entry-lang
-				 (concat entry-keywords " lang-" entry-lang)
-			       entry-keywords)))
-	   (dt ()
-	       (a ((href . ,(concat (file-name-sans-extension entry) ".html")))
-		  ,(org-publish-find-title entry project)))
-	   (dd ()
-	       ,(or (bruno-website-org-publish-find-description entry project) ""))))))
+    (if (member "draft" (split-string entry-keywords " " t))
+	"" 				; hide it
+      (with-xml
+       `(div ((class . "post")
+	      (data-date . ,(format-time-string "%Y-%m-%d" (org-publish-find-date entry project)))
+	      (lang . ,(or entry-lang ""))
+	      (data-keyword . ,(if entry-lang
+				   (concat entry-keywords " lang-" entry-lang)
+				 entry-keywords)))
+	     (dt ()
+		 (a ((href . ,(concat (file-name-sans-extension entry) ".html")))
+		    ,(org-publish-find-title entry project)))
+	     (dd ()
+		 ,(or (bruno-website-org-publish-find-description entry project) "")))))))
 
 (defun bruno-website-sitemap (title files)
   (let ((file-contents (cl-mapcar #'car (cdr files))))
