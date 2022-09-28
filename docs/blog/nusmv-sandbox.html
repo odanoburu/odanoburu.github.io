@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2022-09-27 -->
+<!-- 2022-09-28 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>A poor man's introduction to model checking of finite state synchronous systems with NuSMV</title>
@@ -37,9 +37,9 @@ specification. the specification is given in a DSL, and the check is
 done over a query written in a temporal logic (CTL or LTL).
 </p>
 
-<section id="outline-container-org066ff1a" class="outline-2">
-<h2 id="org066ff1a">a (very) simple specification</h2>
-<div class="outline-text-2" id="text-org066ff1a">
+<section id="outline-container-org4b2e9bc" class="outline-2">
+<h2 id="org4b2e9bc">a (very) simple specification</h2>
+<div class="outline-text-2" id="text-org4b2e9bc">
 <p>
 in the spirit of the ongoing world cup, we&rsquo;ll model a <a href="https://en.wikipedia.org/wiki/Goal-line_technology">goal-line
 system</a>. (this is the system used in some football matches to determine
@@ -54,16 +54,16 @@ described by the following finite state machine:
 </p>
 
 
-<figure id="orgd707151">
+<figure id="orgca6bd62">
 <img src="../static/goal-line.png" alt="goal-line.png">
 
 <figcaption><span class="figure-number">Figure 1: </span>a finite state machine describing a goal-line system</figcaption>
 </figure>
 </div>
 
-<div id="outline-container-org5ee9330" class="outline-3">
-<h3 id="org5ee9330">goal-line model</h3>
-<div class="outline-text-3" id="text-org5ee9330">
+<div id="outline-container-orgd88049c" class="outline-3">
+<h3 id="orgd88049c">goal-line model</h3>
+<div class="outline-text-3" id="text-orgd88049c">
 <p>
 first thing we do is declare our variables. these are straight
 forward: we need to keep track of where the ball is, and in which
@@ -158,9 +158,9 @@ you can also call <code>help</code> for help.
 </div>
 </div>
 
-<div id="outline-container-orge42c55b" class="outline-3">
-<h3 id="orge42c55b">checks</h3>
-<div class="outline-text-3" id="text-orge42c55b">
+<div id="outline-container-orgcb5a1c0" class="outline-3">
+<h3 id="orgcb5a1c0">checks</h3>
+<div class="outline-text-3" id="text-orgcb5a1c0">
 <p>
 NuSMV offers a variety of checks, but we&rsquo;ll be using only two of
 them. you might want to go over CTL if you don&rsquo;t know/remember it (you
@@ -211,9 +211,9 @@ CTLSPEC EG ball = outside &amp; goal-line = idle
 </div>
 </section>
 
-<section id="outline-container-org697a8b9" class="outline-2">
-<h2 id="org697a8b9">a (less) simple specification</h2>
-<div class="outline-text-2" id="text-org697a8b9">
+<section id="outline-container-org3f497fe" class="outline-2">
+<h2 id="org3f497fe">a (less) simple specification</h2>
+<div class="outline-text-2" id="text-org3f497fe">
 <p>
 in this section we&rsquo;ll model the <a href="https://en.wikipedia.org/wiki/River_crossing_puzzle">river crossing puzzle</a> and use NuSMV to
 solve it. the puzzle is about a farmer who needs to cross a river,
@@ -225,9 +225,9 @@ the cabbage.
 </p>
 </div>
 
-<div id="outline-container-orgd0bce10" class="outline-3">
-<h3 id="orgd0bce10">river crossing model</h3>
-<div class="outline-text-3" id="text-orgd0bce10">
+<div id="outline-container-orgf2ad4b7" class="outline-3">
+<h3 id="orgf2ad4b7">river crossing model</h3>
+<div class="outline-text-3" id="text-orgf2ad4b7">
 <p>
 for each state, we need to keep track of where each entity is, and
 what the farmer will do. the former can be modelled as simple
@@ -326,9 +326,9 @@ judge, though).
 </div>
 </div>
 
-<div id="outline-container-org14edddb" class="outline-3">
-<h3 id="org14edddb">query</h3>
-<div class="outline-text-3" id="text-org14edddb">
+<div id="outline-container-org954efe9" class="outline-3">
+<h3 id="org954efe9">query</h3>
+<div class="outline-text-3" id="text-org954efe9">
 <p>
 in the previous section we checked whether a few desirable properties
 we&rsquo;d like to see were true in the model we specified. in the case of
@@ -368,9 +368,9 @@ after having saved all this code in <code>river-crossing.smv</code>.
 </div>
 </section>
 
-<section id="outline-container-org2949e01" class="outline-2">
-<h2 id="org2949e01">considerations</h2>
-<div class="outline-text-2" id="text-org2949e01">
+<section id="outline-container-orgd83bb71" class="outline-2">
+<h2 id="orgd83bb71">considerations</h2>
+<div class="outline-text-2" id="text-orgd83bb71">
 <p>
 model checking is cool and all (c&rsquo;mon, if you&rsquo;re not convinced of
 this, read this tutorial again!), but it is not without its
