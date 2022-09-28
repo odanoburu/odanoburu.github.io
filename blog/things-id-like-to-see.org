@@ -1,7 +1,7 @@
 #+TITLE: Things I'd like to see
 #+DATE: <2022-09-27 Tue>
 #+DESCRIPTION: My bucket list, in a blog post.
-#+KEYWORDS: personal draft
+#+KEYWORDS: personal
 #+LANGUAGE: en
 
 This is a non-exhaustive list of the things I'd like to see in my
