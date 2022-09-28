@@ -141,16 +141,22 @@
 	(description (bruno-website-org-publish-find-description source project))
 	(dest-url (bruno-website-publish-url (concat (file-name-sans-extension (file-name-nondirectory source)) ".html") publish-dir)))
     (when description
-      (org-publish-cache-set-file-property
-       source
-       :rss
-       `(item ()
-	      (title () ,title)
-	      (description () ,description)
-	      ,(if lang `(category ((domain . "https://www.rfc-editor.org/info/bcp47")) ,lang) "")
-	      (pubDate () ,(format-time-string bruno-website-rfc822-time-format-string date))
-	      (link () ,dest-url)
-	      (guid ((isPermaLink . "true")) ,dest-url))))))
+      (unless (member
+	       "draft"
+	       (split-string
+		(or (org-publish-find-property source :keywords project 'html) "")
+		" "
+		t))
+	(org-publish-cache-set-file-property
+	 source
+	 :rss
+	 `(item ()
+		(title () ,title)
+		(description () ,description)
+		,(if lang `(category ((domain . "https://www.rfc-editor.org/info/bcp47")) ,lang) "")
+		(pubDate () ,(format-time-string bruno-website-rfc822-time-format-string date))
+		(link () ,dest-url)
+		(guid ((isPermaLink . "true")) ,dest-url)))))))
 
 (defun bruno-website-rss (entry-rss publish-dir)
   (with-temp-file (concat publish-dir "feed.xml")
