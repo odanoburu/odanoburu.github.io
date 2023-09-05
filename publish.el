@@ -4,7 +4,7 @@
 ;; and Nicolas Petton's setup
 
 ;; run with
-;;; bash publish.sh [t]
+;;; bash make-site.sh [t]
 ;; or
 ;;; emacs --batch --no-init-file --load publish.el --eval '(org-publish-all t)'
 
@@ -14,6 +14,7 @@
 (require 'ox-html)
 (require 'xml)
 
+;; could use shr-dom-to-xml
 (defmacro with-xml (&rest xml)
   ;; NOTE: this is XML export, not HTML, so we have to be careful
   ;; with HTML5-breaking stuff, like self-closing non-void elements

@@ -27,6 +27,14 @@ You can find my contact information in any of the papers below.
    :CUSTOM_ID: publications
    :END:
 
+  - Haeusler, E.H., /Bruno Cuconato/, Luiz A. Glatzl, Maria L.
+    Guateque, Diogo M. Vieira, Elvismary M. de Armas, Fernanda Baião,
+    Marcos Catanho, Antonio B. de Miranda & Sergio Lifschitz.
+    *Intentional Semantics for Molecular Biology* (BSB 2023, full
+    paper). In: Reis, M.S., de Melo-Minardi, R.C. (eds) Advances in
+    Bioinformatics and Computational Biology. BSB 2023. Lecture Notes
+    in Computer Science(), vol 13954. Springer, Cham.
+    https://doi.org/10.1007/978-3-031-42715-2_9
   - /Bruno Cuconato/, Jefferson de Barros Santos, Edward Hermann
     Haeusler. *A graph logical framework* (EBL XX 2022, presentation-only)
   - /Bruno Cuconato/, Jefferson de Barros Santos, Edward Hermann
@@ -61,7 +69,7 @@ You can find my contact information in any of the papers below.
     (JURIX 2018) {{{publication(cid2018-legal-concept-jurix)}}}
   - Pedro Delfino, /Bruno Cuconato/, Guilherme Paulino Passos, Gerson
     Zaverucha, Alexandre Rademaker. *Using OpenWordnet-PT for Question
-    Answering on Legal Domain/* (GWC 2018)
+    Answering on Legal Domain* (GWC 2018)
     {{{publication(delfino2018-oab-gwc)}}}
   - Pedro Delfino, /Bruno Cuconato/, Edward Hermann Haeusler,
     Alexandre Rademaker. *Passing the Brazilian OAB Exam: Data
