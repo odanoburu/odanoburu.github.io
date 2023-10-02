@@ -4,16 +4,17 @@
 <a href="#publications" style="font-style:italic;font-size:0.8em;">[skip to publications]​</a>
 #+end_export
 
-I am currently a PhD student/candidate/researcher at the computer
-science department at [[https://en.wikipedia.org/wiki/Pontifical_Catholic_University_of_Rio_de_Janeiro][PUC-Rio]], under the supervision of [[https://www-di.inf.puc-rio.br/~hermann/][Edward Hermann
-Haeusler]].
+I recently defended my PhD thesis at the computer science department
+at [[https://en.wikipedia.org/wiki/Pontifical_Catholic_University_of_Rio_de_Janeiro][PUC-Rio]], under the supervision of [[https://www-di.inf.puc-rio.br/~hermann/][Edward Hermann Haeusler]]. The text
+of my thesis will be available soon at PUC's [[https://www.dbd.puc-rio.br/][library]] (I will add a
+link to it in this page too).
 
-I mostly work on the Graph Logical Framework, a [[https://en.wikipedia.org/wiki/Logical_framework][logical framework]] with
-a simple meta-language intended to facilitate the implementation and
-use (see the [[https://glf.tecmf.inf.puc-rio.br/][web interface]]) of deductive systems. This is in
-opposition to most logical frameworks (or proof assistants, as they
-like to be called) these days, whose focus lies more in the
-verification of the systems' properties.
+During my PhD I mostly worked on the Labelled Logical Framework, a
+[[https://en.wikipedia.org/wiki/Logical_framework][logical framework]] with a simple meta-language intended to facilitate
+the implementation and use (see the [[https://glf.tecmf.inf.puc-rio.br/][web interface]]) of deductive
+systems. This is in opposition to most logical frameworks (or proof
+assistants, as they like to be called) these days, whose focus lies
+more in the verification of the systems' properties.
 
 Previously I have worked with natural language processing, with a
 focus in developing datasets (under the guidance of [[https://arademaker.github.io/][Alexandre
@@ -33,8 +34,9 @@ You can find my contact information in any of the papers below.
     *Intentional Semantics for Molecular Biology* (BSB 2023, full
     paper). In: Reis, M.S., de Melo-Minardi, R.C. (eds) Advances in
     Bioinformatics and Computational Biology. BSB 2023. Lecture Notes
-    in Computer Science(), vol 13954. Springer, Cham.
+    in Computer Science, vol 13954. Springer, Cham.
     https://doi.org/10.1007/978-3-031-42715-2_9
+    {{{publication(haeusler-intentional-bsb)}}}
   - /Bruno Cuconato/, Jefferson de Barros Santos, Edward Hermann
     Haeusler. *A graph logical framework* (EBL XX 2022, presentation-only)
   - /Bruno Cuconato/, Jefferson de Barros Santos, Edward Hermann
