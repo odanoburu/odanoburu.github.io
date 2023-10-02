@@ -5,8 +5,16 @@
     <link>https://odanoburu.github.io/</link>
     <atom:link href="https://odanoburu.github.io/feed.xml" ref="self" type="application/rss+xml"/>
     <description>https://odanoburu.github.io/about.html</description>
-    <lastBuildDate>Tue, 27 Sep 2022 20:04:22 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 02 Oct 2023 17:33:18 GMT</lastBuildDate>
     <docs>https://www.rssboard.org/rss-specification</docs>
+    <item>
+      <title>Uma introdução ao protocolo bitcoin, em português</title>
+      <description>Bitcoin explicado à leigos, mas em detalhes (e com alguma matemática envolvida).</description>
+      <category domain="https://www.rfc-editor.org/info/bcp47">pt</category>
+      <pubDate>Mon, 20 Feb 2017 00:00:00 GMT</pubDate>
+      <link>https://odanoburu.github.io/blog/uma-introdu%C3%A7%C3%A3o-ao-protocolo-bitcoin-em-portugu%C3%AAs.html</link>
+      <guid isPermaLink="true">https://odanoburu.github.io/blog/uma-introdu%C3%A7%C3%A3o-ao-protocolo-bitcoin-em-portugu%C3%AAs.html</guid>
+    </item>
     <item>
       <title>Things I&apos;d like to see</title>
       <description>My bucket list, in a blog post.</description>
@@ -14,6 +22,70 @@
       <pubDate>Tue, 27 Sep 2022 00:00:00 GMT</pubDate>
       <link>https://odanoburu.github.io/blog/things-id-like-to-see.html</link>
       <guid isPermaLink="true">https://odanoburu.github.io/blog/things-id-like-to-see.html</guid>
+    </item>
+    <item>
+      <title>O teste mais difícil</title>
+      <description>O Teste de Turing e o prêmio Loebner para leigos.</description>
+      <category domain="https://www.rfc-editor.org/info/bcp47">pt</category>
+      <pubDate>Wed, 29 Jun 2016 00:00:00 GMT</pubDate>
+      <link>https://odanoburu.github.io/blog/o-teste-mais-dif%C3%ADcil.html</link>
+      <guid isPermaLink="true">https://odanoburu.github.io/blog/o-teste-mais-dif%C3%ADcil.html</guid>
+    </item>
+    <item>
+      <title>A poor man&apos;s introduction to model checking of finite state synchronous systems with NuSMV</title>
+      <description>An introduction to NuSMV, with examples.</description>
+      <category domain="https://www.rfc-editor.org/info/bcp47">en</category>
+      <pubDate>Fri, 29 Jun 2018 00:00:00 GMT</pubDate>
+      <link>https://odanoburu.github.io/blog/nusmv-sandbox.html</link>
+      <guid isPermaLink="true">https://odanoburu.github.io/blog/nusmv-sandbox.html</guid>
+    </item>
+    <item>
+      <title>Fusion</title>
+      <description>Why you should read ‘The Future of Fusion Energy’, by Jason Parisi &amp; Justin Ball.</description>
+      <category domain="https://www.rfc-editor.org/info/bcp47">en</category>
+      <pubDate>Wed, 18 May 2022 00:00:00 GMT</pubDate>
+      <link>https://odanoburu.github.io/blog/nuclear-fusion.html</link>
+      <guid isPermaLink="true">https://odanoburu.github.io/blog/nuclear-fusion.html</guid>
+    </item>
+    <item>
+      <title>Benchmarking Logica</title>
+      <description>Translating SQL queries to Logica and benchmarking them.</description>
+      <category domain="https://www.rfc-editor.org/info/bcp47">en</category>
+      <pubDate>Tue, 19 Oct 2021 00:00:00 GMT</pubDate>
+      <link>https://odanoburu.github.io/blog/logica-tpc.html</link>
+      <guid isPermaLink="true">https://odanoburu.github.io/blog/logica-tpc.html</guid>
+    </item>
+    <item>
+      <title>Developing grammars with GF</title>
+      <description>Pointers to begin learning Grammatical Framework (GF).</description>
+      <category domain="https://www.rfc-editor.org/info/bcp47">en</category>
+      <pubDate>Sat, 25 May 2019 00:00:00 GMT</pubDate>
+      <link>https://odanoburu.github.io/blog/gf-grammars.html</link>
+      <guid isPermaLink="true">https://odanoburu.github.io/blog/gf-grammars.html</guid>
+    </item>
+    <item>
+      <title>Funes através do espelho (negro)</title>
+      <description>Discutindo Black Mirror (a série) e um conto de Borges.</description>
+      <category domain="https://www.rfc-editor.org/info/bcp47">pt</category>
+      <pubDate>Tue, 10 Mar 2015 00:00:00 GMT</pubDate>
+      <link>https://odanoburu.github.io/blog/funes-atrav%C3%A9s-do-espelho-(negro).html</link>
+      <guid isPermaLink="true">https://odanoburu.github.io/blog/funes-atrav%C3%A9s-do-espelho-(negro).html</guid>
+    </item>
+    <item>
+      <title>Facebook should be more like email</title>
+      <description>do you use facebook because it is the best platform available or just because all your friends are already on it?</description>
+      <category domain="https://www.rfc-editor.org/info/bcp47">en</category>
+      <pubDate>Thu, 22 Jun 2017 00:00:00 GMT</pubDate>
+      <link>https://odanoburu.github.io/blog/facebook-should-be-more-like-email.html</link>
+      <guid isPermaLink="true">https://odanoburu.github.io/blog/facebook-should-be-more-like-email.html</guid>
+    </item>
+    <item>
+      <title>Brasiliana: a carteira de meu tio (1855)</title>
+      <description>O autor de ‘A moreninha’ já escreveu outros livros bem diferentes, este é um deles.</description>
+      <category domain="https://www.rfc-editor.org/info/bcp47">pt</category>
+      <pubDate>Tue, 04 Aug 2015 00:00:00 GMT</pubDate>
+      <link>https://odanoburu.github.io/blog/brasiliana-a-carteira-de-meu-tio-(1855).html</link>
+      <guid isPermaLink="true">https://odanoburu.github.io/blog/brasiliana-a-carteira-de-meu-tio-(1855).html</guid>
     </item>
     <item>
       <title>#StreetArt</title>
@@ -30,78 +102,6 @@
       <pubDate>Fri, 10 Feb 2017 00:00:00 GMT</pubDate>
       <link>https://odanoburu.github.io/blog/borboletas-e-preconceito-no-s%C3%A9culo-xix.html</link>
       <guid isPermaLink="true">https://odanoburu.github.io/blog/borboletas-e-preconceito-no-s%C3%A9culo-xix.html</guid>
-    </item>
-    <item>
-      <title>Brasiliana: a carteira de meu tio (1855)</title>
-      <description>O autor de ‘A moreninha’ já escreveu outros livros bem diferentes, este é um deles.</description>
-      <category domain="https://www.rfc-editor.org/info/bcp47">pt</category>
-      <pubDate>Tue, 04 Aug 2015 00:00:00 GMT</pubDate>
-      <link>https://odanoburu.github.io/blog/brasiliana-a-carteira-de-meu-tio-(1855).html</link>
-      <guid isPermaLink="true">https://odanoburu.github.io/blog/brasiliana-a-carteira-de-meu-tio-(1855).html</guid>
-    </item>
-    <item>
-      <title>Facebook should be more like email</title>
-      <description>do you use facebook because it is the best platform available or just because all your friends are already on it?</description>
-      <category domain="https://www.rfc-editor.org/info/bcp47">en</category>
-      <pubDate>Thu, 22 Jun 2017 00:00:00 GMT</pubDate>
-      <link>https://odanoburu.github.io/blog/facebook-should-be-more-like-email.html</link>
-      <guid isPermaLink="true">https://odanoburu.github.io/blog/facebook-should-be-more-like-email.html</guid>
-    </item>
-    <item>
-      <title>Funes através do espelho (negro)</title>
-      <description>Discutindo Black Mirror (a série) e um conto de Borges.</description>
-      <category domain="https://www.rfc-editor.org/info/bcp47">pt</category>
-      <pubDate>Tue, 10 Mar 2015 00:00:00 GMT</pubDate>
-      <link>https://odanoburu.github.io/blog/funes-atrav%C3%A9s-do-espelho-(negro).html</link>
-      <guid isPermaLink="true">https://odanoburu.github.io/blog/funes-atrav%C3%A9s-do-espelho-(negro).html</guid>
-    </item>
-    <item>
-      <title>Developing grammars with GF</title>
-      <description>Pointers to begin learning Grammatical Framework (GF).</description>
-      <category domain="https://www.rfc-editor.org/info/bcp47">en</category>
-      <pubDate>Sat, 25 May 2019 00:00:00 GMT</pubDate>
-      <link>https://odanoburu.github.io/blog/gf-grammars.html</link>
-      <guid isPermaLink="true">https://odanoburu.github.io/blog/gf-grammars.html</guid>
-    </item>
-    <item>
-      <title>Benchmarking Logica</title>
-      <description>Translating SQL queries to Logica and benchmarking them.</description>
-      <category domain="https://www.rfc-editor.org/info/bcp47">en</category>
-      <pubDate>Tue, 19 Oct 2021 00:00:00 GMT</pubDate>
-      <link>https://odanoburu.github.io/blog/logica-tpc.html</link>
-      <guid isPermaLink="true">https://odanoburu.github.io/blog/logica-tpc.html</guid>
-    </item>
-    <item>
-      <title>Fusion</title>
-      <description>Why you should read ‘The Future of Fusion Energy’, by Jason Parisi &amp; Justin Ball.</description>
-      <category domain="https://www.rfc-editor.org/info/bcp47">en</category>
-      <pubDate>Wed, 18 May 2022 00:00:00 GMT</pubDate>
-      <link>https://odanoburu.github.io/blog/nuclear-fusion.html</link>
-      <guid isPermaLink="true">https://odanoburu.github.io/blog/nuclear-fusion.html</guid>
-    </item>
-    <item>
-      <title>A poor man&apos;s introduction to model checking of finite state synchronous systems with NuSMV</title>
-      <description>An introduction to NuSMV, with examples.</description>
-      <category domain="https://www.rfc-editor.org/info/bcp47">en</category>
-      <pubDate>Fri, 29 Jun 2018 00:00:00 GMT</pubDate>
-      <link>https://odanoburu.github.io/blog/nusmv-sandbox.html</link>
-      <guid isPermaLink="true">https://odanoburu.github.io/blog/nusmv-sandbox.html</guid>
-    </item>
-    <item>
-      <title>O teste mais difícil</title>
-      <description>O Teste de Turing e o prêmio Loebner para leigos.</description>
-      <category domain="https://www.rfc-editor.org/info/bcp47">pt</category>
-      <pubDate>Wed, 29 Jun 2016 00:00:00 GMT</pubDate>
-      <link>https://odanoburu.github.io/blog/o-teste-mais-dif%C3%ADcil.html</link>
-      <guid isPermaLink="true">https://odanoburu.github.io/blog/o-teste-mais-dif%C3%ADcil.html</guid>
-    </item>
-    <item>
-      <title>Uma introdução ao protocolo bitcoin, em português</title>
-      <description>Bitcoin explicado à leigos, mas em detalhes (e com alguma matemática envolvida).</description>
-      <category domain="https://www.rfc-editor.org/info/bcp47">pt</category>
-      <pubDate>Mon, 20 Feb 2017 00:00:00 GMT</pubDate>
-      <link>https://odanoburu.github.io/blog/uma-introdu%C3%A7%C3%A3o-ao-protocolo-bitcoin-em-portugu%C3%AAs.html</link>
-      <guid isPermaLink="true">https://odanoburu.github.io/blog/uma-introdu%C3%A7%C3%A3o-ao-protocolo-bitcoin-em-portugu%C3%AAs.html</guid>
     </item>
   </channel>
 </rss>
