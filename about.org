@@ -4,7 +4,7 @@
 
 I (= Bruno Cuconato) am a fresh PhD graduate (defended in
 September 2023) from the Computer Science department at [[https://en.wikipedia.org/wiki/Pontifical_Catholic_University_of_Rio_de_Janeiro][PUC-Rio]].
-Otherwise, I spend most of my free time reading, hiking, and learning
+Lately, I spend most of my free time reading, hiking, and learning
 Japanese.
 
 If you ever thought of visiting my hometown (Rio), you may find this

@@ -6,8 +6,7 @@
 
 I recently defended my PhD thesis at the computer science department
 at [[https://en.wikipedia.org/wiki/Pontifical_Catholic_University_of_Rio_de_Janeiro][PUC-Rio]], under the supervision of [[https://www-di.inf.puc-rio.br/~hermann/][Edward Hermann Haeusler]]. The text
-of my thesis will be available soon at PUC's [[https://www.dbd.puc-rio.br/][library]] (I will add a
-link to it in this page too).
+of my thesis is here: [[https://www.maxwell.vrac.puc-rio.br/65161/65161.PDF][PDF]] [[https://doi.org/10.17771/PUCRio.acad.65161][DOI]].
 
 During my PhD I mostly worked on the Labelled Logical Framework, a
 [[https://en.wikipedia.org/wiki/Logical_framework][logical framework]] with a simple meta-language intended to facilitate
