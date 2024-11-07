@@ -1,0 +1,135 @@
+#+TITLE: Como provar que você sabia algo numa data passada
+#+DATE: <2024-11-06 Wed>
+#+DESCRIPTION: Se você tem conhecimento de uma fraude que ainda vai se concretizar, como provar esse conhecimento post factum sem alertar os fraudadores?
+#+KEYWORDS: technical crypto
+#+LANGUAGE: pt
+
+Digamos que você descobriu um esquema de manipulação dos resultados da
+mega-sena, descobrindo inclusive o nome do próximo ganhador. Se você
+for à imprensa denunciar, os fraudadores simplesmente escolherão outro
+ganhador, você ficará descreditado, e a fraude será continuará
+posteriormente. Como você poderia provar que sabia da fraude antes
+dela ocorrer, sem anunciar seu conhecimento publicamente e portanto
+evitando coibir que ela acontecesse?
+
+Essa situação pode parecer improvável, mas [[https://www1.folha.uol.com.br/poder/2017/04/1878315-folha-antecipou-resultado-de-licitacao-de-publicidade-do-banco-do-brasil.shtml][a Folha já antecipou o
+resultado de mais de uma licitação pública]]. Como a Folha provou que
+sabia o resultado das licitações antes deles serem publicados?
+Registrando em cartório os resultados dias antes da publicação.
+
+Neste post, mostraremos como provar conhecimento de alguma informação
+sem o uso de cartórios. Além de custoso, o uso de um intermediário
+como um cartório demanda confiança nesse intermediário. Temos de
+confiar que o cartório não irá informar pessoas que se beneficiariam
+da informação registrada (no caso da Folha, o órgão licitante), que a
+informação registrada está segura, e que o público em geral confia nas
+informações registradas no cartório (confiando por exemplo que o
+cartório não recebeu dinheiro extra da Folha para mentir sobre o
+registro antecipado).
+
+Para provar conhecimento de uma informação em uma data qualquer Y,
+precisamos apenas de uma forma de publicação que possa ser verificada
+como tendo sido feita na data Y. No caso da Folha, o próprio jornal
+poderia ser esse meio. Para provar o conhecimento de uma informação na
+data Y, publicamos o [[https://en.wikipedia.org/wiki/Cryptographic_hash_function][hash criptográfico]] de um texto contendo essa
+informação na data Y. Pelas propriedades matemáticas de um hash
+criptográfico — das quais falaremos mais adiante — é para todos os
+fins impossível de descobrir qual texto que originou um determinado
+hash [1], bem como é fácil de verificar se um certo texto originou um
+determinado hash ou não (precisamos apenas de saber apenas o algoritmo
+de hash utilizado, e o texto em questão) [2]. Também importante para
+impedir [[https://dicionario.priberam.org/contrafa%C3%A7%C3%A3o][contrafações]], é para todos os fins impossível criar um segundo
+texto diferente que origine o mesmo hash [3].
+
+No caso da Folha, o procedimento seria o seguinte: o jornal escreveria
+um texto antecipando o resultado da licitação. O texto alimentaria uma
+função hash criptográfica, que produziria um hash, a ser publicado no
+jornal na data Y; o texto original é mantido em segredo enquanto isso.
+Na data Y + n, um dia depois da publicação oficial do resultado da
+licitação, a Folha publica o texto que originou o hash publicado na
+data Y, afirmando essa correspondência, que pode então ser facilmente
+verificada por qualquer assinante (via propriedade [2]).
+
+Pela propriedade [1] discutida acima, sabe-se que é impossível que as
+pessoas afetadas negativamente pela informação da Folha descubram que
+o jornal possuía essa informação apenas pela publicação do hash, pois
+o hash nada mais é do que um número, e é impossível recuperar o texto
+original deste número sem saber o texto de antemão.
+
+Pela propriedade [2] discutida acima, é possível verificar que o texto
+de fato produz o hash publicado na data Y (basta dá-lo como entrada da
+função de hash usada).
+
+Finalmente, pela propriedade [3], é impossível que a Folha tenha
+falsificado o hash, isto é, que o jornal não conhecesse de fato o
+resultado da licitação antes da sua publicação, que ele tenha
+publicado um hash arbitrário e depois — na data Y + n — escolhido um
+texto apropriado contendo o nome do vencedor revelado no dia anterior.
+
+** O que é uma função hash?
+
+Uma função hash é uma função de uma sequência de bits de tamanho
+arbitrário (que pode codificar um número, um texto, uma imagem, etc.)
+para uma sequência de bits de tamanho fixo $k$ (a depender do
+algoritmo utilizado). Como se trata de uma função de um conjunto
+infinito para um conjunto finito (de $2^k$), teremos necessariamente
+colisões (duas entradas mapeadas para o mesmo hash). Se $k$ for
+suficientemente grande, no entanto, $2^k$ elementos é um número bem
+grande, e encontrar duas entradas tais que ambas tenham o mesmo hash
+demanda muito tempo computacional, a ponto de serem inviáveis —
+assumindo que a função hash criptográfica escolhida é bem-desenhada.
+Assim, garantimos a propriedade [3].
+
+#+CAPTION: Exemplo de aplicações de uma função hash criptográfica
+[[file:../static/hash-examples.svg]]
+
+Muitas linguagens de programação possuem implementações de funções
+hash criptográficas. Em Python, podemos fazer
+#+begin_src python
+>>> from hashlib import sha256
+>>> sha256("O resultado da licitação 95845/2024 será a empresa XYZ…".encode('utf-8')).hexdigest()
+'8509c84b5a007cec46f7bfa61e1a2dd9dabbbe31a0354c93d12ec83313f76040'
+#+end_src
+para obter um hash de um texto usando o algoritmo [[https://en.wikipedia.org/wiki/SHA-2][SHA-2]]. Qualquer
+outra implementação do mesmo algoritmo dará o mesmo resultado para a
+mesma entrada, permitindo a verificação garantida pela propriedade
+[2].
+
+Pelo fato do universo de entradas possíveis da função hash ser
+infinito, é impossível descobrir qual entrada origina um determinado
+hash — assumindo que a entrada não seja previsível. Se a entrada usada
+no caso de revelação antecipada do resultado de uma licitação tiver
+sempre o mesmo formato, bastaria substituir o nome de todos os
+participantes de uma licitação no formato estabelecido para descobrir
+todos os hashes possíveis, e portanto determinar o texto original. Se
+a entrada for imprevisível, garantimos a propriedade [1].
+
+** Posso confiar que uma função hash criptográfica é segura sem entender como ela produz seus resultados?
+
+Nem toda função hash criptográfica é considerada segura atualmente —
+algumas tiveram vulnerabilidades (bugs no desenho da função)
+descobertas, o que significa que elas não possuem algumas das
+propriedades elencadas acima. Já outras funções não tem as mesmas
+vulnerabilidades descobertas, e são consideradas seguras. A função
+[[https://en.wikipedia.org/wiki/SHA-2][SHA-2]] mencionada acima é usada no [[file:uma-introdução-ao-protocolo-bitcoin-em-português.org][protocolo Bitcoin]].
+
+O uso da função SHA-2 no protocolo Bitcoin nos permite fazer um
+argumento econômico quanto a sua segurança. A descoberta de uma
+vulnerabilidade grave no algoritmo SHA-2 permitiria a manipulação da
+rede Bitcoin, gerando bilhões de dólares de lucro para os
+descobridores (se eles escolherem usar essa informação para fins
+ilegais), ou milhões de dólares em ganhos de reputação e contratos de
+consultoria (se eles escolherem o caminho ético/legal). Dados os
+valores em jogo, diversas pessoas e organizações tentaram — e ao que
+tudo indica falharam — em encontrar tais vulnerabilidades, apontando
+para a segurança do algoritmo.
+
+** É prático usar o esquema descrito neste post ao invés de um intermediário como um cartório?
+
+Depende do público que quisermos convencer. Se o público em questão é
+educado o suficiente para compreender os conceitos envolvidos, ou
+acreditaria no testemunho de especialistas de segurança (ou no [[https://csrc.nist.gov/projects/hash-functions][NIST]]
+americano), ou se convenceria pelo argumento econômico baseado no
+protocolo Bitcoin, sim. Caso contrário, os cartórios podem ser uma
+solução mais simples de intermediário, se o público acreditar que eles
+são confiáveis.

@@ -13,4 +13,4 @@ fi
 # and the directory name changes, but alas I seldom update this blog
 # and it is not cost-effective for me to find a better solution now :)
 mkdir -p public/
-emacs --batch --no-init-file --no-site-lisp --directory "~/.emacs.d/non-elpa/emacs-htmlize/" --load "$SCRIPTDIR/publish.el" --eval "(org-publish-all $FORCE)"
+emacs --batch --no-init-file --no-site-lisp --directory "~/.config/emacs/non-elpa/emacs-htmlize/" --load "$SCRIPTDIR/publish.el" --eval "(org-publish-all $FORCE)"
