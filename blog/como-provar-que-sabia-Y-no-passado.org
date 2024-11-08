@@ -133,3 +133,5 @@ americano), ou se convenceria pelo argumento econômico baseado no
 protocolo Bitcoin, sim. Caso contrário, os cartórios podem ser uma
 solução mais simples de intermediário, se o público acreditar que eles
 são confiáveis.
+
+PS: Este post descreve um [[https://en.wikipedia.org/wiki/Commitment_scheme][“esquema de compromisso”]] simples.
