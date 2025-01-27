@@ -1,7 +1,7 @@
 #+TITLE: Fusion
 #+DATE: <2022-05-18 Wed>
 #+DESCRIPTION: Why you should read ‘The Future of Fusion Energy’, by Jason Parisi & Justin Ball.
-#+KEYWORDS: book-review technology public-policy
+#+KEYWORDS: book-review technology public-policy environment
 #+LANGUAGE: en
 
 If you are not excited about fusion energy, you should be. In case you

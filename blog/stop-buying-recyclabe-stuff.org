@@ -1,0 +1,66 @@
+#+TITLE: Stop buying recyclable stuff
+#+DATE: <2025-01-27 Mon>
+#+DESCRIPTION: Why you shouldn't buy recyclable stuff.
+#+KEYWORDS: environment public-policy
+#+LANGUAGE: en
+
+… and start buying recycled stuff.
+
+There is no use in an item being recyclable if it is not ever
+recycled. The idea of recycling is to reduce (ideally, to eliminate)
+waste, but this does not happen if a recyclable product does not get
+recycled.
+
+Lots of people and organizations have called out the fact that
+plastics are almost always recyclable, but rarely recycled [[https://www.greenpeace.org/usa/the-myth-of-single-use-plastic-and-recycling/][[1]​]] [[https://www.nytimes.com/2023/09/01/headway/plastic-recycling-california-law.html][[2]​]]
+[[https://www.earthday.org/plastic-recycling-is-a-lie/][[3]​]] [[https://www.npr.org/2022/12/08/1141601301/the-myth-of-plastic-recycling][[4]​]]. The reason for the non-recycling of plastics is usually
+economic (it is cheaper to produce new plastic than to recycle it,
+specially if you account for logistic costs), while the reason for the
+recyclability of plastics is to assuage the conscience of the consumer
+who cares about an unpolluted environment — that is, a form of
+[[https://en.wikipedia.org/wiki/Greenwashing][greenwashing]].
+
+There are ways to change the economic incentives to encourage
+recycling, such as a tax on the extraction of raw materials, a subsidy
+for the recycling of raw materials, or investment in better systems
+for [[https://en.wikipedia.org/wiki/Reverse_logistics][reverse logistics]]. As an individual you can support some or all of
+these measures, but you can also change your buying habits, which will
+then force companies to change their behaviour.
+
+Some environmental activists are sceptical about the impact of
+individual behaviour, and surely it is hard to coordinate collective
+action to the point that it changes corporate behaviour. That may be
+so, but it does seem that if individual behaviour can make plastics
+recyclable, it should also be able to force companies to produce using
+recycled materials wherever possible, simply via the market mechanism
+(that is, via the aggregation of individual consumer choices).
+
+I therefore call on you as an individual to prefer buying products
+made of materials that are more durable and more commonly recycled
+(e.g., most metals, glass) or — the more sure-fire way — to simply buy
+products made with recycled materials (the higher percentage, the
+better).
+
+* Why you should care about recycling
+
+Even if you are not big on environmental issues, I trust you like
+breathing clean air, drinking pure water, and eating non-contaminated
+food. These desirable conditions are all more easily achieved when we
+make conscientious use of the resources of our planet, which are after
+all finite. Recycling is one way to help us in this quest, allowing us
+to reuse already extracted raw materials instead of dumping them into
+the air we breath (via burning them), into the water we drink or into
+the land we grow food on.
+
+You should
+
+#+begin_quote
+act so that the effects of your action are compatible with the
+permanence of genuine human life. ([[https://en.wikipedia.org/wiki/Hans_Jonas][Hans Jonas]])
+#+end_quote
+
+Recycling helps us not exhaust limited resources, and thus contributes
+to the continuation of the human experience. If you have trouble
+picturing what I mean by human experience, just think of giving your
+children and grandchildren the same (or better) resources you were
+given. Do better for them, and for yourselves.
