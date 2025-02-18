@@ -151,7 +151,8 @@
 	(org-publish-cache-set-file-property
 	 source
 	 :rss
-	 `(item ()
+	 `(,(format-time-string "%Y-%m-%d" date)
+           item ()
 		(title () ,title)
 		(description () ,description)
 		,(if lang `(category ((domain . "https://www.rfc-editor.org/info/bcp47")) ,lang) "")
@@ -253,7 +254,8 @@ should follow the schema
 						  (when rss
 						    (push rss entries-rss))))
 					      org-publish-cache)
-				      (bruno-website-rss entries-rss bruno-website-publish-dir)))
+                                      (setq entries-rss (seq-sort-by #'car (lambda (a b) (string-lessp b a)) entries-rss))
+				      (bruno-website-rss (mapcar #'cdr entries-rss) bruno-website-publish-dir)))
 	     :html-head bruno-website-html-blog-head
 	     :html-preamble bruno-website-html-preamble
 	     :html-postamble bruno-website-html-postamble)
